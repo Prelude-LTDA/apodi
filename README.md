@@ -79,9 +79,11 @@ validation results and the known differences, see [REPORT.md](REPORT.md).
   renderings. The side-by-side renderings were made for visual review only, and they stay
   out of the repository (`docs/comparison/` is git-ignored).
 * **Apodi's own design changes**: the middle vertex of **M** is raised off the baseline
-  (parametrically, on Open Sans's M). Open Sans's own alternates are now the defaults: the
-  single-storey **g** and the baseline **J**, plus, in italics, the double-storey **a**. The
-  former defaults are still there under `salt`/`ss01`. Each glyph is interpolated at a width
+  (parametrically, on Open Sans's M). Two Open Sans alternates that match the reference's
+  letter shapes are now the defaults: the **J** that sits on the baseline, and in italics the
+  double-storey **a**. The double-storey (binocular) **g** stays the default, as in the
+  reference. The former defaults are still there under `salt`/`ss01`/`ss03`, and the
+  single-storey g under `salt`/`ss01`/`ss02`. Each glyph is interpolated at a width
   chosen to fit its advance; spacing is refitted; a few oversized symbols (®) are scaled down.
 * **License**: SIL Open Font License 1.1 ([OFL.txt](OFL.txt)). Change history:
   [FONTLOG.txt](FONTLOG.txt).

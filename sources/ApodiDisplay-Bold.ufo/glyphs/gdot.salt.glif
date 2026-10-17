@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="gdot.salt" format="2">
-  <advance width="896"/>
-  <anchor x="412" y="-453" name="bottom"/>
-  <anchor x="497" y="1442" name="top"/>
+  <advance width="1050"/>
+  <anchor x="466" y="-453" name="bottom"/>
+  <anchor x="532" y="1436" name="top"/>
   <outline>
     <component base="g.salt"/>
-    <component base="dotaccent" xOffset="-37"/>
+    <component base="dotaccent" xOffset="-11"/>
   </outline>
 </glyph>

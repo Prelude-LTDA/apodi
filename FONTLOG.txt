@@ -59,9 +59,11 @@ Changelog
 - Design changes:
   * M: middle vertex raised off the baseline by 16% of the cap height (parametric edit of
     Open Sans's M; carries into M-acute, Greek Mu, Cyrillic Em).
-  * Open Sans alternates promoted to default: single-storey g (g.salt), baseline J
-    (J.salt); in italics also double-storey a (a.ss01). Former defaults stay available
-    through salt/ss01.
+  * Open Sans alternates promoted to default where they match the reference's letter
+    shapes: J sitting on the baseline (J.salt), and in italics the double-storey a (a.ss01).
+    Former defaults stay available through salt/ss01/ss03. The double-storey (binocular) g
+    remains the default, as in the reference; the single-storey g stays an alternate
+    (salt/ss01/ss02).
 - Hinting removed (unhinted TrueType, gasp: smoothing at all sizes).
 - Unshipped glyphs pruned from the sources; glyph set = Open Sans's shipped set plus the
   extra Open Sans glyphs that cover reference characters (currency signs, Latin Extended-B,

@@ -52,11 +52,13 @@ BASE_WGHT = {"regular": 450, "bold": 700}       # Open Sans user wght at wdth 10
 STRETCH_WIDE = [1.015, 1.03, 1.045, 1.06]       # at wdth 100
 STRETCH_NARROW = [0.985, 0.97]                  # at wdth 75
 STRETCH_COST = 0.5                              # 1% of stretch counts like 0.5% of width error
-# Open Sans's own alternates promoted to default (closer to the reference's letter shapes);
-# the former defaults stay reachable through the same features (salt/ss01/ss03).
+# Open Sans's own alternates promoted to default, where they match the reference's letter
+# shapes (checked against renderings): J sitting on the baseline, and in italics the
+# double-storey a. The double-storey (binocular) g stays the default, as in the reference.
+# The former defaults stay reachable through the same features (salt/ss01/ss03).
 DEFAULT_ALTERNATES = {
-    "roman": [("g", "g.salt"), ("J", "J.salt")],
-    "italic": [("g", "g.salt"), ("J", "J.salt"), ("a", "a.ss01")],
+    "roman": [("J", "J.salt")],
+    "italic": [("J", "J.salt"), ("a", "a.ss01")],
 }
 M_VERTEX_RAISE = 0.16                           # M middle vertex raised by 16% of cap height
 VERSION = (1, 0)

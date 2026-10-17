@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="gcircumflex.salt" format="2">
-  <advance width="888"/>
-  <anchor x="408" y="-453" name="bottom"/>
-  <anchor x="492" y="1445" name="top"/>
+  <advance width="1028"/>
+  <anchor x="451" y="-453" name="bottom"/>
+  <anchor x="523" y="1445" name="top"/>
   <outline>
     <component base="g.salt"/>
-    <component base="circumflex" xScale="0.9292452830188678" xOffset="112"/>
+    <component base="circumflex" xScale="0.9433962264150942" xOffset="113"/>
   </outline>
 </glyph>

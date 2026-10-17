@@ -33,10 +33,6 @@
       <key>defaultAlternates</key>
       <array>
         <array>
-          <string>g</string>
-          <string>g.salt</string>
-        </array>
-        <array>
           <string>J</string>
           <string>J.salt</string>
         </array>

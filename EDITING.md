@@ -105,7 +105,9 @@ The fitting parameters sit at the top of `scripts/build_sources.py`:
 * `WDTH_GRID`, `STRETCH_WIDE`, `STRETCH_NARROW`, `STRETCH_COST`: candidate widths, and the
   limits on horizontal scaling.
 * `M_VERTEX_RAISE`: the M vertex height.
-* `DEFAULT_ALTERNATES`: Open Sans alternates promoted to default.
+* `DEFAULT_ALTERNATES`: Open Sans alternates promoted to default. Currently J.salt (J on the
+  baseline) everywhere, plus a.ss01 (double-storey a) in italics. The binocular g is
+  deliberately left as the default, because the reference uses it too.
 
 Then run `APTOS_DIR=... ./build.sh fit`. This **regenerates `sources/` from scratch** and
 discards hand edits, so make design changes in `build_sources.py` (as with the M), or
