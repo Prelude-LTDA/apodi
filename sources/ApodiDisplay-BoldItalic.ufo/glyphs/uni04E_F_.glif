@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni04EF" format="2">
+  <advance width="973"/>
+  <unicode hex="04EF"/>
+  <anchor x="282" y="-453" name="bottom"/>
+  <anchor x="627" y="1337" name="top"/>
+  <outline>
+    <component base="y"/>
+    <component base="macron" xOffset="82"/>
+  </outline>
+</glyph>

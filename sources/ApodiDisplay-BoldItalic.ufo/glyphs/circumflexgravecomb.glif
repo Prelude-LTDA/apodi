@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="circumflexgravecomb" format="2">
+  <outline>
+    <contour>
+      <point x="-788" y="1143" type="line"/>
+      <point x="-601" y="1143" type="line"/>
+      <point x="-532" y="1188"/>
+      <point x="-470" y="1231"/>
+      <point x="-401" y="1288" type="curve"/>
+      <point x="-360" y="1239"/>
+      <point x="-302" y="1178"/>
+      <point x="-261" y="1143" type="curve"/>
+      <point x="-89" y="1143" type="line"/>
+      <point x="-89" y="1164" type="line"/>
+      <point x="-139" y="1233"/>
+      <point x="-206" y="1342"/>
+      <point x="-241" y="1425" type="curve"/>
+      <point x="-534" y="1425" type="line"/>
+      <point x="-596" y="1348"/>
+      <point x="-718" y="1229"/>
+      <point x="-788" y="1164" type="curve"/>
+    </contour>
+    <contour>
+      <point x="-802" y="1324" type="curve"/>
+      <point x="-677" y="1324" type="line"/>
+      <point x="-677" y="1339" type="line"/>
+      <point x="-711" y="1403"/>
+      <point x="-739" y="1472"/>
+      <point x="-754" y="1533" type="curve"/>
+      <point x="-967" y="1533" type="line"/>
+      <point x="-967" y="1520" type="line"/>
+      <point x="-934" y="1459"/>
+      <point x="-859" y="1375"/>
+    </contour>
+  </outline>
+</glyph>

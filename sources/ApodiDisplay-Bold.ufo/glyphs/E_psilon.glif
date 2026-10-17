@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Epsilon" format="2">
+  <advance width="1125"/>
+  <unicode hex="0395"/>
+  <anchor x="609" y="0" name="bottom"/>
+  <anchor x="606" y="1346" name="top"/>
+  <anchor x="44" y="1346" name="topleft"/>
+  <outline>
+    <component base="E"/>
+  </outline>
+</glyph>

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ordmasculine" format="2">
+  <advance width="830"/>
+  <unicode hex="00BA"/>
+  <anchor x="460" y="723" name="bottom"/>
+  <anchor x="600" y="1373" name="top"/>
+  <outline>
+    <contour>
+      <point x="490" y="723" type="curve" smooth="yes"/>
+      <point x="719" y="723"/>
+      <point x="818" y="925"/>
+      <point x="818" y="1121" type="curve" smooth="yes"/>
+      <point x="818" y="1259"/>
+      <point x="745" y="1363"/>
+      <point x="579" y="1363" type="curve" smooth="yes"/>
+      <point x="362" y="1363"/>
+      <point x="248" y="1169"/>
+      <point x="248" y="969" type="curve" smooth="yes"/>
+      <point x="248" y="806"/>
+      <point x="350" y="723"/>
+    </contour>
+    <contour>
+      <point x="498" y="818" type="curve" smooth="yes"/>
+      <point x="413" y="818"/>
+      <point x="363" y="870"/>
+      <point x="363" y="972" type="curve" smooth="yes"/>
+      <point x="363" y="1126"/>
+      <point x="436" y="1265"/>
+      <point x="576" y="1265" type="curve" smooth="yes"/>
+      <point x="655" y="1265"/>
+      <point x="704" y="1219"/>
+      <point x="704" y="1116" type="curve" smooth="yes"/>
+      <point x="704" y="965"/>
+      <point x="633" y="818"/>
+    </contour>
+  </outline>
+</glyph>

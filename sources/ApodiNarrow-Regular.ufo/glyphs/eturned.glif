@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="eturned" format="2">
+  <advance width="994"/>
+  <unicode hex="01DD"/>
+  <anchor x="497" y="0" name="bottom"/>
+  <anchor x="497" y="1013" name="top"/>
+  <outline>
+    <component base="uni0259"/>
+  </outline>
+</glyph>

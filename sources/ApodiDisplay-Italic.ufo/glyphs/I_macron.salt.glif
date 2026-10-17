@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Imacron.salt" format="2">
+  <advance width="572"/>
+  <anchor x="179" y="0" name="bottom"/>
+  <anchor x="520" y="1616" name="top"/>
+  <outline>
+    <component base="I.salt"/>
+    <component base="macron" xOffset="22" yOffset="341"/>
+  </outline>
+</glyph>

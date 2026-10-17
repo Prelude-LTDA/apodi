@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni03F3dotless" format="2">
+  <advance width="517"/>
+  <anchor x="55" y="-453" name="bottom"/>
+  <anchor x="367" y="1019" name="top"/>
+  <outline>
+    <component base="jdotless" xOffset="2"/>
+  </outline>
+</glyph>

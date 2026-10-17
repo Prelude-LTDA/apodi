@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="upsilondieresistonos" format="2">
+  <advance width="1156"/>
+  <unicode hex="03B0"/>
+  <anchor x="465" y="0" name="bottom"/>
+  <anchor x="807" y="1580" name="top"/>
+  <outline>
+    <component base="upsilon"/>
+    <component base="dieresistonos" xScale="1.06" xOffset="-88"/>
+  </outline>
+</glyph>

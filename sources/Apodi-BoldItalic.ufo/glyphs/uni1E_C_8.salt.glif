@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni1EC8.salt" format="2">
+  <advance width="721"/>
+  <anchor x="252" y="0" name="bottom"/>
+  <anchor x="639" y="1876" name="top"/>
+  <outline>
+    <component base="I.salt"/>
+    <component base="hook" xScale="0.9433962264150942" xOffset="959" yOffset="311"/>
+  </outline>
+</glyph>

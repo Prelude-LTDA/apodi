@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Nacute" format="2">
+  <advance width="1318"/>
+  <unicode hex="0143"/>
+  <anchor x="550" y="0" name="bottom"/>
+  <anchor x="939" y="1780" name="top"/>
+  <outline>
+    <component base="N" xScale="0.9999999999999999" yScale="0.9999999999999999"/>
+    <component base="acute" xScale="0.9999999999999999" yScale="0.9999999999999999" xOffset="294" yOffset="336"/>
+  </outline>
+</glyph>

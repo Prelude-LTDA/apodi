@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni03F8" format="2">
+  <advance width="1053"/>
+  <unicode hex="03F8"/>
+  <anchor x="324" y="-450" name="bottom"/>
+  <anchor x="725" y="1433" name="top"/>
+  <outline>
+    <component base="thorn" xScale="0.9999999999999999" yScale="0.9999999999999999"/>
+  </outline>
+</glyph>

@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Ncommaaccent.loclMAH" format="2">
+  <advance width="1303"/>
+  <outline>
+    <component base="N" xScale="0.9999999999999999" yScale="0.9999999999999999" xOffset="-7"/>
+    <component base="cedillacomb" xScale="0.9999999999999999" yScale="0.9999999999999999" xOffset="668"/>
+  </outline>
+</glyph>

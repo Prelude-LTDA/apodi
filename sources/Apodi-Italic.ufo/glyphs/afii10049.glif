@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="afii10049" format="2">
+  <advance width="1255"/>
+  <unicode hex="042F"/>
+  <anchor x="514" y="0" name="bottom"/>
+  <anchor x="817" y="1346" name="top"/>
+  <outline>
+    <contour>
+      <point x="-23" y="0" type="line"/>
+      <point x="184" y="0" type="line"/>
+      <point x="635" y="561" type="line"/>
+      <point x="861" y="561" type="line"/>
+      <point x="735" y="0" type="line"/>
+      <point x="908" y="0" type="line"/>
+      <point x="1208" y="1346" type="line"/>
+      <point x="830" y="1346" type="line" smooth="yes"/>
+      <point x="532" y="1346"/>
+      <point x="287" y="1226"/>
+      <point x="287" y="916" type="curve" smooth="yes"/>
+      <point x="287" y="755"/>
+      <point x="371" y="667"/>
+      <point x="481" y="615" type="curve"/>
+    </contour>
+    <contour>
+      <point x="736" y="698" type="line" smooth="yes"/>
+      <point x="553" y="698"/>
+      <point x="463" y="789"/>
+      <point x="463" y="927" type="curve" smooth="yes"/>
+      <point x="463" y="1138"/>
+      <point x="622" y="1208"/>
+      <point x="831" y="1208" type="curve" smooth="yes"/>
+      <point x="1009" y="1208" type="line"/>
+      <point x="892" y="698" type="line"/>
+    </contour>
+  </outline>
+</glyph>

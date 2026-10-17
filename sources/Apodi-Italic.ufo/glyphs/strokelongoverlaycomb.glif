@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="strokelongoverlaycomb" format="2">
+  <unicode hex="0336"/>
+  <anchor x="3" y="534" name="_center"/>
+  <outline>
+    <contour>
+      <point x="-637" y="469" type="line"/>
+      <point x="612" y="469" type="line"/>
+      <point x="641" y="599" type="line"/>
+      <point x="-609" y="599" type="line"/>
+    </contour>
+  </outline>
+</glyph>

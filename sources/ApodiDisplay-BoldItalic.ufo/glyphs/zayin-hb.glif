@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="zayin-hb" format="2">
+  <advance width="624"/>
+  <unicode hex="05D6"/>
+  <note>
+afii57670
+</note>
+  <anchor x="203" y="0" name="bottom"/>
+  <anchor x="-91" y="0" name="bottomleft"/>
+  <anchor x="12" y="617" name="center"/>
+  <anchor x="422" y="1030" name="top"/>
+  <anchor x="128" y="1030" name="topleft"/>
+  <outline>
+    <contour>
+      <point x="32" y="0" type="line"/>
+      <point x="310" y="0" type="line"/>
+      <point x="419" y="513" type="line" smooth="yes"/>
+      <point x="434" y="581"/>
+      <point x="451" y="644"/>
+      <point x="470" y="700" type="curve" smooth="yes"/>
+      <point x="484" y="738"/>
+      <point x="501" y="775"/>
+      <point x="520" y="808" type="curve" smooth="yes"/>
+      <point x="559" y="873"/>
+      <point x="618" y="948"/>
+      <point x="681" y="991" type="curve"/>
+      <point x="724" y="1190" type="line"/>
+      <point x="217" y="1190" type="line"/>
+      <point x="171" y="974" type="line"/>
+      <point x="417" y="974" type="line"/>
+      <point x="387" y="953"/>
+      <point x="356" y="925"/>
+      <point x="326" y="890" type="curve" smooth="yes"/>
+      <point x="234" y="794"/>
+      <point x="173" y="659"/>
+      <point x="142" y="513" type="curve" smooth="yes"/>
+    </contour>
+  </outline>
+</glyph>

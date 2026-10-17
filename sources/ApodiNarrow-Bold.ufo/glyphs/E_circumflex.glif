@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Ecircumflex" format="2">
+  <advance width="1054"/>
+  <unicode hex="00CA"/>
+  <anchor x="571" y="0" name="bottom"/>
+  <anchor x="566" y="1761" name="top"/>
+  <outline>
+    <component base="E"/>
+    <component base="circumflex" xScale="0.9433962264150942" xOffset="89" yOffset="317"/>
+  </outline>
+</glyph>

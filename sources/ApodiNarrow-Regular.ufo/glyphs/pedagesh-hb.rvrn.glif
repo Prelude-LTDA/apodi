@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="pedagesh-hb.rvrn" format="2">
+  <advance width="1014"/>
+  <note>
+uniFB44
+</note>
+  <outline>
+    <component base="pe-hb"/>
+    <component base="dagesh-hb.small" xOffset="506" yOffset="403"/>
+  </outline>
+</glyph>

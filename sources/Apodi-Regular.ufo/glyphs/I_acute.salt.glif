@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Iacute.salt" format="2">
+  <advance width="632"/>
+  <anchor x="317" y="0" name="bottom"/>
+  <anchor x="317" y="1776" name="top"/>
+  <outline>
+    <component base="I.salt"/>
+    <component base="acute" xOffset="-167" yOffset="332"/>
+  </outline>
+</glyph>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni1EE3" format="2">
+  <advance width="1221"/>
+  <unicode hex="1EE3"/>
+  <anchor x="418" y="-396" name="bottom"/>
+  <anchor x="721" y="1029" name="top"/>
+  <outline>
+    <component base="ohorn"/>
+    <component base="dotbelowcomb" xOffset="1147"/>
+  </outline>
+</glyph>

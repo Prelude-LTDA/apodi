@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="qamatsqatan-hb" format="2">
+  <unicode hex="05C7"/>
+  <note>
+uni05C7
+</note>
+  <anchor x="-105" y="-68" name="_bottom"/>
+  <outline>
+    <contour>
+      <point x="-226" y="-354" type="line"/>
+      <point x="-146" y="-354" type="line"/>
+      <point x="-108" y="-171" type="line"/>
+      <point x="26" y="-171" type="line"/>
+      <point x="43" y="-87" type="line"/>
+      <point x="-300" y="-87" type="line"/>
+      <point x="-318" y="-171" type="line"/>
+      <point x="-187" y="-171" type="line"/>
+    </contour>
+  </outline>
+</glyph>

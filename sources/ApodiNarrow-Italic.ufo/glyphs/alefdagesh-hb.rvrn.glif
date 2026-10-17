@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="alefdagesh-hb.rvrn" format="2">
+  <advance width="1060"/>
+  <note>
+uniFB30
+</note>
+  <outline>
+    <component base="alef-hb" xScale="0.9999999999999999" yScale="0.9999999999999999"/>
+    <component base="dagesh-hb.small" xScale="0.9999999999999999" yScale="0.9999999999999999" xOffset="372" yOffset="-204"/>
+  </outline>
+</glyph>

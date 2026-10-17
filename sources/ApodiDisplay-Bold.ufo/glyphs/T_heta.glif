@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Theta" format="2">
+  <advance width="1443"/>
+  <unicode hex="0398"/>
+  <anchor x="722" y="0" name="bottom"/>
+  <anchor x="722" y="1346" name="top"/>
+  <outline>
+    <contour>
+      <point x="938" y="800" type="line"/>
+      <point x="505" y="800" type="line"/>
+      <point x="505" y="569" type="line"/>
+      <point x="938" y="569" type="line"/>
+    </contour>
+    <component base="O"/>
+  </outline>
+</glyph>

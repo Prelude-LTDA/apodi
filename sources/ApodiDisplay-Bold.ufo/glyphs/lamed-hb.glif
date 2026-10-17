@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="lamed-hb" format="2">
+  <advance width="948"/>
+  <unicode hex="05DC"/>
+  <note>
+afii57676
+</note>
+  <anchor x="475" y="0" name="bottom"/>
+  <anchor x="30" y="0" name="bottomleft"/>
+  <anchor x="282" y="608" name="center"/>
+  <anchor x="475" y="1030" name="top"/>
+  <anchor x="30" y="1030" name="topleft"/>
+  <outline>
+    <contour>
+      <point x="364" y="0" type="line"/>
+      <point x="635" y="0" type="line"/>
+      <point x="730" y="451" type="line"/>
+      <point x="890" y="1009" type="line"/>
+      <point x="890" y="1190" type="line"/>
+      <point x="331" y="1190" type="line"/>
+      <point x="331" y="1432" type="line"/>
+      <point x="56" y="1432" type="line"/>
+      <point x="56" y="972" type="line"/>
+      <point x="610" y="972" type="line"/>
+      <point x="461" y="457" type="line"/>
+    </contour>
+  </outline>
+</glyph>

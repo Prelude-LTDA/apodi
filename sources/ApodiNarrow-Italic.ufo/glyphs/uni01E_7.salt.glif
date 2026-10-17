@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni01E7.salt" format="2">
+  <advance width="820"/>
+  <anchor x="244" y="-453" name="bottom"/>
+  <anchor x="640" y="1445" name="top"/>
+  <outline>
+    <component base="g.salt"/>
+    <component base="caron" xOffset="-37"/>
+  </outline>
+</glyph>

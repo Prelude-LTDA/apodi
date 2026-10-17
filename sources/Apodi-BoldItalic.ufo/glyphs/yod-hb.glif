@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="yod-hb" format="2">
+  <advance width="534"/>
+  <unicode hex="05D9"/>
+  <note>
+afii57673
+</note>
+  <anchor x="151" y="0" name="bottom"/>
+  <anchor x="-97" y="0" name="bottomleft"/>
+  <anchor x="42" y="843" name="center"/>
+  <anchor x="383" y="1027" name="top"/>
+  <anchor x="136" y="1027" name="topleft"/>
+  <outline>
+    <contour>
+      <point x="89" y="407" type="line"/>
+      <point x="201" y="407" type="line"/>
+      <point x="412" y="605" type="line"/>
+      <point x="545" y="1190" type="line"/>
+      <point x="266" y="1190" type="line"/>
+    </contour>
+  </outline>
+</glyph>

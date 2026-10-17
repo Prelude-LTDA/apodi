@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="yoddagesh-hb" format="2">
+  <advance width="422"/>
+  <unicode hex="FB39"/>
+  <note>
+uniFB39
+</note>
+  <outline>
+    <component base="yod-hb" xScale="0.9999999999999999" yScale="0.9999999999999999"/>
+    <component base="dagesh-hb" xScale="0.9999999999999999" yScale="0.9999999999999999" xOffset="23" yOffset="272"/>
+  </outline>
+</glyph>

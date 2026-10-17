@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Iotatonos.salt" format="2">
+  <advance width="1004"/>
+  <anchor x="553" y="0" name="bottom"/>
+  <anchor x="830" y="1346" name="top"/>
+  <outline>
+    <component base="I.salt" xOffset="316"/>
+    <component base="tonos" xOffset="-375" yOffset="-131"/>
+  </outline>
+</glyph>

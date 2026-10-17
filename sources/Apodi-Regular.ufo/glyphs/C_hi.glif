@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Chi" format="2">
+  <advance width="1132"/>
+  <unicode hex="03A7"/>
+  <anchor x="565" y="0" name="bottom"/>
+  <anchor x="564" y="1346" name="top"/>
+  <outline>
+    <component base="X"/>
+  </outline>
+</glyph>

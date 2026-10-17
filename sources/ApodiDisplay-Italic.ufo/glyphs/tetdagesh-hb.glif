@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="tetdagesh-hb" format="2">
+  <advance width="1130"/>
+  <unicode hex="FB38"/>
+  <note>
+uniFB38
+</note>
+  <outline>
+    <component base="tet-hb" xScale="0.9999999999999999" yScale="0.9999999999999999"/>
+    <component base="dagesh-hb" xScale="0.9999999999999999" yScale="0.9999999999999999" xOffset="574" yOffset="64"/>
+  </outline>
+</glyph>

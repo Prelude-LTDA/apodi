@@ -1,0 +1,82 @@
+FONTLOG for Apodi
+=================
+
+This file provides detailed information on the Apodi font software. This information should
+be distributed along with the Apodi fonts and any derivative works.
+
+
+Basic font information
+----------------------
+
+Apodi is an open, metric-compatible alternative to Aptos: a sans-serif family whose
+characters have the same advance widths, kerning values and vertical metrics as Aptos, so
+that documents keep their line and page breaks when Apodi replaces it. "Aptos" is used only
+to describe compatibility (nominative use); Apodi is not affiliated with Microsoft.
+
+Apodi is a Modified Version of Open Sans (designed by Steve Matteson; Open Sans Project
+Authors), released under the SIL Open Font License 1.1. Open Sans declares no Reserved Font
+Name; the modified fonts are nevertheless renamed.
+
+Families: Apodi, Apodi Narrow, Apodi Display; each in Regular, Bold, Italic, Bold Italic.
+
+
+Sources used
+------------
+
+Open Sans sources (the only source of outlines, components, anchors and substitution
+features):
+  https://github.com/googlefonts/opensans
+  commit bd7e37632246368c60fdcbd374dbf9bad11969b6 ("Fix version number to v3.003", 2023-11-16)
+  sources/OpenSans-Roman.designspace, sources/OpenSans-Italic.designspace, sources/*.ufo,
+  sources/OpenSans-glyphset.txt; license OFL.txt (SIL OFL 1.1).
+
+Reference metrics (numbers only), read from locally installed Aptos fonts: advance width per
+Unicode codepoint, advance per default-ligature character sequence, kerning value per
+codepoint pair, unitsPerEm, hhea/typo/win ascender, descender and line gap, cap height,
+weight class, italic angle. No outlines, points or curves were taken from Aptos.
+
+
+Changelog
+---------
+
+2026-10-17 (The Apodi Project Authors) Apodi v1.000
+- Generated 12 static styles from the Open Sans Roman and Italic designspaces.
+- Scaled all outlines uniformly by 1346/1462 (0.92066) so the cap height matches the
+  reference; unitsPerEm stays 2048.
+- Per glyph, interpolated Open Sans at the width (wdth 75-100, plus up to 6% horizontal
+  stretch beyond wdth 100 and 3% compression below wdth 75) whose advance is closest to the
+  reference advance, with the weight adjusted at every width so stem thickness stays
+  constant (Regular from Open Sans wght 450, Bold from wght 700 at wdth 100). Composite
+  (accented) glyphs follow their base glyph.
+- Set every advance width exactly to the reference value by moving sidebearings (difference
+  split in proportion to the existing left/right sidebearings). Symbols that would otherwise
+  overlap their neighbours are scaled down uniformly (e.g. the registered sign).
+- Replaced Open Sans's kerning with the reference pair values (class-compressed UFO groups,
+  ignoring marks); mark positioning still comes from Open Sans's anchors.
+- Default ligatures limited to ff, fi, fl (ffi, ffl removed from liga).
+- Vertical metrics set to the reference values: hhea 1923/-577/0, typo 1923/-577/0,
+  win 2068/563, USE_TYPO_METRICS on.
+- Design changes:
+  * M: middle vertex raised off the baseline by 16% of the cap height (parametric edit of
+    Open Sans's M; carries into M-acute, Greek Mu, Cyrillic Em).
+  * Open Sans alternates promoted to default: single-storey g (g.salt), baseline J
+    (J.salt); in italics also double-storey a (a.ss01). Former defaults stay available
+    through salt/ss01.
+- Hinting removed (unhinted TrueType, gasp: smoothing at all sizes).
+- Unshipped glyphs pruned from the sources; glyph set = Open Sans's shipped set plus the
+  extra Open Sans glyphs that cover reference characters (currency signs, Latin Extended-B,
+  Greek symbols, format controls).
+
+
+Acknowledgements
+----------------
+
+N: Steve Matteson
+D: Designer of Open Sans
+
+N: The Open Sans Project Authors
+W: https://github.com/googlefonts/opensans
+D: Open Sans sources
+
+N: The Apodi Project Authors
+D: Metric fitting, M redesign, build tooling

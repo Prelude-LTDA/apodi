@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni1ECBdotless" format="2">
+  <advance width="515"/>
+  <anchor x="262" y="-409" name="bottom"/>
+  <anchor x="257" y="1033" name="top"/>
+  <outline>
+    <component base="idotless"/>
+    <component base="dotbelowcomb" xOffset="819"/>
+  </outline>
+</glyph>

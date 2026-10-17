@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Alphatonos" format="2">
+  <advance width="1188"/>
+  <unicode hex="0386"/>
+  <anchor x="481" y="0" name="bottom"/>
+  <anchor x="787" y="1346" name="top"/>
+  <outline>
+    <component base="A"/>
+    <component base="tonos" xOffset="-485" yOffset="-172"/>
+  </outline>
+</glyph>

@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Iota.salt" format="2">
+  <advance width="688"/>
+  <anchor x="237" y="0" name="bottom"/>
+  <anchor x="513" y="1346" name="top"/>
+  <outline>
+    <component base="I.salt"/>
+  </outline>
+</glyph>

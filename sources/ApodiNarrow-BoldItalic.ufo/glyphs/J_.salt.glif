@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="J.salt" format="2">
+  <advance width="487"/>
+  <anchor x="-124" y="-412" name="bottom"/>
+  <anchor x="421" y="1346" name="top"/>
+  <anchor x="627" y="1346" name="topright"/>
+  <outline>
+    <contour>
+      <point x="-124" y="-412" type="curve" smooth="yes"/>
+      <point x="74" y="-412"/>
+      <point x="219" y="-286"/>
+      <point x="286" y="31" type="curve" smooth="yes"/>
+      <point x="560" y="1346" type="line"/>
+      <point x="278" y="1346" type="line"/>
+      <point x="11" y="73" type="line" smooth="yes"/>
+      <point x="-9" y="-28"/>
+      <point x="-43" y="-164"/>
+      <point x="-141" y="-164" type="curve" smooth="yes"/>
+      <point x="-171" y="-164"/>
+      <point x="-202" y="-156"/>
+      <point x="-237" y="-138" type="curve"/>
+      <point x="-290" y="-389" type="line"/>
+      <point x="-246" y="-404"/>
+      <point x="-198" y="-412"/>
+    </contour>
+  </outline>
+</glyph>

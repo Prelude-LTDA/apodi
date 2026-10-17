@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="I.salt" format="2">
+  <advance width="668"/>
+  <anchor x="334" y="0" name="bottom"/>
+  <anchor x="334" y="1346" name="top"/>
+  <anchor x="630" y="1346" name="topright"/>
+  <outline>
+    <contour>
+      <point x="614" y="0" type="line"/>
+      <point x="614" y="157" type="line"/>
+      <point x="477" y="217" type="line"/>
+      <point x="477" y="1129" type="line"/>
+      <point x="614" y="1190" type="line"/>
+      <point x="614" y="1346" type="line"/>
+      <point x="55" y="1346" type="line"/>
+      <point x="55" y="1190" type="line"/>
+      <point x="192" y="1129" type="line"/>
+      <point x="192" y="217" type="line"/>
+      <point x="55" y="157" type="line"/>
+      <point x="55" y="0" type="line"/>
+    </contour>
+  </outline>
+</glyph>

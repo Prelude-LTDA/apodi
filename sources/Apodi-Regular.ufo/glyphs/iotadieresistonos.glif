@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="iotadieresistonos" format="2">
+  <advance width="534"/>
+  <unicode hex="0390"/>
+  <anchor x="314" y="0" name="bottom"/>
+  <anchor x="224" y="1521" name="top"/>
+  <outline>
+    <component base="iota" xOffset="-1"/>
+    <component base="dieresistonos" xOffset="-280"/>
+  </outline>
+</glyph>

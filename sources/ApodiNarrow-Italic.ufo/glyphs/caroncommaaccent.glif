@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="caroncommaaccent" format="2">
+  <advance width="900"/>
+  <anchor x="397" y="1014" name="_topright"/>
+  <outline>
+    <contour>
+      <point x="464" y="1131" type="line"/>
+      <point x="559" y="1131" type="line"/>
+      <point x="637" y="1213"/>
+      <point x="726" y="1347"/>
+      <point x="756" y="1415" type="curve"/>
+      <point x="756" y="1433" type="line"/>
+      <point x="596" y="1433" type="line"/>
+      <point x="567" y="1352"/>
+      <point x="505" y="1221"/>
+      <point x="464" y="1154" type="curve"/>
+    </contour>
+  </outline>
+</glyph>

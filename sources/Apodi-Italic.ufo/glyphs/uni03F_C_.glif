@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni03FC" format="2">
+  <advance width="1151"/>
+  <unicode hex="03FC"/>
+  <anchor x="362" y="-451" name="bottom"/>
+  <anchor x="688" y="1010" name="top"/>
+  <outline>
+    <contour>
+      <point x="-163" y="-291" type="line"/>
+      <point x="492" y="-291" type="line"/>
+      <point x="520" y="-166" type="line"/>
+      <point x="-135" y="-166" type="line"/>
+    </contour>
+    <component base="rho"/>
+  </outline>
+</glyph>

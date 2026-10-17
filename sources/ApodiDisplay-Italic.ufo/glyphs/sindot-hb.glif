@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="sindot-hb" format="2">
+  <unicode hex="05C2"/>
+  <note>
+afii57803
+</note>
+  <anchor x="228" y="1163" name="_topleft"/>
+  <outline>
+    <contour>
+      <point x="144" y="1181" type="curve" smooth="yes"/>
+      <point x="194" y="1181"/>
+      <point x="228" y="1222"/>
+      <point x="228" y="1277" type="curve" smooth="yes"/>
+      <point x="228" y="1306"/>
+      <point x="212" y="1326"/>
+      <point x="173" y="1326" type="curve" smooth="yes"/>
+      <point x="121" y="1326"/>
+      <point x="89" y="1282"/>
+      <point x="89" y="1227" type="curve" smooth="yes"/>
+      <point x="89" y="1200"/>
+      <point x="106" y="1181"/>
+    </contour>
+  </outline>
+</glyph>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Etatonos" format="2">
+  <advance width="1448"/>
+  <unicode hex="0389"/>
+  <anchor x="709" y="0" name="bottom"/>
+  <anchor x="985" y="1346" name="top"/>
+  <outline>
+    <component base="H" xOffset="75"/>
+    <component base="tonos" xOffset="-568" yOffset="-172"/>
+  </outline>
+</glyph>

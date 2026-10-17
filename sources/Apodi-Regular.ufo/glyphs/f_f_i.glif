@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="f_f_i" format="2">
+  <advance width="1701"/>
+  <unicode hex="FB03"/>
+  <anchor x="243" y="0" name="bottom_1"/>
+  <anchor x="858" y="0" name="bottom_2"/>
+  <anchor x="1468" y="0" name="bottom_3"/>
+  <anchor x="569" y="0" name="caret_1"/>
+  <anchor x="1138" y="0" name="caret_2"/>
+  <anchor x="455" y="1443" name="top_1"/>
+  <anchor x="1069" y="1443" name="top_2"/>
+  <anchor x="1465" y="1443" name="top_3"/>
+  <outline>
+    <component base="f" xOffset="-1"/>
+    <component base="f" xOffset="614"/>
+    <component base="i" xOffset="1229"/>
+  </outline>
+</glyph>

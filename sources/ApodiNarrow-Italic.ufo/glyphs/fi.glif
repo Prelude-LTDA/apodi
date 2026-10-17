@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="fi" format="2">
+  <advance width="983"/>
+  <unicode hex="FB01"/>
+  <anchor x="-108" y="-453" name="bottom_1"/>
+  <anchor x="650" y="0" name="bottom_2"/>
+  <anchor x="405" y="0" name="caret_1"/>
+  <anchor x="593" y="1443" name="top_1"/>
+  <anchor x="951" y="1443" name="top_2"/>
+  <outline>
+    <component base="f" xOffset="1"/>
+    <component base="i" xOffset="540"/>
+  </outline>
+</glyph>

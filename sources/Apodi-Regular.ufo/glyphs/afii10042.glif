@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="afii10042" format="2">
+  <advance width="1871"/>
+  <unicode hex="0428"/>
+  <anchor x="936" y="0" name="bottom"/>
+  <anchor x="936" y="1346" name="top"/>
+  <outline>
+    <contour>
+      <point x="1686" y="0" type="line"/>
+      <point x="1686" y="1346" type="line"/>
+      <point x="1512" y="1346" type="line"/>
+      <point x="1512" y="153" type="line"/>
+      <point x="1021" y="153" type="line"/>
+      <point x="1021" y="1346" type="line"/>
+      <point x="848" y="1346" type="line"/>
+      <point x="848" y="153" type="line"/>
+      <point x="356" y="153" type="line"/>
+      <point x="356" y="1346" type="line"/>
+      <point x="184" y="1346" type="line"/>
+      <point x="184" y="0" type="line"/>
+    </contour>
+  </outline>
+</glyph>

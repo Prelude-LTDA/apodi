@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="iogonek" format="2">
+  <advance width="548"/>
+  <unicode hex="012F"/>
+  <anchor x="70" y="-453" name="bottom"/>
+  <anchor x="470" y="1434" name="top"/>
+  <outline>
+    <component base="i" xOffset="2"/>
+    <component base="ogonek" xOffset="-282"/>
+  </outline>
+</glyph>

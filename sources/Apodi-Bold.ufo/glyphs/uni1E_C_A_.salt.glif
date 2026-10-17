@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni1ECA.salt" format="2">
+  <advance width="715"/>
+  <anchor x="358" y="-400" name="bottom"/>
+  <anchor x="358" y="1346" name="top"/>
+  <outline>
+    <component base="I.salt"/>
+    <component base="dotbelowcomb" xOffset="940"/>
+  </outline>
+</glyph>

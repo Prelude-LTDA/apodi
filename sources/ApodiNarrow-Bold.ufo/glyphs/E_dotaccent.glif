@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Edotaccent" format="2">
+  <advance width="1054"/>
+  <unicode hex="0116"/>
+  <anchor x="571" y="0" name="bottom"/>
+  <anchor x="566" y="1750" name="top"/>
+  <outline>
+    <component base="E"/>
+    <component base="dotaccent" xOffset="73" yOffset="317"/>
+  </outline>
+</glyph>

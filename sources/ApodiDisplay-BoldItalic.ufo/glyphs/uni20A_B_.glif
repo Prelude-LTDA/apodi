@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni20AB" format="2">
+  <advance width="1126"/>
+  <unicode hex="20AB"/>
+  <outline>
+    <component base="dcroat" xOffset="8"/>
+    <component base="underscore" xScale="0.9433962264150942" xOffset="155"/>
+  </outline>
+</glyph>

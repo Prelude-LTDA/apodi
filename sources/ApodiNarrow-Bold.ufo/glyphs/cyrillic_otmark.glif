@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="cyrillic_otmark" format="2">
+  <advance width="1074"/>
+  <outline>
+    <contour>
+      <point x="907" y="1385" type="line"/>
+      <point x="165" y="1385" type="line"/>
+      <point x="165" y="1292" type="line"/>
+      <point x="235" y="1139" type="line"/>
+      <point x="289" y="1139" type="line"/>
+      <point x="334" y="1232" type="line"/>
+      <point x="465" y="1232" type="line"/>
+      <point x="508" y="1139" type="line"/>
+      <point x="561" y="1139" type="line"/>
+      <point x="606" y="1232" type="line"/>
+      <point x="736" y="1232" type="line"/>
+      <point x="780" y="1139" type="line"/>
+      <point x="834" y="1139" type="line"/>
+      <point x="907" y="1292" type="line"/>
+    </contour>
+  </outline>
+</glyph>

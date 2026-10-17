@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="afii10097" format="2">
+  <advance width="961"/>
+  <unicode hex="044F"/>
+  <anchor x="373" y="0" name="bottom"/>
+  <anchor x="587" y="1009" name="top"/>
+  <outline>
+    <contour>
+      <point x="37" y="-11" type="curve" smooth="yes"/>
+      <point x="174" y="-11"/>
+      <point x="229" y="67"/>
+      <point x="295" y="209" type="curve" smooth="yes"/>
+      <point x="358" y="343"/>
+      <point x="396" y="406"/>
+      <point x="515" y="406" type="curve" smooth="yes"/>
+      <point x="619" y="406" type="line"/>
+      <point x="531" y="0" type="line"/>
+      <point x="697" y="0" type="line"/>
+      <point x="910" y="1012" type="line"/>
+      <point x="550" y="1012" type="line" smooth="yes"/>
+      <point x="306" y="1012"/>
+      <point x="157" y="885"/>
+      <point x="157" y="687" type="curve" smooth="yes"/>
+      <point x="157" y="578"/>
+      <point x="210" y="497"/>
+      <point x="320" y="463" type="curve"/>
+      <point x="237" y="435"/>
+      <point x="191" y="368"/>
+      <point x="146" y="268" type="curve" smooth="yes"/>
+      <point x="98" y="164"/>
+      <point x="65" y="129"/>
+      <point x="5" y="129" type="curve" smooth="yes"/>
+      <point x="-13" y="129"/>
+      <point x="-30" y="131"/>
+      <point x="-43" y="135" type="curve"/>
+      <point x="-43" y="0" type="line"/>
+      <point x="-25" y="-6"/>
+      <point x="3" y="-11"/>
+    </contour>
+    <contour>
+      <point x="506" y="540" type="line" smooth="yes"/>
+      <point x="397" y="540"/>
+      <point x="325" y="582"/>
+      <point x="325" y="687" type="curve" smooth="yes"/>
+      <point x="325" y="803"/>
+      <point x="403" y="876"/>
+      <point x="533" y="876" type="curve" smooth="yes"/>
+      <point x="717" y="876" type="line"/>
+      <point x="646" y="540" type="line"/>
+    </contour>
+  </outline>
+</glyph>

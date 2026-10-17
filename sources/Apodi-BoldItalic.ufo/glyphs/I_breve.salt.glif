@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Ibreve.salt" format="2">
+  <advance width="721"/>
+  <anchor x="252" y="0" name="bottom"/>
+  <anchor x="617" y="1770" name="top"/>
+  <outline>
+    <component base="I.salt"/>
+    <component base="breve" xOffset="-187" yOffset="317"/>
+  </outline>
+</glyph>

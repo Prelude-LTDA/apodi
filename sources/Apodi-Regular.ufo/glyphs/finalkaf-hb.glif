@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="finalkaf-hb" format="2">
+  <advance width="939"/>
+  <unicode hex="05DA"/>
+  <note>
+afii57674
+</note>
+  <anchor x="471" y="0" name="bottom"/>
+  <anchor x="26" y="0" name="bottomleft"/>
+  <anchor x="319" y="615" name="center"/>
+  <anchor x="471" y="1013" name="top"/>
+  <anchor x="26" y="1013" name="topleft"/>
+  <outline>
+    <contour>
+      <point x="619" y="-453" type="line"/>
+      <point x="791" y="-453" type="line"/>
+      <point x="791" y="663" type="line" smooth="yes"/>
+      <point x="791" y="781"/>
+      <point x="771" y="882"/>
+      <point x="730" y="969" type="curve" smooth="yes"/>
+      <point x="707" y="1016"/>
+      <point x="679" y="1058"/>
+      <point x="644" y="1092" type="curve" smooth="yes"/>
+      <point x="574" y="1161"/>
+      <point x="457" y="1207"/>
+      <point x="330" y="1207" type="curve" smooth="yes"/>
+      <point x="267" y="1207"/>
+      <point x="209" y="1203"/>
+      <point x="157" y="1196" type="curve" smooth="yes"/>
+      <point x="106" y="1189"/>
+      <point x="64" y="1180"/>
+      <point x="32" y="1171" type="curve"/>
+      <point x="32" y="1027" type="line"/>
+      <point x="61" y="1034"/>
+      <point x="112" y="1048"/>
+      <point x="143" y="1053" type="curve" smooth="yes"/>
+      <point x="189" y="1062"/>
+      <point x="239" y="1068"/>
+      <point x="296" y="1068" type="curve" smooth="yes"/>
+      <point x="371" y="1068"/>
+      <point x="435" y="1051"/>
+      <point x="481" y="1018" type="curve" smooth="yes"/>
+      <point x="514" y="997"/>
+      <point x="541" y="967"/>
+      <point x="562" y="931" type="curve" smooth="yes"/>
+      <point x="601" y="862"/>
+      <point x="619" y="774"/>
+      <point x="619" y="664" type="curve" smooth="yes"/>
+    </contour>
+  </outline>
+</glyph>

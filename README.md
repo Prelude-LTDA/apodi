@@ -1,0 +1,87 @@
+# Apodi
+
+**An open, metric-compatible alternative to Aptos.**
+
+Apodi is a sans-serif family built from [Open Sans](https://github.com/googlefonts/opensans)
+(SIL Open Font License 1.1), refitted so that text set in it takes the same horizontal space as
+text set in Aptos, Microsoft Office's default typeface: every covered character has the same
+advance width, the kerning pairs have the same values, and the vertical metrics are the same.
+A document laid out with Aptos keeps its line breaks and page breaks when Apodi stands in for it.
+
+"Aptos" is named here only to describe compatibility; Apodi is not affiliated with or endorsed
+by Microsoft, and contains no Microsoft font data other than the metric numbers listed below.
+
+![Apodi specimen](docs/images/specimen.png)
+
+## Styles
+
+| Family | Styles | Compatible with | Use |
+|---|---|---|---|
+| Apodi | Regular, Bold, Italic, Bold Italic | Aptos | Word/PowerPoint body text |
+| Apodi Narrow | Regular, Bold, Italic, Bold Italic | Aptos Narrow | Excel's default font |
+| Apodi Display | Regular, Bold, Italic, Bold Italic | Aptos Display | Word headings |
+
+Files: `fonts/ttf/*.ttf` (desktop, LibreOffice) and `fonts/woff2/*.woff2` (web). Unhinted
+TrueType, 2048 units per em, about 1,300 glyphs per style (Latin, Greek, Cyrillic, Hebrew from
+Open Sans).
+
+Coverage: 1,002 of the 1,086 characters in Aptos. The missing 84 are mostly arrows, box
+drawing, geometric shapes and check boxes (`← → ● ○ ▪ ☐ ✓`), circled digits, a few currency
+signs (`฿ ﷼ ֏ ؋`) and Coptic letters. Text using them falls back to another font, and lines
+that contain them can break differently. The full list is in [REPORT.md](REPORT.md).
+
+## Using it as a substitute (fontconfig / LibreOffice)
+
+```xml
+<!-- ~/.config/fontconfig/fonts.conf -->
+<alias binding="same"><family>Aptos</family><accept><family>Apodi</family></accept></alias>
+<alias binding="same"><family>Aptos Narrow</family><accept><family>Apodi Narrow</family></accept></alias>
+<alias binding="same"><family>Aptos Display</family><accept><family>Apodi Display</family></accept></alias>
+```
+
+In a browser: `font-family: Aptos, Apodi, sans-serif;` with `@font-face` rules pointing to the
+WOFF2 files.
+
+## Building
+
+```sh
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+
+./build.sh fonts                    # sources/*.ufo -> fonts/ttf + fonts/woff2
+APTOS_DIR=/path/to/aptos ./build.sh check   # metric + line-break checks against the reference
+APTOS_DIR=/path/to/aptos ./build.sh images  # side-by-side PNGs (docs/comparison, kept local)
+APTOS_DIR=/path/to/aptos ./build.sh fit     # regenerate sources/ from Open Sans + reference metrics
+```
+
+* `fonts` needs nothing but this repository. The binaries are reproducible (same bytes for
+  the same sources).
+* `check`, `images` and `fit` read the Aptos `.ttf` files from a folder you point to with
+  `APTOS_DIR`. Nothing from that folder is copied into this repository. `fit` writes only
+  numbers to `build/metrics/`, which git ignores.
+* `fit` also downloads the Open Sans sources at a pinned commit (`scripts/fetch_opensans.sh`)
+  and **overwrites `sources/`**. Run it only to change the fitting itself, not after editing
+  glyphs.
+
+To edit letterforms, see [EDITING.md](EDITING.md). For how the fonts were made, the
+validation results and the known differences, see [REPORT.md](REPORT.md).
+
+## Legal notes
+
+* **Outlines**: every contour, component and anchor comes from Open Sans's own sources:
+  googlefonts/opensans, commit `bd7e37632246368c60fdcbd374dbf9bad11969b6` (v3.003,
+  2023-11-16), `sources/*.ufo` + `OpenSans-Roman/Italic.designspace`, SIL OFL 1.1. Open Sans
+  declares no Reserved Font Name. The family is still renamed, as the OFL asks of modified
+  versions.
+* **From Aptos, numbers only**: advance width per Unicode codepoint, advance per ligature
+  character sequence (`fi`, `fl`, `ff`), kerning value per codepoint pair, unitsPerEm,
+  ascender, descender and line gap (hhea, typo, win), cap height, weight class and italic
+  angle. No outline, point or curve was read, traced or derived from Aptos, including from
+  renderings. The side-by-side renderings were made for visual review only, and they stay
+  out of the repository (`docs/comparison/` is git-ignored).
+* **Apodi's own design changes**: the middle vertex of **M** is raised off the baseline
+  (parametrically, on Open Sans's M). Open Sans's own alternates are now the defaults: the
+  single-storey **g** and the baseline **J**, plus, in italics, the double-storey **a**. The
+  former defaults are still there under `salt`/`ss01`. Each glyph is interpolated at a width
+  chosen to fit its advance; spacing is refitted; a few oversized symbols (®) are scaled down.
+* **License**: SIL Open Font License 1.1 ([OFL.txt](OFL.txt)). Change history:
+  [FONTLOG.txt](FONTLOG.txt).

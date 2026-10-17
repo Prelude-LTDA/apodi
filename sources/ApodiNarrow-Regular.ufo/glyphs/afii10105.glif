@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="afii10105" format="2">
+  <advance width="459"/>
+  <unicode hex="0458"/>
+  <anchor x="55" y="-453" name="bottom"/>
+  <anchor x="230" y="1396" name="top"/>
+  <outline>
+    <component base="j"/>
+  </outline>
+</glyph>

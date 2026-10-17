@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni04CF.salt" format="2">
+  <advance width="721"/>
+  <anchor x="252" y="0" name="bottom"/>
+  <anchor x="526" y="1346" name="top"/>
+  <outline>
+    <component base="I.salt"/>
+  </outline>
+</glyph>

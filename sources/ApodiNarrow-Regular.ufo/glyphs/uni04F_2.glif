@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni04F2" format="2">
+  <advance width="1021"/>
+  <unicode hex="04F2"/>
+  <anchor x="511" y="0" name="bottom"/>
+  <anchor x="511" y="1770" name="top"/>
+  <outline>
+    <component base="afii10037"/>
+    <component base="hungarumlaut" xScale="0.9433962264150942" xOffset="176" yOffset="325"/>
+  </outline>
+</glyph>

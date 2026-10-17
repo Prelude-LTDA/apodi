@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="overlinecmb" format="2">
+  <unicode hex="0305"/>
+  <anchor x="100" y="1010" name="_top"/>
+  <anchor x="214" y="1583" name="top"/>
+  <outline>
+    <contour>
+      <point x="-162" y="1451" type="line"/>
+      <point x="551" y="1451" type="line"/>
+      <point x="578" y="1583" type="line"/>
+      <point x="-133" y="1583" type="line"/>
+    </contour>
+  </outline>
+</glyph>

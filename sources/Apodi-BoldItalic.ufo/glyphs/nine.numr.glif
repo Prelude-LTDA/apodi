@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="nine.numr" format="2">
+  <advance width="732"/>
+  <outline>
+    <component base="ninesuperior" xOffset="-51" yOffset="-245"/>
+  </outline>
+</glyph>

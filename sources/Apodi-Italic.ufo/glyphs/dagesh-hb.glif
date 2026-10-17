@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="dagesh-hb" format="2">
+  <unicode hex="05BC"/>
+  <note>
+afii57807
+</note>
+  <anchor x="8" y="541" name="_center"/>
+  <outline>
+    <contour>
+      <point x="-10" y="470" type="curve" smooth="yes"/>
+      <point x="45" y="470"/>
+      <point x="80" y="509"/>
+      <point x="80" y="565" type="curve" smooth="yes"/>
+      <point x="80" y="594"/>
+      <point x="62" y="612"/>
+      <point x="23" y="612" type="curve" smooth="yes"/>
+      <point x="-32" y="612"/>
+      <point x="-64" y="568"/>
+      <point x="-64" y="514" type="curve" smooth="yes"/>
+      <point x="-64" y="487"/>
+      <point x="-48" y="470"/>
+    </contour>
+  </outline>
+</glyph>

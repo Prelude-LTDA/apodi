@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Heta" format="2">
+  <advance width="820"/>
+  <unicode hex="0370"/>
+  <anchor x="301" y="0" name="bottom"/>
+  <anchor x="597" y="1346" name="top"/>
+  <outline>
+    <contour>
+      <point x="82" y="0" type="line"/>
+      <point x="251" y="0" type="line"/>
+      <point x="388" y="630" type="line"/>
+      <point x="747" y="630" type="line"/>
+      <point x="779" y="776" type="line"/>
+      <point x="420" y="776" type="line"/>
+      <point x="545" y="1346" type="line"/>
+      <point x="375" y="1346" type="line"/>
+    </contour>
+  </outline>
+</glyph>

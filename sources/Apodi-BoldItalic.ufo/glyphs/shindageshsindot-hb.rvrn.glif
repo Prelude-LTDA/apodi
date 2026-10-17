@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="shindageshsindot-hb.rvrn" format="2">
+  <advance width="1513"/>
+  <note>
+uniFB2D
+</note>
+  <outline>
+    <component base="shin-hb"/>
+    <component base="dagesh-hb.small" xOffset="828" yOffset="-24"/>
+    <component base="sindot-hb" xOffset="191" yOffset="49"/>
+  </outline>
+</glyph>

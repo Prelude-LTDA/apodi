@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni01F0" format="2">
+  <advance width="549"/>
+  <unicode hex="01F0"/>
+  <anchor x="70" y="-453" name="bottom"/>
+  <anchor x="473" y="1445" name="top"/>
+  <outline>
+    <component base="jdotless"/>
+    <component base="caron" xOffset="-293"/>
+  </outline>
+</glyph>

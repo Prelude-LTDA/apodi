@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Iotadieresis.salt" format="2">
+  <advance width="688"/>
+  <anchor x="237" y="0" name="bottom"/>
+  <anchor x="600" y="1756" name="top"/>
+  <outline>
+    <component base="I.salt"/>
+    <component base="dieresis" xScale="0.9433962264150942" xOffset="-82" yOffset="331"/>
+  </outline>
+</glyph>

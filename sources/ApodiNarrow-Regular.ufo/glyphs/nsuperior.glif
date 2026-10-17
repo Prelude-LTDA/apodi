@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="nsuperior" format="2">
+  <advance width="843"/>
+  <unicode hex="207F"/>
+  <outline>
+    <component base="n" xScale="0.65" yScale="0.5999999999999999" xOffset="85" yOffset="541"/>
+  </outline>
+</glyph>

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Itilde.salt" format="2">
+  <advance width="572"/>
+  <anchor x="179" y="0" name="bottom"/>
+  <anchor x="544" y="1729" name="top"/>
+  <outline>
+    <component base="I.salt"/>
+    <component base="tilde" xScale="0.9433962264150942" xOffset="-164" yOffset="341"/>
+  </outline>
+</glyph>

@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="livreTournois" format="2">
+  <advance width="1030"/>
+  <unicode hex="20B6"/>
+  <outline>
+    <contour>
+      <point x="726" y="-18" type="curve" smooth="yes"/>
+      <point x="791" y="-18"/>
+      <point x="891" y="-6"/>
+      <point x="955" y="28" type="curve"/>
+      <point x="955" y="244" type="line"/>
+      <point x="912" y="226"/>
+      <point x="865" y="218"/>
+      <point x="846" y="218" type="curve" smooth="yes"/>
+      <point x="808" y="218"/>
+      <point x="795" y="235"/>
+      <point x="795" y="273" type="curve" smooth="yes"/>
+      <point x="795" y="289"/>
+      <point x="799" y="311"/>
+      <point x="803" y="333" type="curve" smooth="yes"/>
+      <point x="904" y="810" type="line"/>
+      <point x="1075" y="810" type="line"/>
+      <point x="1123" y="1037" type="line"/>
+      <point x="952" y="1037" type="line"/>
+      <point x="998" y="1250" type="line"/>
+      <point x="806" y="1250" type="line"/>
+      <point x="707" y="1037" type="line"/>
+      <point x="472" y="1037" type="line"/>
+      <point x="518" y="1250" type="line"/>
+      <point x="327" y="1250" type="line"/>
+      <point x="226" y="1028" type="line"/>
+      <point x="90" y="952" type="line"/>
+      <point x="60" y="810" type="line"/>
+      <point x="154" y="810" type="line"/>
+      <point x="-18" y="0" type="line"/>
+      <point x="253" y="0" type="line"/>
+      <point x="424" y="810" type="line"/>
+      <point x="635" y="810" type="line"/>
+      <point x="541" y="372" type="line" smooth="yes"/>
+      <point x="527" y="304"/>
+      <point x="521" y="254"/>
+      <point x="521" y="210" type="curve" smooth="yes"/>
+      <point x="521" y="77"/>
+      <point x="574" y="-18"/>
+    </contour>
+  </outline>
+</glyph>

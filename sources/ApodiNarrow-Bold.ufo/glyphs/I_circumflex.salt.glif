@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Icircumflex.salt" format="2">
+  <advance width="679"/>
+  <anchor x="339" y="0" name="bottom"/>
+  <anchor x="339" y="1753" name="top"/>
+  <outline>
+    <component base="I.salt"/>
+    <component base="circumflex" xScale="0.9433962264150942" xOffset="-79" yOffset="308"/>
+  </outline>
+</glyph>

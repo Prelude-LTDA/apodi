@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Eogonek.loclNAV" format="2">
+  <advance width="1034"/>
+  <anchor x="467" y="0" name="bottom"/>
+  <anchor x="747" y="1346" name="top"/>
+  <outline>
+    <component base="E" xOffset="-2"/>
+    <component base="ogonek" xScale="1.06" xOffset="-4"/>
+  </outline>
+</glyph>

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Idotaccent.salt" format="2">
+  <advance width="688"/>
+  <anchor x="237" y="0" name="bottom"/>
+  <anchor x="603" y="1771" name="top"/>
+  <outline>
+    <component base="I.salt"/>
+    <component base="dotaccent" xOffset="-95" yOffset="331"/>
+  </outline>
+</glyph>

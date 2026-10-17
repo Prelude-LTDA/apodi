@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="commaaccentrotate" format="2">
+  <advance width="993"/>
+  <outline>
+    <contour>
+      <point x="461" y="1143" type="line"/>
+      <point x="723" y="1143" type="line"/>
+      <point x="750" y="1224"/>
+      <point x="809" y="1348"/>
+      <point x="848" y="1420" type="curve"/>
+      <point x="848" y="1445" type="line"/>
+      <point x="682" y="1445" type="line"/>
+      <point x="594" y="1353"/>
+      <point x="507" y="1242"/>
+      <point x="461" y="1162" type="curve"/>
+    </contour>
+  </outline>
+</glyph>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Omegatonos" format="2">
+  <advance width="1354"/>
+  <unicode hex="038F"/>
+  <anchor x="603" y="0" name="bottom"/>
+  <anchor x="890" y="1346" name="top"/>
+  <outline>
+    <component base="tonos" xOffset="-503" yOffset="-146"/>
+    <component base="Omega" xOffset="111"/>
+  </outline>
+</glyph>

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Archaicsampi" format="2">
+  <advance width="1036"/>
+  <unicode hex="0372"/>
+  <anchor x="415" y="0" name="bottom"/>
+  <anchor x="700" y="1346" name="top"/>
+  <outline>
+    <contour>
+      <point x="327" y="0" type="line"/>
+      <point x="497" y="0" type="line"/>
+      <point x="752" y="1197" type="line"/>
+      <point x="1058" y="1197" type="line"/>
+      <point x="1089" y="1346" type="line"/>
+      <point x="309" y="1346" type="line"/>
+      <point x="277" y="1197" type="line"/>
+      <point x="581" y="1197" type="line"/>
+    </contour>
+    <contour>
+      <point x="129" y="807" type="line"/>
+      <point x="281" y="807" type="line"/>
+      <point x="396" y="1346" type="line"/>
+      <point x="244" y="1346" type="line"/>
+    </contour>
+    <contour>
+      <point x="884" y="807" type="line"/>
+      <point x="1037" y="807" type="line"/>
+      <point x="1151" y="1346" type="line"/>
+      <point x="1000" y="1346" type="line"/>
+    </contour>
+  </outline>
+</glyph>

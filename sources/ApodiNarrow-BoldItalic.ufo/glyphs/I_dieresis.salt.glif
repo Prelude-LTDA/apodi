@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Idieresis.salt" format="2">
+  <advance width="688"/>
+  <anchor x="237" y="0" name="bottom"/>
+  <anchor x="600" y="1756" name="top"/>
+  <outline>
+    <component base="I.salt"/>
+    <component base="dieresis" xOffset="-55" yOffset="331"/>
+  </outline>
+</glyph>

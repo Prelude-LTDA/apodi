@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="pamphyliandigamma" format="2">
+  <advance width="1236"/>
+  <unicode hex="0377"/>
+  <anchor x="618" y="0" name="bottom"/>
+  <anchor x="618" y="1032" name="top"/>
+  <outline>
+    <component base="afii10074"/>
+  </outline>
+</glyph>

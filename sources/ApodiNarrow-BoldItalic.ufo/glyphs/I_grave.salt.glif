@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Igrave.salt" format="2">
+  <advance width="688"/>
+  <anchor x="237" y="0" name="bottom"/>
+  <anchor x="604" y="1775" name="top"/>
+  <outline>
+    <component base="I.salt"/>
+    <component base="grave" xOffset="-177" yOffset="331"/>
+  </outline>
+</glyph>

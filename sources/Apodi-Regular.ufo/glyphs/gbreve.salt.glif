@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="gbreve.salt" format="2">
+  <advance width="864"/>
+  <anchor x="453" y="-453" name="bottom"/>
+  <anchor x="496" y="1403" name="top"/>
+  <outline>
+    <component base="g.salt"/>
+    <component base="breve" xOffset="-32"/>
+  </outline>
+</glyph>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni202A" format="2">
+  <unicode hex="202A"/>
+  <outline>
+    <contour>
+      <point x="-38" y="-250" type="line"/>
+      <point x="40" y="-250" type="line"/>
+      <point x="40" y="1062" type="line"/>
+      <point x="400" y="1062" type="line"/>
+      <point x="400" y="1135" type="line"/>
+      <point x="-38" y="1135" type="line"/>
+    </contour>
+  </outline>
+</glyph>

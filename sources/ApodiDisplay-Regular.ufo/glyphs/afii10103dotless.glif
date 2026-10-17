@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="afii10103dotless" format="2">
+  <advance width="431"/>
+  <anchor x="219" y="0" name="bottom"/>
+  <anchor x="215" y="1015" name="top"/>
+  <outline>
+    <component base="idotless"/>
+  </outline>
+</glyph>

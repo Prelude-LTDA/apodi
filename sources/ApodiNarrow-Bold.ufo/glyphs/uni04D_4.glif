@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni04D4" format="2">
+  <advance width="1749"/>
+  <unicode hex="04D4"/>
+  <anchor x="874" y="0" name="bottom"/>
+  <anchor x="874" y="1346" name="top"/>
+  <outline>
+    <component base="AE" xScale="0.9999999999999999" yScale="0.9999999999999999"/>
+  </outline>
+</glyph>

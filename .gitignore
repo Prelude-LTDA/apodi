@@ -1,0 +1,19 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# build intermediates
+build/
+master_ufo/
+instance_ufo/
+
+# downloaded upstream sources (fetched by scripts/fetch_opensans.sh)
+.opensans/
+
+# reference-font comparisons: these contain renderings of the reference fonts,
+# so they stay local (regenerate with ./build.sh images)
+docs/comparison/
+
+.DS_Store

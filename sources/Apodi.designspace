@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<designspace format="5.0">
+  <axes>
+    <axis tag="wght" name="Weight" minimum="400" maximum="700" default="400"/>
+    <axis tag="wdth" name="Width" minimum="87.5" maximum="100" default="100"/>
+    <axis tag="opsz" name="Optical size" minimum="11" maximum="24" default="11"/>
+    <axis tag="ital" name="Italic" values="0 1" default="0"/>
+  </axes>
+  <sources>
+    <source filename="Apodi-Regular.ufo" name="Apodi-Regular" familyname="Apodi" stylename="Regular">
+      <location>
+        <dimension name="Weight" xvalue="400"/>
+        <dimension name="Width" xvalue="100"/>
+        <dimension name="Optical size" xvalue="11"/>
+        <dimension name="Italic" xvalue="0"/>
+      </location>
+    </source>
+    <source filename="Apodi-Bold.ufo" name="Apodi-Bold" familyname="Apodi" stylename="Bold">
+      <location>
+        <dimension name="Weight" xvalue="700"/>
+        <dimension name="Width" xvalue="100"/>
+        <dimension name="Optical size" xvalue="11"/>
+        <dimension name="Italic" xvalue="0"/>
+      </location>
+    </source>
+    <source filename="Apodi-Italic.ufo" name="Apodi-Italic" familyname="Apodi" stylename="Italic">
+      <location>
+        <dimension name="Weight" xvalue="400"/>
+        <dimension name="Width" xvalue="100"/>
+        <dimension name="Optical size" xvalue="11"/>
+        <dimension name="Italic" xvalue="1"/>
+      </location>
+    </source>
+    <source filename="Apodi-BoldItalic.ufo" name="Apodi-BoldItalic" familyname="Apodi" stylename="Bold Italic">
+      <location>
+        <dimension name="Weight" xvalue="700"/>
+        <dimension name="Width" xvalue="100"/>
+        <dimension name="Optical size" xvalue="11"/>
+        <dimension name="Italic" xvalue="1"/>
+      </location>
+    </source>
+    <source filename="ApodiNarrow-Regular.ufo" name="ApodiNarrow-Regular" familyname="Apodi Narrow" stylename="Regular">
+      <location>
+        <dimension name="Weight" xvalue="400"/>
+        <dimension name="Width" xvalue="87.5"/>
+        <dimension name="Optical size" xvalue="11"/>
+        <dimension name="Italic" xvalue="0"/>
+      </location>
+    </source>
+    <source filename="ApodiNarrow-Bold.ufo" name="ApodiNarrow-Bold" familyname="Apodi Narrow" stylename="Bold">
+      <location>
+        <dimension name="Weight" xvalue="700"/>
+        <dimension name="Width" xvalue="87.5"/>
+        <dimension name="Optical size" xvalue="11"/>
+        <dimension name="Italic" xvalue="0"/>
+      </location>
+    </source>
+    <source filename="ApodiNarrow-Italic.ufo" name="ApodiNarrow-Italic" familyname="Apodi Narrow" stylename="Italic">
+      <location>
+        <dimension name="Weight" xvalue="400"/>
+        <dimension name="Width" xvalue="87.5"/>
+        <dimension name="Optical size" xvalue="11"/>
+        <dimension name="Italic" xvalue="1"/>
+      </location>
+    </source>
+    <source filename="ApodiNarrow-BoldItalic.ufo" name="ApodiNarrow-BoldItalic" familyname="Apodi Narrow" stylename="Bold Italic">
+      <location>
+        <dimension name="Weight" xvalue="700"/>
+        <dimension name="Width" xvalue="87.5"/>
+        <dimension name="Optical size" xvalue="11"/>
+        <dimension name="Italic" xvalue="1"/>
+      </location>
+    </source>
+    <source filename="ApodiDisplay-Regular.ufo" name="ApodiDisplay-Regular" familyname="Apodi Display" stylename="Regular">
+      <location>
+        <dimension name="Weight" xvalue="400"/>
+        <dimension name="Width" xvalue="100"/>
+        <dimension name="Optical size" xvalue="24"/>
+        <dimension name="Italic" xvalue="0"/>
+      </location>
+    </source>
+    <source filename="ApodiDisplay-Bold.ufo" name="ApodiDisplay-Bold" familyname="Apodi Display" stylename="Bold">
+      <location>
+        <dimension name="Weight" xvalue="700"/>
+        <dimension name="Width" xvalue="100"/>
+        <dimension name="Optical size" xvalue="24"/>
+        <dimension name="Italic" xvalue="0"/>
+      </location>
+    </source>
+    <source filename="ApodiDisplay-Italic.ufo" name="ApodiDisplay-Italic" familyname="Apodi Display" stylename="Italic">
+      <location>
+        <dimension name="Weight" xvalue="400"/>
+        <dimension name="Width" xvalue="100"/>
+        <dimension name="Optical size" xvalue="24"/>
+        <dimension name="Italic" xvalue="1"/>
+      </location>
+    </source>
+    <source filename="ApodiDisplay-BoldItalic.ufo" name="ApodiDisplay-BoldItalic" familyname="Apodi Display" stylename="Bold Italic">
+      <location>
+        <dimension name="Weight" xvalue="700"/>
+        <dimension name="Width" xvalue="100"/>
+        <dimension name="Optical size" xvalue="24"/>
+        <dimension name="Italic" xvalue="1"/>
+      </location>
+    </source>
+  </sources>
+  <instances>
+    <instance familyname="Apodi" stylename="Regular" filename="Apodi-Regular.ufo" postscriptfontname="Apodi-Regular" stylemapfamilyname="Apodi" stylemapstylename="regular">
+      <location>
+        <dimension name="Weight" xvalue="400"/>
+        <dimension name="Width" xvalue="100"/>
+        <dimension name="Optical size" xvalue="11"/>
+        <dimension name="Italic" xvalue="0"/>
+      </location>
+    </instance>
+    <instance familyname="Apodi" stylename="Bold" filename="Apodi-Bold.ufo" postscriptfontname="Apodi-Bold" stylemapfamilyname="Apodi" stylemapstylename="bold">
+      <location>
+        <dimension name="Weight" xvalue="700"/>
+        <dimension name="Width" xvalue="100"/>
+        <dimension name="Optical size" xvalue="11"/>
+        <dimension name="Italic" xvalue="0"/>
+      </location>
+    </instance>
+    <instance familyname="Apodi" stylename="Italic" filename="Apodi-Italic.ufo" postscriptfontname="Apodi-Italic" stylemapfamilyname="Apodi" stylemapstylename="italic">
+      <location>
+        <dimension name="Weight" xvalue="400"/>
+        <dimension name="Width" xvalue="100"/>
+        <dimension name="Optical size" xvalue="11"/>
+        <dimension name="Italic" xvalue="1"/>
+      </location>
+    </instance>
+    <instance familyname="Apodi" stylename="Bold Italic" filename="Apodi-BoldItalic.ufo" postscriptfontname="Apodi-BoldItalic" stylemapfamilyname="Apodi" stylemapstylename="bold italic">
+      <location>
+        <dimension name="Weight" xvalue="700"/>
+        <dimension name="Width" xvalue="100"/>
+        <dimension name="Optical size" xvalue="11"/>
+        <dimension name="Italic" xvalue="1"/>
+      </location>
+    </instance>
+    <instance familyname="Apodi Narrow" stylename="Regular" filename="ApodiNarrow-Regular.ufo" postscriptfontname="ApodiNarrow-Regular" stylemapfamilyname="Apodi Narrow" stylemapstylename="regular">
+      <location>
+        <dimension name="Weight" xvalue="400"/>
+        <dimension name="Width" xvalue="87.5"/>
+        <dimension name="Optical size" xvalue="11"/>
+        <dimension name="Italic" xvalue="0"/>
+      </location>
+    </instance>
+    <instance familyname="Apodi Narrow" stylename="Bold" filename="ApodiNarrow-Bold.ufo" postscriptfontname="ApodiNarrow-Bold" stylemapfamilyname="Apodi Narrow" stylemapstylename="bold">
+      <location>
+        <dimension name="Weight" xvalue="700"/>
+        <dimension name="Width" xvalue="87.5"/>
+        <dimension name="Optical size" xvalue="11"/>
+        <dimension name="Italic" xvalue="0"/>
+      </location>
+    </instance>
+    <instance familyname="Apodi Narrow" stylename="Italic" filename="ApodiNarrow-Italic.ufo" postscriptfontname="ApodiNarrow-Italic" stylemapfamilyname="Apodi Narrow" stylemapstylename="italic">
+      <location>
+        <dimension name="Weight" xvalue="400"/>
+        <dimension name="Width" xvalue="87.5"/>
+        <dimension name="Optical size" xvalue="11"/>
+        <dimension name="Italic" xvalue="1"/>
+      </location>
+    </instance>
+    <instance familyname="Apodi Narrow" stylename="Bold Italic" filename="ApodiNarrow-BoldItalic.ufo" postscriptfontname="ApodiNarrow-BoldItalic" stylemapfamilyname="Apodi Narrow" stylemapstylename="bold italic">
+      <location>
+        <dimension name="Weight" xvalue="700"/>
+        <dimension name="Width" xvalue="87.5"/>
+        <dimension name="Optical size" xvalue="11"/>
+        <dimension name="Italic" xvalue="1"/>
+      </location>
+    </instance>
+    <instance familyname="Apodi Display" stylename="Regular" filename="ApodiDisplay-Regular.ufo" postscriptfontname="ApodiDisplay-Regular" stylemapfamilyname="Apodi Display" stylemapstylename="regular">
+      <location>
+        <dimension name="Weight" xvalue="400"/>
+        <dimension name="Width" xvalue="100"/>
+        <dimension name="Optical size" xvalue="24"/>
+        <dimension name="Italic" xvalue="0"/>
+      </location>
+    </instance>
+    <instance familyname="Apodi Display" stylename="Bold" filename="ApodiDisplay-Bold.ufo" postscriptfontname="ApodiDisplay-Bold" stylemapfamilyname="Apodi Display" stylemapstylename="bold">
+      <location>
+        <dimension name="Weight" xvalue="700"/>
+        <dimension name="Width" xvalue="100"/>
+        <dimension name="Optical size" xvalue="24"/>
+        <dimension name="Italic" xvalue="0"/>
+      </location>
+    </instance>
+    <instance familyname="Apodi Display" stylename="Italic" filename="ApodiDisplay-Italic.ufo" postscriptfontname="ApodiDisplay-Italic" stylemapfamilyname="Apodi Display" stylemapstylename="italic">
+      <location>
+        <dimension name="Weight" xvalue="400"/>
+        <dimension name="Width" xvalue="100"/>
+        <dimension name="Optical size" xvalue="24"/>
+        <dimension name="Italic" xvalue="1"/>
+      </location>
+    </instance>
+    <instance familyname="Apodi Display" stylename="Bold Italic" filename="ApodiDisplay-BoldItalic.ufo" postscriptfontname="ApodiDisplay-BoldItalic" stylemapfamilyname="Apodi Display" stylemapstylename="bold italic">
+      <location>
+        <dimension name="Weight" xvalue="700"/>
+        <dimension name="Width" xvalue="100"/>
+        <dimension name="Optical size" xvalue="24"/>
+        <dimension name="Italic" xvalue="1"/>
+      </location>
+    </instance>
+  </instances>
+  <lib>
+    <dict>
+      <key>org.apodi.note</key>
+      <string>Each source is a complete static style (built as-is by fontmake -u / -m ... -o ttf). The sources share Open Sans's point structure, but advance widths are fitted per glyph, so interpolating between them is not a designed intermediate style.</string>
+    </dict>
+  </lib>
+</designspace>

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="gcommaaccent.alt" format="2">
+  <advance width="1006"/>
+  <anchor x="300" y="-453" name="bottom"/>
+  <anchor x="692" y="1445" name="top"/>
+  <outline>
+    <component base="g.salt" xScale="0.9999999999999999" yScale="0.9999999999999999"/>
+    <component base="commaaccentrotate" xScale="0.9433962264150941" yScale="0.9999999999999999" xOffset="94"/>
+  </outline>
+</glyph>

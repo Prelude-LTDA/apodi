@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni03B9030803040301" format="2">
+  <advance width="584"/>
+  <anchor x="312" y="0" name="bottom"/>
+  <anchor x="255" y="1875" name="top"/>
+  <outline>
+    <component base="iota" xOffset="6"/>
+    <component base="uni030103040308" xOffset="-83"/>
+  </outline>
+</glyph>

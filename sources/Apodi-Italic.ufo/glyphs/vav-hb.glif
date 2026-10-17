@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="vav-hb" format="2">
+  <advance width="470"/>
+  <unicode hex="05D5"/>
+  <note>
+afii57669
+</note>
+  <anchor x="121" y="0" name="bottom"/>
+  <anchor x="-95" y="0" name="bottomleft"/>
+  <anchor x="-3" y="614" name="center"/>
+  <anchor x="349" y="1012" name="top"/>
+  <anchor x="453" y="1267" name="topleft"/>
+  <outline>
+    <contour>
+      <point x="17" y="0" type="line"/>
+      <point x="187" y="0" type="line"/>
+      <point x="456" y="1189" type="line"/>
+      <point x="285" y="1189" type="line"/>
+    </contour>
+  </outline>
+</glyph>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="hedagesh-hb.rvrn" format="2">
+  <advance width="1131"/>
+  <note>
+uniFB34
+</note>
+  <outline>
+    <component base="he-hb" xScale="0.9999999999999999" yScale="0.9999999999999999"/>
+    <component base="dagesh-hb.small" xScale="0.9999999999999999" yScale="0.9999999999999999" xOffset="573" yOffset="120"/>
+  </outline>
+</glyph>

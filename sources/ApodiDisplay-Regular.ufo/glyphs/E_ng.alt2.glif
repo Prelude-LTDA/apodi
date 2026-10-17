@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Eng.alt2" format="2">
+  <advance width="1399"/>
+  <anchor x="699" y="-361" name="bottom"/>
+  <anchor x="699" y="1346" name="top"/>
+  <outline>
+    <component base="Eng" xOffset="3"/>
+  </outline>
+</glyph>

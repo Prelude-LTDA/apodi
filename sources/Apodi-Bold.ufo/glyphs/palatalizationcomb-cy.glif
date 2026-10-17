@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="palatalizationcomb-cy" format="2">
+  <unicode hex="0484"/>
+  <anchor x="-498" y="1029" name="_top"/>
+  <anchor x="-494" y="1433" name="top"/>
+  <outline>
+    <contour>
+      <point x="-390" y="1433" type="curve" smooth="yes"/>
+      <point x="-532" y="1433"/>
+      <point x="-658" y="1322"/>
+      <point x="-851" y="1322" type="curve" smooth="yes"/>
+      <point x="-864" y="1322" type="line"/>
+      <point x="-864" y="1143" type="line"/>
+      <point x="-849" y="1143" type="line" smooth="yes"/>
+      <point x="-575" y="1143"/>
+      <point x="-496" y="1243"/>
+      <point x="-394" y="1243" type="curve" smooth="yes"/>
+      <point x="-338" y="1243"/>
+      <point x="-315" y="1213"/>
+      <point x="-302" y="1141" type="curve"/>
+      <point x="-133" y="1141" type="line"/>
+      <point x="-133" y="1186" type="line" smooth="yes"/>
+      <point x="-133" y="1413"/>
+      <point x="-279" y="1433"/>
+    </contour>
+  </outline>
+</glyph>

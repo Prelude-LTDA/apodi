@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="iotatonos" format="2">
+  <advance width="534"/>
+  <unicode hex="03AF"/>
+  <anchor x="314" y="0" name="bottom"/>
+  <anchor x="224" y="1482" name="top"/>
+  <outline>
+    <component base="iota" xOffset="-1"/>
+    <component base="tonos" xOffset="-289"/>
+  </outline>
+</glyph>

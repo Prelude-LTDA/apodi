@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Iogonek.salt" format="2">
+  <advance width="572"/>
+  <anchor x="90" y="-420" name="bottom"/>
+  <anchor x="462" y="1346" name="top"/>
+  <outline>
+    <component base="I.salt"/>
+    <component base="ogonek" xOffset="-252"/>
+  </outline>
+</glyph>

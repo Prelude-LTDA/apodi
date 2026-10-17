@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="dieresiscomb" format="2">
+  <unicode hex="0308"/>
+  <anchor x="111" y="1009" name="_top"/>
+  <anchor x="176" y="1379" name="top"/>
+  <outline>
+    <component base="dieresis" xOffset="-488"/>
+  </outline>
+</glyph>

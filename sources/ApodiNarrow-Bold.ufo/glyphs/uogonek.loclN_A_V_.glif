@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uogonek.loclNAV" format="2">
+  <advance width="1072"/>
+  <anchor x="523" y="-447" name="bottom"/>
+  <anchor x="537" y="1033" name="top"/>
+  <outline>
+    <contour>
+      <point x="598" y="-447" type="curve" smooth="yes"/>
+      <point x="656" y="-447"/>
+      <point x="699" y="-435"/>
+      <point x="732" y="-424" type="curve"/>
+      <point x="732" y="-255" type="line"/>
+      <point x="712" y="-263"/>
+      <point x="682" y="-272"/>
+      <point x="648" y="-272" type="curve" smooth="yes"/>
+      <point x="600" y="-272"/>
+      <point x="571" y="-242"/>
+      <point x="571" y="-178" type="curve" smooth="yes"/>
+      <point x="571" y="-92"/>
+      <point x="605" y="-11"/>
+      <point x="679" y="118" type="curve"/>
+      <point x="546" y="149" type="line"/>
+      <point x="455" y="53"/>
+      <point x="370" y="-87"/>
+      <point x="370" y="-228" type="curve" smooth="yes"/>
+      <point x="370" y="-368"/>
+      <point x="452" y="-447"/>
+    </contour>
+    <component base="u" xOffset="-1"/>
+  </outline>
+</glyph>

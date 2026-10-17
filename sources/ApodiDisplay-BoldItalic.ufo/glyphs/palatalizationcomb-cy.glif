@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="palatalizationcomb-cy" format="2">
+  <unicode hex="0484"/>
+  <anchor x="-445" y="1029" name="_top"/>
+  <anchor x="-387" y="1433" name="top"/>
+  <outline>
+    <contour>
+      <point x="-752" y="1143" type="line"/>
+      <point x="-713" y="1143" type="line" smooth="yes"/>
+      <point x="-552" y="1143"/>
+      <point x="-439" y="1188"/>
+      <point x="-362" y="1220" type="curve" smooth="yes"/>
+      <point x="-330" y="1233"/>
+      <point x="-302" y="1243"/>
+      <point x="-273" y="1243" type="curve" smooth="yes"/>
+      <point x="-232" y="1243"/>
+      <point x="-202" y="1224"/>
+      <point x="-202" y="1169" type="curve" smooth="yes"/>
+      <point x="-202" y="1162"/>
+      <point x="-202" y="1154"/>
+      <point x="-203" y="1141" type="curve"/>
+      <point x="-36" y="1141" type="line"/>
+      <point x="-30" y="1169"/>
+      <point x="-29" y="1195"/>
+      <point x="-29" y="1220" type="curve" smooth="yes"/>
+      <point x="-29" y="1369"/>
+      <point x="-122" y="1433"/>
+      <point x="-241" y="1433" type="curve" smooth="yes"/>
+      <point x="-311" y="1433"/>
+      <point x="-371" y="1414"/>
+      <point x="-434" y="1386" type="curve" smooth="yes"/>
+      <point x="-511" y="1350"/>
+      <point x="-590" y="1322"/>
+      <point x="-694" y="1322" type="curve" smooth="yes"/>
+      <point x="-714" y="1322" type="line"/>
+    </contour>
+  </outline>
+</glyph>

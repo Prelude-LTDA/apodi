@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="iogonekdotless" format="2">
+  <advance width="486"/>
+  <anchor x="48" y="-414" name="bottom"/>
+  <anchor x="351" y="1012" name="top"/>
+  <outline>
+    <component base="idotless"/>
+    <component base="ogonek" xOffset="-355"/>
+  </outline>
+</glyph>
