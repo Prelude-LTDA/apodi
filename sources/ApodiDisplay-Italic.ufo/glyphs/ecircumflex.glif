@@ -2,10 +2,10 @@
 <glyph name="ecircumflex" format="2">
   <advance width="1006"/>
   <unicode hex="00EA"/>
-  <anchor x="448" y="0" name="bottom"/>
-  <anchor x="729" y="1444" name="top"/>
+  <anchor x="424" y="0" name="bottom"/>
+  <anchor x="707" y="1447" name="top"/>
   <outline>
     <component base="e"/>
-    <component base="circumflex" xScale="1.06" xOffset="-94"/>
+    <component base="circumflex" xOffset="-59" yOffset="4"/>
   </outline>
 </glyph>

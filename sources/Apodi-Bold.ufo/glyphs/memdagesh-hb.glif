@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="memdagesh-hb" format="2">
-  <advance width="1213"/>
+  <advance width="1300"/>
   <unicode hex="FB3E"/>
   <note>
 uniFB3E
 </note>
   <outline>
     <component base="mem-hb"/>
-    <component base="dagesh-hb" xOffset="598" yOffset="-2"/>
+    <component base="dagesh-hb" xOffset="637" yOffset="39"/>
   </outline>
 </glyph>

@@ -2,8 +2,8 @@
 <glyph name="afii10102" format="2">
   <advance width="1056"/>
   <unicode hex="0455"/>
-  <anchor x="396" y="0" name="bottom"/>
-  <anchor x="601" y="1027" name="top"/>
+  <anchor x="413" y="0" name="bottom"/>
+  <anchor x="632" y="1029" name="top"/>
   <outline>
     <component base="s"/>
   </outline>

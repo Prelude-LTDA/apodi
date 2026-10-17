@@ -2,10 +2,10 @@
 <glyph name="edieresis" format="2">
   <advance width="1149"/>
   <unicode hex="00EB"/>
-  <anchor x="516" y="0" name="bottom"/>
-  <anchor x="797" y="1412" name="top"/>
+  <anchor x="465" y="0" name="bottom"/>
+  <anchor x="775" y="1415" name="top"/>
   <outline>
     <component base="e"/>
-    <component base="dieresis" xOffset="13"/>
+    <component base="dieresis" xOffset="11"/>
   </outline>
 </glyph>

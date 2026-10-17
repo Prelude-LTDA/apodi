@@ -7,8 +7,8 @@
   <anchor x="1470" y="1346" name="topright"/>
   <outline>
     <contour>
-      <point x="634" y="215" type="line"/>
-      <point x="857" y="215" type="line"/>
+      <point x="634" y="337" type="line"/>
+      <point x="857" y="337" type="line"/>
       <point x="1119" y="966" type="line"/>
       <point x="1127" y="966" type="line"/>
       <point x="1119" y="853"/>
@@ -18,8 +18,8 @@
       <point x="1386" y="0" type="line"/>
       <point x="1386" y="1346" type="line"/>
       <point x="998" y="1346" type="line"/>
-      <point x="756" y="669" type="line"/>
-      <point x="749" y="669" type="line"/>
+      <point x="756" y="790" type="line"/>
+      <point x="749" y="790" type="line"/>
       <point x="508" y="1346" type="line"/>
       <point x="118" y="1346" type="line"/>
       <point x="118" y="0" type="line"/>

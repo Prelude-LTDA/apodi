@@ -2,10 +2,10 @@
 <glyph name="ccedilla" format="2">
   <advance width="1016"/>
   <unicode hex="00E7"/>
-  <anchor x="577" y="-453" name="bottom"/>
-  <anchor x="571" y="1027" name="top"/>
+  <anchor x="507" y="-453" name="bottom"/>
+  <anchor x="507" y="1034" name="top"/>
   <outline>
     <component base="c"/>
-    <component base="cedilla" xOffset="97"/>
+    <component base="cedilla" xOffset="40"/>
   </outline>
 </glyph>

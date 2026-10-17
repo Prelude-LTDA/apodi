@@ -2,10 +2,10 @@
 <glyph name="uni04D7" format="2">
   <advance width="1062"/>
   <unicode hex="04D7"/>
-  <anchor x="467" y="0" name="bottom"/>
-  <anchor x="750" y="1470" name="top"/>
+  <anchor x="432" y="0" name="bottom"/>
+  <anchor x="738" y="1476" name="top"/>
   <outline>
     <component base="e" xOffset="1"/>
-    <component base="cyrillicbreve" xOffset="-11"/>
+    <component base="cyrillicbreve" xOffset="21" yOffset="6"/>
   </outline>
 </glyph>

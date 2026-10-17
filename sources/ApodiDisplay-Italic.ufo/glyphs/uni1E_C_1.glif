@@ -2,10 +2,10 @@
 <glyph name="uni1EC1" format="2">
   <advance width="1006"/>
   <unicode hex="1EC1"/>
-  <anchor x="448" y="0" name="bottom"/>
-  <anchor x="749" y="1531" name="top"/>
+  <anchor x="424" y="0" name="bottom"/>
+  <anchor x="726" y="1532" name="top"/>
   <outline>
     <component base="e"/>
-    <component base="circumflexgravecomb" xScale="1.06" xOffset="1125"/>
+    <component base="circumflexgravecomb" xOffset="1069" yOffset="1"/>
   </outline>
 </glyph>

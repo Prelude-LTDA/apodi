@@ -2,10 +2,10 @@
 <glyph name="ebreve" format="2">
   <advance width="1006"/>
   <unicode hex="0115"/>
-  <anchor x="448" y="0" name="bottom"/>
-  <anchor x="717" y="1394" name="top"/>
+  <anchor x="424" y="0" name="bottom"/>
+  <anchor x="698" y="1403" name="top"/>
   <outline>
     <component base="e"/>
-    <component base="breve" xScale="1.06" xOffset="-96"/>
+    <component base="breve" xOffset="-60" yOffset="4"/>
   </outline>
 </glyph>

@@ -2,10 +2,10 @@
 <glyph name="uni1E63" format="2">
   <advance width="991"/>
   <unicode hex="1E63"/>
-  <anchor x="284" y="-387" name="bottom"/>
-  <anchor x="579" y="1027" name="top"/>
+  <anchor x="302" y="-396" name="bottom"/>
+  <anchor x="607" y="1029" name="top"/>
   <outline>
     <component base="s"/>
-    <component base="dotbelowcomb" xScale="1.06" xOffset="1056"/>
+    <component base="dotbelowcomb" xOffset="1032"/>
   </outline>
 </glyph>

@@ -5,7 +5,7 @@
   <anchor x="650" y="-417" name="bottom"/>
   <anchor x="653" y="1346" name="top"/>
   <outline>
-    <component base="K" xScale="0.9999999999999999" yScale="0.9999999999999999"/>
+    <component base="K" xScale="0.9999999999999999" yScale="0.9999999999999999" xOffset="6"/>
     <component base="commaaccent2" xScale="0.9999999999999999" yScale="0.9999999999999999" xOffset="178"/>
   </outline>
 </glyph>

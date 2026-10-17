@@ -2,10 +2,10 @@
 <glyph name="Ccaron" format="2">
   <advance width="1298"/>
   <unicode hex="010C"/>
-  <anchor x="756" y="0" name="bottom"/>
-  <anchor x="771" y="1764" name="top"/>
+  <anchor x="652" y="0" name="bottom"/>
+  <anchor x="651" y="1758" name="top"/>
   <outline>
     <component base="C"/>
-    <component base="caron" xOffset="277" yOffset="319"/>
+    <component base="caron" xScale="0.9433962264150942" xOffset="222" yOffset="314"/>
   </outline>
 </glyph>

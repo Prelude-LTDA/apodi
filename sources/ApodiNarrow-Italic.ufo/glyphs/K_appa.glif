@@ -2,9 +2,9 @@
 <glyph name="Kappa" format="2">
   <advance width="1053"/>
   <unicode hex="039A"/>
-  <anchor x="456" y="0" name="bottom"/>
-  <anchor x="744" y="1346" name="top"/>
+  <anchor x="419" y="0" name="bottom"/>
+  <anchor x="742" y="1346" name="top"/>
   <outline>
-    <component base="K" xScale="0.9999999999999999" yScale="0.9999999999999999"/>
+    <component base="K"/>
   </outline>
 </glyph>

@@ -2,10 +2,10 @@
 <glyph name="scircumflex" format="2">
   <advance width="941"/>
   <unicode hex="015D"/>
-  <anchor x="472" y="0" name="bottom"/>
-  <anchor x="472" y="1445" name="top"/>
+  <anchor x="462" y="0" name="bottom"/>
+  <anchor x="473" y="1445" name="top"/>
   <outline>
     <component base="s"/>
-    <component base="circumflex" xScale="0.9433962264150942" xOffset="-6"/>
+    <component base="circumflex" xScale="0.9433962264150942" xOffset="26"/>
   </outline>
 </glyph>

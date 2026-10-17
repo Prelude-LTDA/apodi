@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="f_l.ss02" format="2">
-  <advance width="1183"/>
-  <anchor x="182" y="0" name="bottom_1"/>
-  <anchor x="807" y="0" name="bottom_2"/>
-  <anchor x="508" y="0" name="caret_1"/>
-  <anchor x="633" y="1443" name="top_1"/>
-  <anchor x="1119" y="1443" name="top_2"/>
+  <advance width="1129"/>
+  <anchor x="167" y="0" name="bottom_1"/>
+  <anchor x="763" y="0" name="bottom_2"/>
+  <anchor x="476" y="0" name="caret_1"/>
+  <anchor x="612" y="1443" name="top_1"/>
+  <anchor x="1075" y="1443" name="top_2"/>
   <outline>
     <component base="f.ss02"/>
-    <component base="l" xOffset="656"/>
+    <component base="l" xOffset="625"/>
   </outline>
 </glyph>

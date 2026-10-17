@@ -2,9 +2,9 @@
 <glyph name="afii10070" format="2">
   <advance width="993"/>
   <unicode hex="0435"/>
-  <anchor x="441" y="0" name="bottom"/>
-  <anchor x="621" y="1011" name="top"/>
+  <anchor x="427" y="0" name="bottom"/>
+  <anchor x="613" y="1008" name="top"/>
   <outline>
-    <component base="e"/>
+    <component base="e" xScale="0.9999999999999999" yScale="0.9999999999999999" xOffset="49"/>
   </outline>
 </glyph>

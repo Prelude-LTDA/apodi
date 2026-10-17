@@ -6,6 +6,6 @@
   <anchor x="470" y="1433" name="top"/>
   <outline>
     <component base="d"/>
-    <component base="caroncommaaccent" xOffset="791"/>
+    <component base="caroncommaaccent" xOffset="790"/>
   </outline>
 </glyph>

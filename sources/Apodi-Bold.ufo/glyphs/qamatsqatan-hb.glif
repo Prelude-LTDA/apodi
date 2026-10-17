@@ -4,17 +4,17 @@
   <note>
 uni05C7
 </note>
-  <anchor x="1" y="-75" name="_bottom"/>
+  <anchor x="1" y="-68" name="_bottom"/>
   <outline>
     <contour>
-      <point x="-44" y="-377" type="line"/>
-      <point x="40" y="-377" type="line"/>
-      <point x="40" y="-180" type="line"/>
-      <point x="179" y="-180" type="line"/>
-      <point x="179" y="-93" type="line"/>
-      <point x="-179" y="-93" type="line"/>
-      <point x="-179" y="-180" type="line"/>
-      <point x="-44" y="-180" type="line"/>
+      <point x="-42" y="-354" type="line"/>
+      <point x="39" y="-354" type="line"/>
+      <point x="39" y="-171" type="line"/>
+      <point x="172" y="-171" type="line"/>
+      <point x="172" y="-87" type="line"/>
+      <point x="-172" y="-87" type="line"/>
+      <point x="-172" y="-171" type="line"/>
+      <point x="-42" y="-171" type="line"/>
     </contour>
   </outline>
 </glyph>

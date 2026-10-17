@@ -2,10 +2,10 @@
 <glyph name="Kcommaaccent" format="2">
   <advance width="1164"/>
   <unicode hex="0136"/>
-  <anchor x="617" y="-417" name="bottom"/>
-  <anchor x="630" y="1346" name="top"/>
+  <anchor x="582" y="-417" name="bottom"/>
+  <anchor x="628" y="1346" name="top"/>
   <outline>
     <component base="K"/>
-    <component base="commaaccent2" xOffset="158"/>
+    <component base="commaaccent2" xOffset="124"/>
   </outline>
 </glyph>

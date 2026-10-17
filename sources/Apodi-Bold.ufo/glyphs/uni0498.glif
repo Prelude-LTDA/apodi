@@ -6,6 +6,6 @@
   <anchor x="602" y="1346" name="top"/>
   <outline>
     <component base="afii10025" xScale="0.9999999999999999" yScale="0.9999999999999999"/>
-    <component base="cyrillichookleft" xScale="0.9999999999999999" yScale="0.9999999999999999" xOffset="373"/>
+    <component base="cyrillichookleft" xScale="0.9999999999999999" yScale="0.9999999999999999" xOffset="372"/>
   </outline>
 </glyph>

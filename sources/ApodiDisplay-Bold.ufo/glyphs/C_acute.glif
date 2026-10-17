@@ -2,10 +2,10 @@
 <glyph name="Cacute" format="2">
   <advance width="1382"/>
   <unicode hex="0106"/>
-  <anchor x="809" y="0" name="bottom"/>
-  <anchor x="824" y="1764" name="top"/>
+  <anchor x="693" y="0" name="bottom"/>
+  <anchor x="692" y="1759" name="top"/>
   <outline>
     <component base="C"/>
-    <component base="acute" xScale="1.06" xOffset="334" yOffset="319"/>
+    <component base="acute" xOffset="232" yOffset="315"/>
   </outline>
 </glyph>

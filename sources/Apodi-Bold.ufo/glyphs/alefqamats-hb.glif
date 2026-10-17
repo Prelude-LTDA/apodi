@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="alefqamats-hb" format="2">
-  <advance width="1145"/>
+  <advance width="1223"/>
   <unicode hex="FB2F"/>
   <note>
 uniFB2F
 </note>
   <outline>
     <component base="alef-hb"/>
-    <component base="qamats-hb" xOffset="567" yOffset="-25"/>
+    <component base="qamats-hb" xOffset="603" yOffset="-2"/>
   </outline>
 </glyph>

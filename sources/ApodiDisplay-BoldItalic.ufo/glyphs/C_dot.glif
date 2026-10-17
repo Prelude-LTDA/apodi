@@ -2,10 +2,10 @@
 <glyph name="Cdot" format="2">
   <advance width="1391"/>
   <unicode hex="010A"/>
-  <anchor x="720" y="0" name="bottom"/>
-  <anchor x="1048" y="1746" name="top"/>
+  <anchor x="588" y="0" name="bottom"/>
+  <anchor x="959" y="1752" name="top"/>
   <outline>
     <component base="C"/>
-    <component base="dotaccent" xScale="1.06" xOffset="244" yOffset="319"/>
+    <component base="dotaccent" xOffset="201" yOffset="314"/>
   </outline>
 </glyph>

@@ -2,10 +2,10 @@
 <glyph name="Gdot" format="2">
   <advance width="1470"/>
   <unicode hex="0120"/>
-  <anchor x="792" y="0" name="bottom"/>
-  <anchor x="809" y="1746" name="top"/>
+  <anchor x="788" y="0" name="bottom"/>
+  <anchor x="805" y="1749" name="top"/>
   <outline>
-    <component base="G"/>
-    <component base="dotaccent" xScale="1.06" xOffset="222" yOffset="319"/>
+    <component base="G" xScale="0.9999999999999999" yScale="0.9999999999999999" xOffset="66"/>
+    <component base="dotaccent" xScale="0.9999999999999999" yScale="0.9999999999999999" xOffset="247" yOffset="316"/>
   </outline>
 </glyph>

@@ -1,16 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="f_f_l.ss02" format="2">
-  <advance width="1508"/>
-  <anchor x="132" y="0" name="bottom_1"/>
-  <anchor x="663" y="0" name="bottom_2"/>
-  <anchor x="1176" y="0" name="bottom_3"/>
-  <anchor x="410" y="0" name="caret_1"/>
-  <anchor x="931" y="0" name="caret_2"/>
-  <anchor x="604" y="1443" name="top_1"/>
-  <anchor x="1132" y="1443" name="top_2"/>
-  <anchor x="1476" y="1433" name="top_3"/>
+  <advance width="1382"/>
+  <anchor x="109" y="0" name="bottom_1"/>
+  <anchor x="595" y="0" name="bottom_2"/>
+  <anchor x="1068" y="0" name="bottom_3"/>
+  <anchor x="366" y="0" name="caret_1"/>
+  <anchor x="845" y="0" name="caret_2"/>
+  <anchor x="563" y="1443" name="top_1"/>
+  <anchor x="1043" y="1443" name="top_2"/>
+  <anchor x="1367" y="1433" name="top_3"/>
   <outline>
     <component base="f_f.ss02"/>
-    <component base="l" xOffset="1070"/>
+    <component base="l" xOffset="977"/>
   </outline>
 </glyph>

@@ -2,10 +2,10 @@
 <glyph name="Gcommaaccent" format="2">
   <advance width="1323"/>
   <unicode hex="0122"/>
-  <anchor x="732" y="-417" name="bottom"/>
-  <anchor x="739" y="1346" name="top"/>
+  <anchor x="661" y="-417" name="bottom"/>
+  <anchor x="661" y="1346" name="top"/>
   <outline>
     <component base="G"/>
-    <component base="commaaccent2" xOffset="270"/>
+    <component base="commaaccent2" xOffset="206"/>
   </outline>
 </glyph>

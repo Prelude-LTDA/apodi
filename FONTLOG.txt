@@ -39,6 +39,20 @@ weight class, italic angle. No outlines, points or curves were taken from Aptos.
 Changelog
 ---------
 
+2026-10-17 (The Apodi Project Authors) Apodi v1.001
+- Outline changes only; advance widths, kerning, vertical metrics and ligatures unchanged
+  (0 metric mismatches, 0 line-break differences against the reference).
+- M: middle vertex raised to 25% of the cap height (was 16%).
+- G drawn with Open Sans's Cyrillic Komi Sje (U+050C), K with Open Sans's Cyrillic Ka
+  (U+041A); Latin names, kerning and groups kept.
+- C and c cut out of O and o, S cut out of 8, s cut out of an x-height 8 (Open Sans's 8 at a
+  heavier weight, scaled to the x-height): boolean differences with rectangles, giving flat
+  horizontal terminals; the S cuts follow the 8's waist so the spine is one stroke. All
+  styles.
+- Italics: e, f, c, C, s, S, e-ogonek and the f ligatures are obliques (the matching roman
+  glyph slanted by the italic angle) instead of Open Sans's cursive forms.
+- Accented and other composites follow their redrawn base glyphs (marks move with anchors).
+
 2026-10-17 (The Apodi Project Authors) Apodi v1.000
 - Generated 12 static styles from the Open Sans Roman and Italic designspaces.
 - Scaled all outlines uniformly by 1346/1462 (0.92066) so the cap height matches the
@@ -81,4 +95,4 @@ W: https://github.com/googlefonts/opensans
 D: Open Sans sources
 
 N: The Apodi Project Authors
-D: Metric fitting, M redesign, build tooling
+D: Metric fitting, letter-shape changes (M, G, K, C, S, italic obliques), build tooling

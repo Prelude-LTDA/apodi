@@ -1,26 +1,26 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="cyrillicbighookUC" format="2">
-  <advance width="522"/>
+  <advance width="550"/>
   <outline>
     <contour>
-      <point x="182" y="-447" type="curve" smooth="yes"/>
-      <point x="400" y="-447"/>
-      <point x="498" y="-304"/>
-      <point x="498" y="-102" type="curve" smooth="yes"/>
-      <point x="498" y="238" type="line"/>
-      <point x="208" y="238" type="line"/>
-      <point x="208" y="0" type="line"/>
-      <point x="226" y="0" type="line"/>
-      <point x="226" y="-70" type="line" smooth="yes"/>
-      <point x="226" y="-187"/>
-      <point x="181" y="-220"/>
-      <point x="115" y="-220" type="curve" smooth="yes"/>
-      <point x="77" y="-220"/>
-      <point x="49" y="-215"/>
-      <point x="13" y="-203" type="curve"/>
-      <point x="13" y="-425" type="line"/>
-      <point x="53" y="-439"/>
-      <point x="120" y="-447"/>
+      <point x="185" y="-453" type="curve" smooth="yes"/>
+      <point x="416" y="-453"/>
+      <point x="508" y="-300"/>
+      <point x="508" y="-111" type="curve" smooth="yes"/>
+      <point x="508" y="235" type="line"/>
+      <point x="219" y="235" type="line"/>
+      <point x="219" y="0" type="line"/>
+      <point x="238" y="0" type="line"/>
+      <point x="238" y="-70" type="line" smooth="yes"/>
+      <point x="238" y="-194"/>
+      <point x="187" y="-226"/>
+      <point x="124" y="-226" type="curve" smooth="yes"/>
+      <point x="83" y="-226"/>
+      <point x="53" y="-221"/>
+      <point x="15" y="-209" type="curve"/>
+      <point x="15" y="-430" type="line"/>
+      <point x="56" y="-443"/>
+      <point x="126" y="-453"/>
     </contour>
   </outline>
 </glyph>

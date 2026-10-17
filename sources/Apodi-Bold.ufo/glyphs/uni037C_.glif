@@ -2,10 +2,10 @@
 <glyph name="uni037C" format="2">
   <advance width="1124"/>
   <unicode hex="037C"/>
-  <anchor x="643" y="0" name="bottom"/>
-  <anchor x="637" y="1027" name="top"/>
+  <anchor x="562" y="0" name="bottom"/>
+  <anchor x="562" y="1030" name="top"/>
   <outline>
     <component base="c"/>
-    <component base="dotaccent" xScale="1.06" xOffset="183" yOffset="-776"/>
+    <component base="dotaccent" xOffset="144" yOffset="-775"/>
   </outline>
 </glyph>

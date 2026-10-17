@@ -2,10 +2,10 @@
 <glyph name="Gcircumflex" format="2">
   <advance width="1470"/>
   <unicode hex="011C"/>
-  <anchor x="740" y="0" name="bottom"/>
-  <anchor x="1083" y="1764" name="top"/>
+  <anchor x="621" y="0" name="bottom"/>
+  <anchor x="1019" y="1764" name="top"/>
   <outline>
     <component base="G"/>
-    <component base="circumflex" xOffset="277" yOffset="319"/>
+    <component base="circumflex" xOffset="214" yOffset="319"/>
   </outline>
 </glyph>

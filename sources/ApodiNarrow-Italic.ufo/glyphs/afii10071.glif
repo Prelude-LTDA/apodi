@@ -2,10 +2,10 @@
 <glyph name="afii10071" format="2">
   <advance width="993"/>
   <unicode hex="0451"/>
-  <anchor x="441" y="0" name="bottom"/>
-  <anchor x="703" y="1375" name="top"/>
+  <anchor x="427" y="0" name="bottom"/>
+  <anchor x="692" y="1381" name="top"/>
   <outline>
-    <component base="e"/>
-    <component base="dieresis" xOffset="-38"/>
+    <component base="e" xScale="0.9999999999999999" yScale="0.9999999999999999" xOffset="49"/>
+    <component base="dieresis" xScale="0.9999999999999999" yScale="0.9999999999999999" xOffset="22"/>
   </outline>
 </glyph>

@@ -79,7 +79,11 @@ validation results and the known differences, see [REPORT.md](REPORT.md).
   renderings. The side-by-side renderings were made for visual review only, and they stay
   out of the repository (`docs/comparison/` is git-ignored).
 * **Apodi's own design changes**: the middle vertex of **M** is raised off the baseline
-  (parametrically, on Open Sans's M). Two Open Sans alternates that match the reference's
+  (parametrically, on Open Sans's M). **G** and **K** use Open Sans's own Cyrillic Ԍ (Komi
+  Sje) and К outlines. **C c S s** are cut out of Open Sans's **O o 8** (boolean difference
+  with rectangles, which leaves flat horizontal terminals). In the italics, **e f c C s S**
+  and the f ligatures are obliques: the roman drawings slanted by the italic angle. The cut
+  positions were set by eye; nothing was measured from the reference. Two Open Sans alternates that match the reference's
   letter shapes are now the defaults: the **J** that sits on the baseline, and in italics the
   double-storey **a**. The double-storey (binocular) **g** stays the default, as in the
   reference. The former defaults are still there under `salt`/`ss01`/`ss03`, and the

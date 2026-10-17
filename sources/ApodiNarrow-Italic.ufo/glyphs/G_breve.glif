@@ -2,10 +2,10 @@
 <glyph name="Gbreve" format="2">
   <advance width="1322"/>
   <unicode hex="011E"/>
-  <anchor x="634" y="0" name="bottom"/>
-  <anchor x="979" y="1732" name="top"/>
+  <anchor x="553" y="0" name="bottom"/>
+  <anchor x="922" y="1733" name="top"/>
   <outline>
     <component base="G"/>
-    <component base="breve" xOffset="259" yOffset="336"/>
+    <component base="breve" xOffset="214" yOffset="335"/>
   </outline>
 </glyph>

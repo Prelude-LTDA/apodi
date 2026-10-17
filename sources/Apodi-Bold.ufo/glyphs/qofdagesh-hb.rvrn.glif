@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="qofdagesh-hb.rvrn" format="2">
-  <advance width="1143"/>
+  <advance width="1206"/>
   <note>
 uniFB47
 </note>
   <outline>
     <component base="qof-hb"/>
-    <component base="dagesh-hb.small" xOffset="553" yOffset="259"/>
+    <component base="dagesh-hb.small" xOffset="585" yOffset="239"/>
   </outline>
 </glyph>

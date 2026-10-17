@@ -18,7 +18,9 @@ What it does, per style:
   3. sets the exact advance by moving sidebearings (difference split in proportion to the
      existing left/right sidebearings), with at most +-3% horizontal outline scaling at the
      ends of the width range;
-  4. raises the M's middle vertex (design change, parametric on Open Sans's own M);
+  4. design changes on each instance (before 1-3): raises the M's middle vertex, draws G and K
+     with Open Sans's Cyrillic Komi Sje and Ka, cuts C c S s out of O o 8, and in the italics
+     replaces e f c C s S (and the f ligatures) with the matching roman glyphs slanted;
   5. writes kerning from the reference pair values (class-compressed), drops ligatures the
      reference doesn't form, and sets vertical metrics to the reference numbers.
 """
@@ -60,8 +62,25 @@ DEFAULT_ALTERNATES = {
     "roman": [("J", "J.salt")],
     "italic": [("J", "J.salt"), ("a", "a.ss01")],
 }
-M_VERTEX_RAISE = 0.16                           # M middle vertex raised by 16% of cap height
-VERSION = (1, 0)
+M_VERTEX_RAISE = 0.25                           # M middle vertex raised by 25% of cap height
+# Latin letters drawn with Open Sans's own Cyrillic outline (same space: upright from the roman,
+# slanted from the italic): G takes Komi Sje (U+050C), K takes Ka (U+041A). Names, Unicode values,
+# kerning and groups stay the Latin glyph's.
+CYRILLIC_OUTLINES = {"G": "uni050C", "K": "afii10028"}
+# C and c are cut out of O and o: a rectangle covering the right side of the bowl (fractions of
+# the source glyph's bounding box: x from CUT_C[0] to beyond the right edge, y from CUT_C[1]
+# to CUT_C[2]) is removed, which leaves flat horizontal terminals.
+CUT_C = {"C": ("O", 0.50, 0.30, 0.70), "c": ("o", 0.50, 0.30, 0.70)}
+# S and s are cut out of 8: the upper-right quadrant (from the centre to the right edge, from
+# the waist to CUT_S[1] of the height) and the lower-left quadrant (from the left edge to the
+# centre, from CUT_S[0] up to the waist) are removed. The cuts follow the 8's waist, so the
+# spine is one stroke (see cut_S_from_8). s uses the 8 scaled to x-height, drawn at the weight
+# that gives s's own horizontal stroke and o's stem after scaling.
+CUT_S = {"S": (0.26, 0.74), "s": (0.27, 0.73)}
+# In the italics these glyphs are the matching roman's (same wdth, weight and stretch) slanted
+# by the italic angle: obliques, instead of Open Sans's cursive forms. The f ligatures follow f.
+OBLIQUE_ITALIC = ["e", "eogonek", "eogonek.loclNAV", "f", "c", "C", "s", "S", "f_f", "fi", "fl", "f_f_i", "f_f_l"]
+VERSION = (1, 1)
 
 STYLES = {
     # key: family, style, italic, weight, Narrow?, Display?, OS/2 width class
@@ -99,8 +118,9 @@ def otround(v):
 class OpenSansSpace:
     """One Open Sans designspace (Roman or Italic): interpolation + stem measurement."""
 
-    def __init__(self, ds_path, swaps=()):
+    def __init__(self, ds_path, swaps=(), roman=True):
         self.swaps = swaps
+        self.roman = roman
         self.ds = DesignSpaceDocument.fromfile(ds_path)
         self.ds.instances = []
         self.ds.loadSourceFonts(ufoLib2.Font.open)
@@ -119,8 +139,15 @@ class OpenSansSpace:
             for a, b in self.swaps:
                 swap_glyphs(f, a, b)
             modify_M(f)
+            apply_outline_changes(f, self, (wght, wdth), self.roman)
             self._cache[key] = f
         return self._cache[key]
+
+    def glyph(self, name, wght, wdth):
+        """One glyph interpolated at (wght, wdth), without building the whole instance."""
+        loc = self.inst.normalize({self.axes["wght"].name: self.axes["wght"].map_forward(wght),
+                                   self.axes["wdth"].name: self.axes["wdth"].map_forward(wdth)})
+        return self.inst.generate_glyph_instance(name, loc)
 
     def stem(self, wght, wdth):
         # stem thickness of "I": horizontal extent minus the slant's contribution in italics
@@ -193,6 +220,459 @@ def modify_M(font):
     for p in bottom + cand:
         p.x += dx
         p.y += h
+
+
+# ----------------------------------------------------------------------------- design changes: outlines
+# Each change redraws a glyph inside one interpolated Open Sans instance, before fitting, so the
+# width choice and the locked advance work on the new drawing like on any other glyph.
+# Composites built on a redrawn glyph keep their width relation to it, and their marks move
+# with the base's anchors.
+
+def contours_of(glyph):
+    """[(points)], points = (x, y, type, smooth) - a plain copy of a glyph's contours."""
+    return [[(p.x, p.y, p.type, p.smooth) for p in c.points] for c in glyph.contours]
+
+
+def bounds_of(contours):
+    bp = BoundsPen(None)
+    draw_contours(contours, bp)
+    return bp.bounds
+
+
+def draw_contours(contours, pen):
+    from fontTools.pens.pointPen import PointToSegmentPen
+    ppen = pen if hasattr(pen, "addPoint") else PointToSegmentPen(pen)
+    for c in contours:
+        ppen.beginPath()
+        for x, y, t, sm in c:
+            ppen.addPoint((x, y), t, sm)
+        ppen.endPath()
+
+
+def signed_area(contours):
+    from fontTools.pens.areaPen import AreaPen
+    ap = AreaPen()
+    draw_contours(contours, ap)
+    return ap.value
+
+
+def to_path(contours):
+    import pathops
+    path = pathops.Path()
+    draw_contours(contours, path.getPen())
+    return path
+
+
+def from_path(path):
+    """pathops.Path -> contours, outer contours counter-clockwise (PostScript direction, as in
+    Open Sans's UFOs)."""
+    from fontTools.pens.recordingPen import RecordingPointPen
+    from fontTools.pens.pointPen import SegmentToPointPen
+    rec = RecordingPointPen()
+    path.draw(SegmentToPointPen(rec))
+    out, cur = [], None
+    for op, args, kw in rec.value:
+        if op == "beginPath":
+            cur = []
+        elif op == "addPoint":
+            (x, y), t = args[0], args[1] if len(args) > 1 else kw.get("segmentType")
+            cur.append((x, y, t, False))
+        elif op == "endPath":
+            out.append(cur)
+    out = [mark_smooth(drop_degenerate(c)) for c in out]
+    if signed_area(out) < 0:
+        out = [reverse_contour(c) for c in out]
+    return out
+
+
+def drop_degenerate(c, eps=1.0):
+    """Remove zero-length segments (a boolean can leave a curve whose points all coincide)."""
+    on = [i for i, p in enumerate(c) if p[2] is not None]
+    if len(on) < 3:
+        return c
+    segs = []                                   # (off-curves, on-curve) ending at each on-curve
+    n = len(c)
+    for k, i in enumerate(on):
+        j = on[k - 1]
+        offs = [c[m % n] for m in range(j + 1, i + (n if i <= j else 0))]
+        segs.append((offs, c[i]))
+    keep = []
+    for k, (offs, p) in enumerate(segs):
+        prev = segs[k - 1][1]
+        if all(math.hypot(q[0] - prev[0], q[1] - prev[1]) < eps for q in offs + [p]) and len(segs) - k + len(keep) > 2:
+            continue
+        keep.append((offs, p))
+    out = []
+    for offs, p in keep:
+        out.extend(offs)
+        out.append(p)
+    return out
+
+
+def reverse_contour(c):
+    from fontTools.pens.recordingPen import RecordingPointPen
+    from fontTools.pens.reverseContourPointPen import ReverseContourPointPen
+    rec = RecordingPointPen()
+    draw_contours([c], ReverseContourPointPen(rec))
+    return [(a[0][0], a[0][1], a[1] if len(a) > 1 else k.get("segmentType"), k.get("smooth", False))
+            for op, a, k in rec.value if op == "addPoint"]
+
+
+def mark_smooth(c, tol_deg=4.0):
+    """Flag on-curve points whose in and out tangents are collinear (within tol) as smooth."""
+    n, out = len(c), []
+    for i, (x, y, t, sm) in enumerate(c):
+        if t is not None:
+            px, py = c[i - 1][:2]
+            nx, ny = c[(i + 1) % n][:2]
+            a1, a2 = math.atan2(y - py, x - px), math.atan2(ny - y, nx - x)
+            d = abs((math.degrees(a2 - a1) + 180) % 360 - 180)
+            sm = (px, py) != (x, y) and (nx, ny) != (x, y) and d < tol_deg
+        out.append((x, y, t, sm))
+    return out
+
+
+def polygon(pts):
+    return [[(x, y, "line", False) for x, y in pts]]
+
+
+def difference(contours, cutters):
+    import pathops
+    res = to_path(contours)
+    for cut in cutters:
+        res = pathops.op(res, to_path(cut), pathops.PathOp.DIFFERENCE, fix_winding=True)
+    return from_path(res)
+
+
+def flatten(contours, steps=24):
+    """Contours as closed polylines (for measuring stroke thickness)."""
+    polys = []
+    for c in contours:
+        on = [i for i, p in enumerate(c) if p[2] is not None]
+        if not on:
+            continue
+        n, poly = len(c), []
+        start = on[0]
+        i = start
+        while True:
+            j = (i + 1) % n
+            offs = []
+            while c[j][2] is None:
+                offs.append(c[j][:2])
+                j = (j + 1) % n
+            p0, p3 = c[i][:2], c[j][:2]
+            if len(offs) == 2:
+                for k in range(1, steps + 1):
+                    t = k / steps
+                    mt = 1 - t
+                    poly.append(tuple(mt ** 3 * a + 3 * mt * mt * t * b + 3 * mt * t * t * cc + t ** 3 * d
+                                      for a, b, cc, d in zip(p0, offs[0], offs[1], p3)))
+            else:
+                poly.append(p3)
+            i = j
+            if i == start:
+                break
+        polys.append(poly)
+    return polys
+
+
+def crossings(contours, y=None, x=None):
+    """Sorted crossing coordinates of a horizontal (y=...) or vertical (x=...) line."""
+    out = []
+    for poly in flatten(contours):
+        for (x0, y0), (x1, y1) in zip(poly, poly[1:] + poly[:1]):
+            if y is not None and (y0 - y) * (y1 - y) < 0:
+                out.append(x0 + (y - y0) * (x1 - x0) / (y1 - y0))
+            if x is not None and (x0 - x) * (x1 - x) < 0:
+                out.append(y0 + (x - x0) * (y1 - y0) / (x1 - x0))
+    return sorted(out)
+
+
+def set_drawing(font, name, contours, anchors, width, components=()):
+    """Redraw `name` in `font`. Composites built on it keep their width relation to it, and their
+    mark components move with the base anchor they attach to."""
+    g = font[name]
+    old_anchors = {a.name: (a.x, a.y) for a in g.anchors}
+    old_width = g.width
+    g.clearContours()
+    g.clearComponents()
+    g.clearAnchors()
+    pen = g.getPointPen()
+    for c in contours:
+        pen.beginPath()
+        for x, y, t, sm in c:
+            pen.addPoint((otround(x), otround(y)), t, sm)
+        pen.endPath()
+    for base, xf in components:
+        pen.addComponent(base, xf)
+    for an, (x, y) in anchors.items():
+        g.appendAnchor({"name": an, "x": otround(x), "y": otround(y)})
+    g.width = otround(width)
+    new_anchors = {an: (otround(x), otround(y)) for an, (x, y) in anchors.items()}
+    def delta(an):
+        return (new_anchors[an][0] - old_anchors[an][0], new_anchors[an][1] - old_anchors[an][1])
+    has = [an for an in old_anchors if an in new_anchors]
+    mid = (old_anchors.get("top", (0, 1000))[1] + old_anchors.get("bottom", (0, 0))[1]) / 2
+
+    def side(y):
+        # attachments with no matching anchor (e.g. an ogonek drawn into the composite) move with
+        # the base's bottom or top anchor, whichever side of the base they sit on
+        an = "top" if y > mid else "bottom"
+        return delta(an) if an in has else (0, 0)
+    for cg in font:
+        if not cg.components or cg.components[0].baseGlyph != name:
+            continue
+        if tuple(cg.components[0].transformation)[:4] != (1, 0, 0, 1):
+            continue
+        if cg.width > 0:
+            cg.width = g.width + (cg.width - old_width)
+        for comp in cg.components[1:]:
+            mark = font[comp.baseGlyph] if comp.baseGlyph in font else None
+            names = [a.name[1:] for a in (mark.anchors if mark else []) if a.name.startswith("_")]
+            names = [an for an in names if an in has]
+            if names:
+                ddx, ddy = delta(names[0])
+            else:
+                mb = glyph_bounds(font, comp.baseGlyph) if mark is not None else None
+                if mb is None:
+                    continue
+                ddx, ddy = side((mb[1] + mb[3]) / 2 + comp.transformation[5])
+            t = list(comp.transformation)
+            t[4] += ddx
+            t[5] += ddy
+            comp.transformation = tuple(t)
+        for c in cg.contours:
+            ys = [p.y for p in c.points]
+            ddx, ddy = side((min(ys) + max(ys)) / 2)
+            for p in c.points:
+                p.x += ddx
+                p.y += ddy
+        for a in cg.anchors:
+            ddx, ddy = delta(a.name) if a.name in has else side(a.y)
+            a.x += ddx
+            a.y += ddy
+
+
+def fit_anchors(orig_glyph, orig_bounds, new_bounds, source_anchors=None):
+    """Anchors for a redrawn glyph, with the original glyph's anchor names. A name the source
+    drawing has takes the source's position; `topright` keeps its distance from the right edge;
+    any other keeps its offset from the centre of the bounding box."""
+    out = {}
+    src = source_anchors or {}
+    oc = (orig_bounds[0] + orig_bounds[2]) / 2
+    nc = (new_bounds[0] + new_bounds[2]) / 2
+    for a in orig_glyph.anchors:
+        if a.name == "topright":
+            out[a.name] = (new_bounds[2] + (a.x - orig_bounds[2]), a.y)
+        elif a.name in src:
+            out[a.name] = src[a.name]
+        else:
+            out[a.name] = (nc + (a.x - oc), a.y)
+    return out
+
+
+def use_outline(font, name, source):
+    """Draw `name` with `source`'s outline (e.g. Latin G with Cyrillic Komi Sje)."""
+    g, s = font[name], font[source]
+    assert s.contours and not s.components, (source, "is not a simple glyph")
+    cs = contours_of(s)
+    anchors = fit_anchors(g, glyph_bounds(font, name), bounds_of(cs), {a.name: (a.x, a.y) for a in s.anchors})
+    set_drawing(font, name, cs, anchors, s.width)
+
+
+def glyph_bounds(font, name):
+    bp = BoundsPen(font)
+    font[name].draw(bp)
+    return bp.bounds
+
+
+def cut_C_from_O(font, name):
+    src, fx, ylo, yhi = CUT_C[name]
+    cs = contours_of(font[src])
+    x0, y0, x1, y1 = bounds_of(cs)
+    w, h = x1 - x0, y1 - y0
+    rect = polygon([(x0 + fx * w, y0 + ylo * h), (x1 + w, y0 + ylo * h),
+                    (x1 + w, y0 + yhi * h), (x0 + fx * w, y0 + yhi * h)])
+    new = difference(cs, [rect])
+    nb = bounds_of(new)
+    anchors = fit_anchors(font[name], glyph_bounds(font, name), nb,
+                          {a.name: (a.x, a.y) for a in font[src].anchors if a.name != "topright"})
+    # the right sidebearing of O carries over; the cut only removes ink
+    set_drawing(font, name, new, anchors, font[src].width)
+
+
+def eight_parts(cs):
+    """The 8's outer contour and two counters, and the points where its waist is drawn, each with
+    the direction in which the S's spine edge leaves or enters it: the outer contour's left and
+    right corners at the waist (AL, AR), the upper counter's bottom corner (U) and the lower
+    counter's top corner (LW)."""
+    assert len(cs) == 3, "unexpected 8 structure"
+    by_size = sorted(cs, key=lambda c: -abs(signed_area([c])))
+    outer, counters = by_size[0], by_size[1:]
+    upper, lower = sorted(counters, key=lambda c: -sum(p[1] for p in c) / len(c))
+
+    def corners(c):
+        return [i for i, p in enumerate(c) if p[2] is not None and not p[3]]
+
+    def nbrs(c, i):
+        return c[i - 1][:2], c[(i + 1) % len(c)][:2]
+
+    def unit(dx, dy):
+        n = math.hypot(dx, dy)
+        return dx / n, dy / n
+    oc = corners(outer)
+    assert len(oc) == 2, ("unexpected 8 waist", oc)
+    iL, iR = sorted(oc, key=lambda i: outer[i][0])
+    iU = min(corners(upper), key=lambda i: upper[i][1])
+    iW = max(corners(lower), key=lambda i: lower[i][1])
+    aL, aR, u, lw = outer[iL][:2], outer[iR][:2], upper[iU][:2], lower[iW][:2]
+    # spine edges run left to right: tangent of the upper counter's left arc at U, of the outer
+    # contour's lower-right bowl at AR, of its upper-left bowl at AL, and of the lower counter's
+    # right arc at LW
+    n = max(nbrs(upper, iU), key=lambda q: -q[0])
+    dU = unit(u[0] - n[0], u[1] - n[1])
+    n = min(nbrs(outer, iR), key=lambda q: q[1])
+    dR = unit(n[0] - aR[0], n[1] - aR[1])
+    n = max(nbrs(outer, iL), key=lambda q: q[1])
+    dL = unit(aL[0] - n[0], aL[1] - n[1])
+    n = max(nbrs(lower, iW), key=lambda q: q[0])
+    dW = unit(n[0] - lw[0], n[1] - lw[1])
+    return outer, upper, lower, (aL, dL), (aR, dR), (u, dU), (lw, dW)
+
+
+def cut_S_from_8(cs, ylo, yhi):
+    """S out of an 8. The 8 is drawn as two S-curves crossing at the waist: the upper counter's
+    bottom corner U and the outer right waist corner AR lie on the edge of one of them (and the
+    outer left corner AL and the lower counter's top corner LW on the edge of the other). The
+    upper-right cut is bounded below by a curve from U to AR, and the lower-left one above by a
+    curve from AL to LW, each tangent to the 8's own edges at both ends, so what is left of the
+    waist is the spine as one smooth stroke, without stubs of the other diagonal. Past AR / AL
+    the cuts follow the bowl's tangent, outside the ink. Their vertical sides pass through the
+    counters only."""
+    outer, upper, lower, (aL, dL), (aR, dR), (u, dU), (lw, dW) = eight_parts(cs)
+    x0, y0, x1, y1 = bounds_of(cs)
+    h = y1 - y0
+    yT, yB = y0 + yhi * h, y0 + ylo * h
+    ub, lb = bounds_of([upper]), bounds_of([lower])
+    assert u[1] < yT < ub[3] and lb[1] < yB < lw[1], "S cut heights outside the 8's counters"
+
+    def edge(p, dp, q, dq):
+        k = math.hypot(q[0] - p[0], q[1] - p[1]) / 3
+        return (p[0] + dp[0] * k, p[1] + dp[1] * k), (q[0] - dq[0] * k, q[1] - dq[1] * k)
+    m = 20
+    eR = (x1 + m, aR[1] + dR[1] / dR[0] * (x1 + m - aR[0]))
+    eL = (x0 - m, aL[1] + dL[1] / dL[0] * (x0 - m - aL[0]))
+    c1, c2 = edge(u, dU, aR, dR)
+    cut_ur = [[(*u, "line", False), (*c1, None, False), (*c2, None, False), (*aR, "curve", False),
+               (*eR, "line", False), (eR[0], yT, "line", False), (u[0], yT, "line", False)]]
+    c1, c2 = edge(aL, dL, lw, dW)
+    cut_ll = [[(*aL, "line", False), (*c1, None, False), (*c2, None, False), (*lw, "curve", False),
+               (lw[0], yB, "line", False), (eL[0], yB, "line", False), (*eL, "line", False)]]
+    return difference(cs, [cut_ur, cut_ll])
+
+
+def stroke_h(cs):
+    """Thickness of the top horizontal stroke, at the centre of the bounding box."""
+    x0, y0, x1, y1 = bounds_of(cs)
+    ys = crossings(cs, x=(x0 + x1) / 2)
+    return ys[-1] - ys[-2]
+
+
+def stem_v(cs, y):
+    """Thickness of the leftmost vertical stroke at height y."""
+    xs = crossings(cs, y=y)
+    return xs[1] - xs[0]
+
+
+def make_S(font, name, space=None, location=None):
+    if name == "S":
+        cs = contours_of(font["eight"])
+    else:
+        cs = small_eight(font, space, location)
+    new = cut_S_from_8(cs, *CUT_S[name])
+    nb = bounds_of(new)
+    anchors = fit_anchors(font[name], glyph_bounds(font, name), nb)
+    # sidebearings: the original S's (the 8 is a tabular figure with wide ones)
+    ob = glyph_bounds(font, name)
+    lsb, rsb = ob[0], font[name].width - ob[2]
+    dx = lsb - nb[0]
+    new = [[(x + dx, y, t, sm) for x, y, t, sm in c] for c in new]
+    anchors = {k: (x + dx, y) for k, (x, y) in anchors.items()}
+    set_drawing(font, name, new, anchors, lsb + (nb[2] - nb[0]) + rsb)
+
+
+def small_eight(font, space, location):
+    """An x-height 8 for s: Open Sans's 8 interpolated at the weight where, scaled down to the
+    height of o, its top stroke is as thick as s's and then narrowed so its bowls' sides are as
+    thick as o's stem."""
+    wght, wdth = location
+    s_cs, o_cs = contours_of(font["s"]), contours_of(font["o"])
+    target_h = stroke_h(s_cs)
+    ob = bounds_of(o_cs)
+    target_v = stem_v(o_cs, (ob[1] + ob[3]) / 2)
+
+    def eight_at(w):
+        return contours_of(space.glyph("eight", min(w, 800.0), wdth))
+
+    def scaled_h(w):
+        e = eight_at(w)
+        eb = bounds_of(e)
+        return stroke_h(e) * (ob[3] - ob[1]) / (eb[3] - eb[1])
+    lo, hi = wght, 800.0
+    if scaled_h(hi) < target_h:
+        lo = hi
+    else:
+        for _ in range(12):
+            mid = (lo + hi) / 2
+            lo, hi = (mid, hi) if scaled_h(mid) < target_h else (lo, mid)
+    e = eight_at(lo)
+    eb = bounds_of(e)
+    sy = (ob[3] - ob[1]) / (eb[3] - eb[1])
+    lower = eight_parts(e)[2]
+    lb = bounds_of([lower])
+    sx = target_v / stem_v(e, (lb[1] + lb[3]) / 2)
+    return [[(eb[0] + (x - eb[0]) * sx, ob[1] + (y - eb[1]) * sy, t, sm) for x, y, t, sm in c] for c in e]
+
+
+def apply_outline_changes(font, space=None, location=None, roman=True):
+    """Design changes made on every Open Sans instance before fitting (see the parameters at the
+    top): G and K from the Cyrillic drawings; in the roman, C c S s cut out of O o 8."""
+    for latin, cyr in CYRILLIC_OUTLINES.items():
+        use_outline(font, latin, cyr)
+    if roman:
+        for name in CUT_C:
+            cut_C_from_O(font, name)
+        make_S(font, "s", space, location)       # before S: measures the instance's own s
+        make_S(font, "S")
+
+
+def skew_glyph_into(dst_font, src_font, name, t, y0):
+    """dst[name] := src[name] slanted: x' = x + t (y - y0). Components keep their base glyph
+    (which is slanted the same way when it is in OBLIQUE_ITALIC) with the offset slanted."""
+    g = src_font[name]
+    cs = [[(x + t * (y - y0), y, tp, sm) for x, y, tp, sm in c] for c in contours_of(g)]
+    comps = []
+    for c in g.components:
+        xx, xy, yx, yy, ox, oy = c.transformation
+        comps.append((c.baseGlyph, (xx, xy, yx, yy, otround(ox + t * oy), oy)))
+    anchors = {a.name: (a.x + t * (a.y - y0), a.y) for a in g.anchors}
+    old = {a.name for a in dst_font[name].anchors}
+    for a in dst_font[name].anchors:              # names the roman lacks keep the italic's
+        if a.name not in anchors:
+            anchors[a.name] = (a.x, a.y)
+    del old
+    set_drawing(dst_font, name, cs, anchors, g.width, comps)
+
+
+def apply_obliques(italic_font, roman_font):
+    """Italic e f c C s S (and the f ligatures): the roman drawings, slanted by the italic angle
+    about half the x-height."""
+    angle = italic_font.info.italicAngle or 0
+    t = math.tan(math.radians(-angle))
+    y0 = roman_font.info.xHeight / 2
+    for name in OBLIQUE_ITALIC:
+        if name in italic_font and name in roman_font:
+            skew_glyph_into(italic_font, roman_font, name, t, y0)
 
 
 # ----------------------------------------------------------------------------- helpers
@@ -324,6 +804,21 @@ def build_style(key, spaces, metrics_dir, out_dir, report):
     grid += [(sp.wght_for_stem(target_stem / k, min(WDTH_GRID)), min(WDTH_GRID), k) for k in STRETCH_NARROW]
     log(key, "scale %.5f" % s, "grid", grid)
     insts = {gw: sp.instance(gw[0], gw[1]) for gw in grid}
+    if italic:
+        # obliques: each italic instance takes its glyphs from the roman instance the matching
+        # upright style uses at the same wdth and stretch (stem solved the same way)
+        rsp = spaces["roman"]
+        r_stem = rsp.stem(W, 100)
+        for gw in grid:
+            wr = rsp.wght_for_stem(r_stem / gw[2], gw[1])
+            f = insts[gw]
+            tag = [wr, gw[1]]
+            prev = f.lib.get("org.apodi.obliqueFrom")
+            if prev == tag:
+                continue
+            assert prev is None, ("italic instance shared by two roman matches", gw, prev, tag)
+            apply_obliques(f, rsp.instance(wr, gw[1]))
+            f.lib["org.apodi.obliqueFrom"] = tag
     any_inst = insts[grid[len(WDTH_GRID) - 1]]
     order = list(any_inst.lib.get("public.glyphOrder", [])) or list(any_inst.keys())
     order = [g for g in order if g in any_inst] + sorted(set(any_inst.keys()) - set(order))
@@ -561,6 +1056,8 @@ def build_style(key, spaces, metrics_dir, out_dir, report):
     font.lib["org.apodi.fit"] = {
         "scale": s, "grid_wght_wdth_stretch": [list(g) for g in grid], "defaultInstance": list(default_gw),
         "mVertexRaise": M_VERTEX_RAISE, "defaultAlternates": DEFAULT_ALTERNATES["italic" if italic else "roman"],
+        "cyrillicOutlines": CYRILLIC_OUTLINES, "cutC": {k: list(v) for k, v in CUT_C.items()},
+        "cutS": {k: list(v) for k, v in CUT_S.items()}, "obliques": OBLIQUE_ITALIC if italic else [],
     }
     for g in font:
         for k in list(g.lib):
@@ -571,9 +1068,11 @@ def build_style(key, spaces, metrics_dir, out_dir, report):
             font.layers.remove(layer.name)
 
     path = os.path.join(out_dir, f"{info.postscriptFontName}.ufo")
-    if os.path.exists(path):
-        shutil.rmtree(path)
-    font.save(path)
+    for _ in range(5):                          # a file manager may drop .DS_Store meanwhile
+        if not os.path.exists(path):
+            break
+        shutil.rmtree(path, ignore_errors=True)
+    font.save(path, overwrite=True)
 
     rels = [abs(r["rel"]) for r in rec]
     report[key] = dict(
@@ -644,7 +1143,7 @@ def main():
     spaces["roman"] = OpenSansSpace(os.path.join(a.opensans, "OpenSans-Roman.designspace"),
                                     DEFAULT_ALTERNATES["roman"])
     spaces["italic"] = OpenSansSpace(os.path.join(a.opensans, "OpenSans-Italic.designspace"),
-                                     DEFAULT_ALTERNATES["italic"])
+                                     DEFAULT_ALTERNATES["italic"], roman=False)
     report, built = {}, {}
     for k in a.styles.split(","):
         built[k] = build_style(k, spaces, a.metrics, a.out, report)

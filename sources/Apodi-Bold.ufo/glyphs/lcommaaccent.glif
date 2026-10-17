@@ -6,6 +6,6 @@
   <anchor x="303" y="1433" name="top"/>
   <outline>
     <component base="l"/>
-    <component base="commaaccent2" xScale="1.06" xOffset="-203"/>
+    <component base="commaaccent2" xScale="1.06" xOffset="-204"/>
   </outline>
 </glyph>

@@ -1,6 +1,6 @@
 # Apodi: build report
 
-Date: 2026-10-17. Version 1.000. All numbers below come from `./build.sh check` and `build/fit_report.json` for the
+Date: 2026-10-17. Version 1.001. All numbers below come from `./build.sh check` and `build/fit_report.json` for the
 binaries in `fonts/`.
 
 ## 1. Inventory
@@ -69,10 +69,10 @@ and Black are not built.
    - Mark positioning (`mark`/`mkmk`) comes from Open Sans anchors, transformed with each glyph.
 6. **Vertical metrics.** hhea, typo and win values are copied from the reference; USE_TYPO_METRICS is set.
 7. **Ligatures.** `liga` keeps `ff`, `fi` and `fl` at the reference advances; `ffi`/`ffl` are removed to match.
-8. **Letter shapes.** Besides the M (§5), two Open Sans alternates were checked against the reference renderings and
-   promoted to default: J.salt (J sitting on the baseline, all styles) and a.ss01 (double-storey a, italics). The
-   double-storey (binocular) g stays the default, as in the reference; the single-storey g is still reachable via
-   `salt`/`ss01`/`ss02`.
+8. **Letter shapes.** Besides the M and the redrawn G K C c S s and italic obliques (§5), two Open Sans alternates
+   were checked against the reference renderings and promoted to default: J.salt (J sitting on the baseline, all
+   styles) and a.ss01 (double-storey a, italics). The double-storey (binocular) g stays the default, as in the
+   reference; the single-storey g is still reachable via `salt`/`ss01`/`ss02`.
 9. **Build.** fontmake (cubic to quadratic, overlaps removed, unhinted), then subsetting to the shipped glyph set, then
    WOFF2.
 
@@ -83,25 +83,25 @@ reference's very wide spacing accents (´ ` ¸ ˙, 1,130 units).
 
 | Style | at wdth 100 | narrower wdth | stretched (k≠1) | scaled-down symbols | median abs residual | p90 | >5% | >10% |
 |---|---|---|---|---|---|---|---|---|
-| Regular | 711 | 292 | 511 | ® | 0.7% | 8.6% | 134 | 83 |
-| Bold | 599 | 404 | 426 | ® | 0.6% | 9.3% | 150 | 78 |
-| Italic | 919 | 84 | 858 | ® | 2.5% | 13.4% | 367 | 145 |
-| Bold Italic | 872 | 131 | 814 | ‹ › ® | 1.7% | 13.2% | 289 | 128 |
-| Narrow Regular | 231 | 772 | 175 | ® | 0.8% | 2.4% | 71 | 51 |
-| Narrow Bold | 170 | 833 | 142 | ₧ ® ″ ™ | 0.5% | 2.0% | 79 | 52 |
-| Narrow Italic | 535 | 468 | 409 | ® | 0.6% | 7.3% | 125 | 54 |
-| Narrow Bold Italic | 303 | 700 | 224 | « » ‹ › ₧ ® ™ | 0.7% | 5.6% | 113 | 49 |
-| Display Regular | 415 | 588 | 315 | ® | 0.7% | 4.7% | 99 | 55 |
-| Display Bold | 378 | 625 | 308 | ® | 0.6% | 6.1% | 106 | 61 |
-| Display Italic | 706 | 297 | 623 | ® | 0.9% | 9.7% | 257 | 89 |
-| Display Bold Italic | 690 | 313 | 593 | ® | 0.7% | 10.1% | 197 | 103 |
+| Regular | 683 | 320 | 483 | ® | 0.7% | 5.2% | 106 | 63 |
+| Bold | 580 | 423 | 389 | ® | 0.6% | 7.7% | 136 | 69 |
+| Italic | 888 | 115 | 827 | ® | 1.6% | 11.2% | 312 | 118 |
+| Bold Italic | 848 | 155 | 783 | ‹ › ® | 1.0% | 9.1% | 258 | 92 |
+| Narrow Regular | 203 | 800 | 147 | ® | 0.8% | 2.1% | 71 | 51 |
+| Narrow Bold | 142 | 861 | 114 | ₧ ® ″ ™ | 0.5% | 1.8% | 79 | 52 |
+| Narrow Italic | 485 | 518 | 342 | ® | 0.6% | 7.8% | 133 | 84 |
+| Narrow Bold Italic | 261 | 742 | 185 | « » ‹ › ₧ ® ™ | 0.7% | 4.3% | 93 | 52 |
+| Display Regular | 389 | 614 | 295 | ® | 0.7% | 4.1% | 88 | 55 |
+| Display Bold | 352 | 651 | 274 | ® | 0.6% | 3.7% | 88 | 61 |
+| Display Italic | 661 | 342 | 578 | ® | 0.9% | 9.1% | 230 | 88 |
+| Display Bold Italic | 645 | 358 | 540 | ® | 0.6% | 8.2% | 161 | 85 |
 
 **Largest residuals among letters:**
 
-- **Regular:** C/c and their accented forms +11%, OE +15%, IJ +14%, ª º +18–19%, AE +9%, ƒ −21%. g, J and a are within
-  about 1%.
-- **Italic,** even at the 6% stretch limit: C +18%, c +16%, F +14%, S/s +13%, E +9%, V Y e R +8%. Open Sans Italic is
-  simply narrower than the reference italic.
+- **Regular:** OE +15%, IJ +14%, ª º +18–19%, AE +9%, ƒ −21%. C c G K S s e f, g, J and a are within about 2%
+  (C and c were +11% before they were cut out of O and o).
+- **Italic:** F +14%, E +9%. The redrawn C c S s e f are within about 2% (before: C +18%, c +16%, S/s +13%, e +8%);
+  in Bold Italic, S/s and K are at +5–6%.
 
 ## 3. Validation
 
@@ -136,6 +136,11 @@ them as `ff`+`i`, so `f`+`ﬁ` differs by 1 unit.
   reference renderings, so they are local only and git-ignored.
 - **`docs/comparison/M_with_reference.png`:** local only.
 - **`docs/images/M_before_after.png`:** Open Sans M against Apodi Regular, Bold and Italic. Committed.
+- **`docs/images/revisions.png`:** the G K M, C c S s and italic obliques rows, Aptos / Apodi before / Apodi after, in
+  Regular and Bold (with their italics); made by `scripts/revisions.py --aptos`. It contains reference renderings, so
+  it is git-ignored like `docs/comparison/`.
+- **`docs/images/revisions-apodi.png`:** the same rows without the reference, Apodi before / after, in Regular, Bold,
+  Narrow Bold and Display Regular. Committed.
 - **`docs/images/specimen.png`:** all 12 styles. Committed.
 
 ## 4. Visible design differences
@@ -143,28 +148,45 @@ them as `ff`+`i`, so `f`+`ﬁ` differs by 1 unit.
 - **Lowercase** is about 4% taller, because caps are matched.
 - **Matching shapes:** g (binocular), J (on the baseline) and the italic a (double-storey) match the reference's
   structure.
-- **Italic overall:** the biggest difference. Open Sans Italic is narrower and more cursive than the reference's sloped
-  roman. Even with 6% stretch, C, c, e, s, F, S and E carry visibly extra space. It is the best candidate for
-  redrawing: wider c/e/s/o and a less cursive structure.
-- **Italic f** descends below the baseline. A non-descending `f.ss02` exists, but the `f_f` ligature is a separate
-  drawing and would need redrawing too.
-- **C, c, G, S, s:** Open Sans's apertures are narrower, so these letters get extra sidebearings (C and c +11%) and
-  read as looser spacing. G keeps Open Sans's spur and bar.
-- **Q, R, K, t, f, j, l, y:** terminals, tails and legs follow Open Sans.
+- **Italic overall:** Open Sans Italic is narrower and more cursive than the reference's sloped roman. e, f (and
+  ff fi fl), c, C, s and S are now obliques of the roman forms, which removes most of the extra space they carried; F
+  and E still carry visibly extra space. The other lowercase keeps Open Sans's cursive italic structure.
+- **C, c, S, s** are cut out of O, o and 8, with flat horizontal terminals and a wider aperture than Open Sans's;
+  their spacing is now close to the reference's. The S spine is the 8's waist, a little lighter than the bowls in
+  the Bold styles.
+- **G** has no spur (Open Sans's Komi Sje); **K** is Open Sans's Cyrillic Ka.
+- **Q, R, t, f, j, l, y:** terminals, tails and legs follow Open Sans.
 - **Figures 1-2-3-4-5-6-9** follow Open Sans's shapes; their widths are identical to the reference.
 - **Punctuation:** quotes and commas are comma-shaped where the reference uses wedges. The bullet • is smaller, and the
   dots are smaller and round.
 - **Scaled-down symbols:** ®, and in some styles ™ ″ ₧ « » ‹ ›, are smaller than in Open Sans.
 - **Spacing accents** have very wide advances in the reference; Apodi centres Open Sans's small accents in that space.
-- **M:** Apodi's vertex sits at 16% of the cap height; the reference's sits at about a third. Try `M_VERTEX_RAISE` =
-  0.25–0.33.
+- **M:** Apodi's vertex sits at 25% of the cap height; the reference's sits at about a third.
 - **Narrow** keeps Open Sans's condensed proportions.
 
-## 5. The M
+## 5. Letter shapes redrawn in the pipeline
 
-The two on-curve points at the bottom of the V and the two crotch points move up by 16% of the cap height: 234 units in
-Open Sans space, 215 in Apodi. In italics they also move along the 12° slant. The change is made in `modify_M()` on
-every interpolated instance before fitting, so Ḿ, Greek Μ and Cyrillic М inherit it.
+All of these are made in `scripts/build_sources.py` on every interpolated Open Sans instance before fitting, so the
+width choice and the locked advance treat the new drawing like any other glyph. Composites follow their base: their
+marks move with the base's anchors, and accented forms (Ğ Ķ Ç ç Ş š é ę …) and the Cyrillic/Greek letters built on
+these glyphs inherit the change.
+
+- **M.** The two on-curve points at the bottom of the V and the two crotch points move up by 25% of the cap height
+  (`M_VERTEX_RAISE`): 366 units in Open Sans space, 337 in Apodi. In italics they also move along the 12° slant.
+- **G, K.** Drawn with Open Sans's Cyrillic Komi Sje (Ԍ, `uni050C`) and Ka (К, `afii10028`), present in every master
+  of both designspaces. The Latin names, kerning and groups stay.
+- **C, c.** O and o minus a rectangle from the horizontal centre to past the right edge, from 30% to 70% of the
+  height (`CUT_C`, via skia-pathops), which leaves flat horizontal terminals.
+- **S.** The 8 minus its upper-right quarter (centre to right edge, waist to 74% of the height) and lower-left
+  quarter (left edge to centre, 26% to the waist). Open Sans's 8 is one outer contour with two counters; its waist
+  corners lie on the edges of two crossing S-curves. The cuts are bounded at the waist by curves tangent to those
+  edges, so no stub of the other diagonal remains and the spine is one smooth stroke.
+- **s.** The same cut on an x-height 8: Open Sans has no x-height 8 (its oldstyle 8 is full height, and ȣ is
+  open-topped), so the cap 8 is interpolated at the weight at which, scaled to the height of o, its top stroke matches
+  s's, then narrowed so its bowls match o's stem.
+- **Italic e f c C s S** (with ę and the ff fi fl ffi ffl ligatures): the glyph of the roman instance that the
+  matching upright style uses at the same wdth and stretch (stem solved the same way), slanted by the italic angle
+  (−12°) about half the x-height. Anchors are slanted with them.
 
 ## 6. Residual issues and risks
 
@@ -177,7 +199,8 @@ every interpolated instance before fitting, so Ḿ, Greek Μ and Cyrillic М inh
    after hinting; there, 6–12 of 318 Latin glyphs are 1 px off at 13–20 ppem. Modern layout engines use unrounded
    widths and are unaffected.
 4. **ﬁ/ﬂ after `f`** in three styles: a 1-unit difference, see §3(a).
-5. **Italic spacing** looks loose (§4).
+5. **Italic spacing:** F and E still look loose (§4).
 6. **Bold** may read slightly heavier than the reference; tune `BASE_WGHT` if needed.
-7. **Interpolation:** the 12 UFOs share point structure but are fitted independently. They are separate styles, and no
-   variable font is offered.
+7. **Interpolation:** the 12 UFOs mostly share point structure but are fitted independently; the cut C c S s are
+   boolean results and are not point-compatible across styles. They are separate styles, and no variable font is
+   offered.

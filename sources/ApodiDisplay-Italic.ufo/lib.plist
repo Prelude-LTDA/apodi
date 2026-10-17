@@ -30,6 +30,43 @@
     </array>
     <key>org.apodi.fit</key>
     <dict>
+      <key>cutC</key>
+      <dict>
+        <key>C</key>
+        <array>
+          <string>O</string>
+          <real>0.5</real>
+          <real>0.3</real>
+          <real>0.7</real>
+        </array>
+        <key>c</key>
+        <array>
+          <string>o</string>
+          <real>0.5</real>
+          <real>0.3</real>
+          <real>0.7</real>
+        </array>
+      </dict>
+      <key>cutS</key>
+      <dict>
+        <key>S</key>
+        <array>
+          <real>0.26</real>
+          <real>0.74</real>
+        </array>
+        <key>s</key>
+        <array>
+          <real>0.27</real>
+          <real>0.73</real>
+        </array>
+      </dict>
+      <key>cyrillicOutlines</key>
+      <dict>
+        <key>G</key>
+        <string>uni050C</string>
+        <key>K</key>
+        <string>afii10028</string>
+      </dict>
       <key>defaultAlternates</key>
       <array>
         <array>
@@ -136,7 +173,23 @@
         </array>
       </array>
       <key>mVertexRaise</key>
-      <real>0.16</real>
+      <real>0.25</real>
+      <key>obliques</key>
+      <array>
+        <string>e</string>
+        <string>eogonek</string>
+        <string>eogonek.loclNAV</string>
+        <string>f</string>
+        <string>c</string>
+        <string>C</string>
+        <string>s</string>
+        <string>S</string>
+        <string>f_f</string>
+        <string>fi</string>
+        <string>fl</string>
+        <string>f_f_i</string>
+        <string>f_f_l</string>
+      </array>
       <key>scale</key>
       <real>0.920656634746922</real>
     </dict>

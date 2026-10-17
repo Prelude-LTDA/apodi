@@ -2,10 +2,10 @@
 <glyph name="uni03FE" format="2">
   <advance width="1292"/>
   <unicode hex="03FE"/>
-  <anchor x="671" y="0" name="bottom"/>
-  <anchor x="910" y="1346" name="top"/>
+  <anchor x="541" y="0" name="bottom"/>
+  <anchor x="828" y="1346" name="top"/>
   <outline>
     <component base="C"/>
-    <component base="period" xOffset="689" yOffset="543"/>
+    <component base="period" xOffset="613" yOffset="533"/>
   </outline>
 </glyph>

@@ -2,10 +2,10 @@
 <glyph name="uni1EBD" format="2">
   <advance width="1025"/>
   <unicode hex="1EBD"/>
-  <anchor x="445" y="0" name="bottom"/>
-  <anchor x="717" y="1428" name="top"/>
+  <anchor x="423" y="0" name="bottom"/>
+  <anchor x="714" y="1445" name="top"/>
   <outline>
     <component base="e"/>
-    <component base="tilde" xScale="0.9433962264150942" xOffset="46"/>
+    <component base="tilde" xScale="0.9433962264150942" xOffset="61" yOffset="13"/>
   </outline>
 </glyph>

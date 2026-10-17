@@ -2,10 +2,10 @@
 <glyph name="eacute" format="2">
   <advance width="993"/>
   <unicode hex="00E9"/>
-  <anchor x="441" y="0" name="bottom"/>
-  <anchor x="719" y="1445" name="top"/>
+  <anchor x="427" y="0" name="bottom"/>
+  <anchor x="705" y="1444" name="top"/>
   <outline>
-    <component base="e"/>
-    <component base="acute" xOffset="62"/>
+    <component base="e" xScale="0.9999999999999999" yScale="0.9999999999999999" xOffset="49"/>
+    <component base="acute" xScale="0.9999999999999999" yScale="0.9999999999999999" xOffset="57" yOffset="-1"/>
   </outline>
 </glyph>
