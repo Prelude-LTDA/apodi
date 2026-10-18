@@ -1,4 +1,4 @@
-"""Before/after sheet for the letter-shape revisions (G K M, cut C c S s, italic obliques).
+"""Before/after sheet for the letter-shape revisions (G K k M, cut C c S s, italic obliques).
 
   python -I scripts/revisions.py --before OLD_TTF_DIR --after fonts/ttf [--aptos APTOS_DIR] \
          --styles Regular,Bold --out docs/images/revisions.png
@@ -13,10 +13,10 @@ import os
 from PIL import Image, ImageDraw, ImageFont
 
 REF = {"": "Aptos", "Narrow": "Aptos Narrow", "Display": "Aptos Display"}
-UPRIGHT = ["G Ğ Gaming", "K Ķ Kick", "M Museum", "C c Ç ç Classic", "S s Ş š Sessions",
-           "Gaming Kick Museum"]
-ITALIC = ["f e é offence", "C c Ç ç classic", "S s Ş š Sessions", "offence classic Sessions",
-          "Gaming Kick Museum"]
+UPRIGHT = ["G Ğ Gaming", "K Ķ Kick", "k ķ kick keeps", "M Museum", "C c Ç ç Classic",
+           "S s Ş š Sessions", "Sessions class asks", "Gaming Kick Museum"]
+ITALIC = ["f e é offence", "C c Ç ç classic", "S s Ş š Sessions", "Sessions class asks",
+          "k ķ kick keeps", "offence classic Sessions", "Gaming Kick Museum"]
 SIZE = 54
 
 

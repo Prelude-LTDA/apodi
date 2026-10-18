@@ -1,6 +1,6 @@
 # Apodi: build report
 
-Date: 2026-10-17. Version 1.001. All numbers below come from `./build.sh check` and `build/fit_report.json` for the
+Date: 2026-10-17. Version 1.002. All numbers below come from `./build.sh check` and `build/fit_report.json` for the
 binaries in `fonts/`.
 
 ## 1. Inventory
@@ -69,7 +69,7 @@ and Black are not built.
    - Mark positioning (`mark`/`mkmk`) comes from Open Sans anchors, transformed with each glyph.
 6. **Vertical metrics.** hhea, typo and win values are copied from the reference; USE_TYPO_METRICS is set.
 7. **Ligatures.** `liga` keeps `ff`, `fi` and `fl` at the reference advances; `ffi`/`ffl` are removed to match.
-8. **Letter shapes.** Besides the M and the redrawn G K C c S s and italic obliques (§5), two Open Sans alternates
+8. **Letter shapes.** Besides the M and the redrawn G K k C c S s and italic obliques (§5), two Open Sans alternates
    were checked against the reference renderings and promoted to default: J.salt (J sitting on the baseline, all
    styles) and a.ss01 (double-storey a, italics). The double-storey (binocular) g stays the default, as in the
    reference; the single-storey g is still reachable via `salt`/`ss01`/`ss02`.
@@ -83,22 +83,22 @@ reference's very wide spacing accents (´ ` ¸ ˙, 1,130 units).
 
 | Style | at wdth 100 | narrower wdth | stretched (k≠1) | scaled-down symbols | median abs residual | p90 | >5% | >10% |
 |---|---|---|---|---|---|---|---|---|
-| Regular | 683 | 320 | 483 | ® | 0.7% | 5.2% | 106 | 63 |
+| Regular | 685 | 318 | 483 | ® | 0.7% | 5.2% | 106 | 63 |
 | Bold | 580 | 423 | 389 | ® | 0.6% | 7.7% | 136 | 69 |
 | Italic | 888 | 115 | 827 | ® | 1.6% | 11.2% | 312 | 118 |
-| Bold Italic | 848 | 155 | 783 | ‹ › ® | 1.0% | 9.1% | 258 | 92 |
+| Bold Italic | 848 | 155 | 781 | ‹ › ® | 1.0% | 9.1% | 258 | 92 |
 | Narrow Regular | 203 | 800 | 147 | ® | 0.8% | 2.1% | 71 | 51 |
 | Narrow Bold | 142 | 861 | 114 | ₧ ® ″ ™ | 0.5% | 1.8% | 79 | 52 |
-| Narrow Italic | 485 | 518 | 342 | ® | 0.6% | 7.8% | 133 | 84 |
+| Narrow Italic | 487 | 516 | 342 | ® | 0.6% | 7.8% | 133 | 84 |
 | Narrow Bold Italic | 261 | 742 | 185 | « » ‹ › ₧ ® ™ | 0.7% | 4.3% | 93 | 52 |
 | Display Regular | 389 | 614 | 295 | ® | 0.7% | 4.1% | 88 | 55 |
 | Display Bold | 352 | 651 | 274 | ® | 0.6% | 3.7% | 88 | 61 |
-| Display Italic | 661 | 342 | 578 | ® | 0.9% | 9.1% | 230 | 88 |
+| Display Italic | 663 | 340 | 578 | ® | 0.9% | 9.1% | 230 | 88 |
 | Display Bold Italic | 645 | 358 | 540 | ® | 0.6% | 8.2% | 161 | 85 |
 
 **Largest residuals among letters:**
 
-- **Regular:** OE +15%, IJ +14%, ª º +18–19%, AE +9%, ƒ −21%. C c G K S s e f, g, J and a are within about 2%
+- **Regular:** OE +15%, IJ +14%, ª º +18–19%, AE +9%, ƒ −21%. C c G K k S s e f, g, J and a are within about 2%
   (C and c were +11% before they were cut out of O and o).
 - **Italic:** F +14%, E +9%. The redrawn C c S s e f are within about 2% (before: C +18%, c +16%, S/s +13%, e +8%);
   in Bold Italic, S/s and K are at +5–6%.
@@ -136,12 +136,10 @@ them as `ff`+`i`, so `f`+`ﬁ` differs by 1 unit.
   reference renderings, so they are local only and git-ignored.
 - **`docs/comparison/M_with_reference.png`:** local only.
 - **`docs/images/M_before_after.png`:** Open Sans M against Apodi Regular, Bold and Italic. Committed.
-- **`docs/images/revisions.png`:** the G K M, C c S s and italic obliques rows, Aptos / Apodi before / Apodi after, in
-  Regular and Bold (with their italics); made by `scripts/revisions.py --aptos`. It contains reference renderings, so
-  it is git-ignored like `docs/comparison/`.
-- **`docs/images/revisions-apodi.png`:** the same rows without the reference, Apodi before / after, in Regular, Bold,
-  Narrow Bold and Display Regular. Committed.
-- **`docs/images/specimen.png`:** all 12 styles. Committed.
+- **`docs/images/revisions.png`:** rows for G K k M, C c S s (with "Sessions class asks", "kick keeps") and the italic
+  obliques, Aptos / Apodi 1.000 / Apodi now, in Regular, Bold and Narrow Bold with their italics; made by
+  `scripts/revisions.py --aptos`. It contains reference renderings, so it is git-ignored like `docs/comparison/`.
+- **`docs/images/revisions-apodi.png`:** the same rows without the reference (Apodi 1.000 / now). Committed.
 
 ## 4. Visible design differences
 
@@ -152,9 +150,8 @@ them as `ff`+`i`, so `f`+`ﬁ` differs by 1 unit.
   ff fi fl), c, C, s and S are now obliques of the roman forms, which removes most of the extra space they carried; F
   and E still carry visibly extra space. The other lowercase keeps Open Sans's cursive italic structure.
 - **C, c, S, s** are cut out of O, o and 8, with flat horizontal terminals and a wider aperture than Open Sans's;
-  their spacing is now close to the reference's. The S spine is the 8's waist, a little lighter than the bowls in
-  the Bold styles.
-- **G** has no spur (Open Sans's Komi Sje); **K** is Open Sans's Cyrillic Ka.
+  their spacing is now close to the reference's. The S/s spine is drawn as thick as the bowls in every weight.
+- **G** has no spur (Open Sans's Komi Sje); **K** and **k** are Open Sans's Cyrillic К and к (k's stem extended).
 - **Q, R, t, f, j, l, y:** terminals, tails and legs follow Open Sans.
 - **Figures 1-2-3-4-5-6-9** follow Open Sans's shapes; their widths are identical to the reference.
 - **Punctuation:** quotes and commas are comma-shaped where the reference uses wedges. The bullet • is smaller, and the
@@ -175,13 +172,20 @@ these glyphs inherit the change.
   (`M_VERTEX_RAISE`): 366 units in Open Sans space, 337 in Apodi. In italics they also move along the 12° slant.
 - **G, K.** Drawn with Open Sans's Cyrillic Komi Sje (Ԍ, `uni050C`) and Ka (К, `afii10028`), present in every master
   of both designspaces. The Latin names, kerning and groups stay.
+- **k.** Open Sans's Cyrillic ka (к, `afii10076`) with the two top points of its stem moved up to the Latin k's
+  ascender (along the slant in the italics, which use the italic к), so the stem top is flat like l's and h's.
+  ķ ǩ follow; Cyrillic к is unchanged.
 - **C, c.** O and o minus a rectangle from the horizontal centre to past the right edge, from 30% to 70% of the
   height (`CUT_C`, via skia-pathops), which leaves flat horizontal terminals.
-- **S.** The 8 minus its upper-right quarter (centre to right edge, waist to 74% of the height) and lower-left
-  quarter (left edge to centre, 26% to the waist). Open Sans's 8 is one outer contour with two counters; its waist
-  corners lie on the edges of two crossing S-curves. The cuts are bounded at the waist by curves tangent to those
-  edges, so no stub of the other diagonal remains and the spine is one smooth stroke.
-- **s.** The same cut on an x-height 8: Open Sans has no x-height 8 (its oldstyle 8 is full height, and ȣ is
+- **S.** The 8 minus its upper-right quarter (centre to right edge, waist to 72% of the height) and lower-left
+  quarter (left edge to centre, 29% to the waist), so the terminals are a little longer than a half-and-half cut. The
+  8's waist (thin, and steep in the narrow s) is replaced by a drawn spine: a band whose edges are single cubics,
+  tangent to the bowls half-way up the upper counter and half-way down the lower one, running at 30° from the
+  horizontal at the centre, as thick (perpendicular) as the bowls' vertical strokes (`S_SPINE`). The 8 is cut along
+  the same curves and the band added, so no stub of the other diagonal remains and the 8's pointed counters become
+  round.
+- **s.** The same construction (terminal cuts at 32% and 69%, spine at 24°, the angle of the reference's s judged by
+  eye) on an x-height 8: Open Sans has no x-height 8 (its oldstyle 8 is full height, and ȣ is
   open-topped), so the cap 8 is interpolated at the weight at which, scaled to the height of o, its top stroke matches
   s's, then narrowed so its bowls match o's stem.
 - **Italic e f c C s S** (with ę and the ff fi fl ffi ffl ligatures): the glyph of the roman instance that the

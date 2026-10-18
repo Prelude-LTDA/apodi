@@ -39,6 +39,15 @@ weight class, italic angle. No outlines, points or curves were taken from Aptos.
 Changelog
 ---------
 
+2026-10-17 (The Apodi Project Authors) Apodi v1.002
+- Outline changes only; metrics, kerning and line breaks unchanged against the reference.
+- S and s: the 8's thin waist is replaced by a drawn spine, as thick as the bowls in every
+  weight and flatter (30 degrees for S, 24 for s, judged against the reference's s), joining
+  the bowls tangentially; the cuts are slightly smaller (S terminals at 29%/72% of the height,
+  s at 32%/69%), so the terminals are longer and the openings narrower.
+- k drawn with Open Sans's Cyrillic ka (U+043A), its stem extended to the ascender with a flat
+  top as on l and h; k-cedilla and k-caron follow, Cyrillic ka itself unchanged.
+
 2026-10-17 (The Apodi Project Authors) Apodi v1.001
 - Outline changes only; advance widths, kerning, vertical metrics and ligatures unchanged
   (0 metric mismatches, 0 line-break differences against the reference).
@@ -95,4 +104,4 @@ W: https://github.com/googlefonts/opensans
 D: Open Sans sources
 
 N: The Apodi Project Authors
-D: Metric fitting, letter-shape changes (M, G, K, C, S, italic obliques), build tooling
+D: Metric fitting, letter-shape changes (M, G, K, k, C, S, italic obliques), build tooling

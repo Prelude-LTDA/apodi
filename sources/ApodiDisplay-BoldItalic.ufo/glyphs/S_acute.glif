@@ -2,10 +2,10 @@
 <glyph name="Sacute" format="2">
   <advance width="1175"/>
   <unicode hex="015A"/>
-  <anchor x="455" y="0" name="bottom"/>
-  <anchor x="886" y="1764" name="top"/>
+  <anchor x="456" y="0" name="bottom"/>
+  <anchor x="887" y="1764" name="top"/>
   <outline>
     <component base="S"/>
-    <component base="acute" xScale="1.06" xOffset="163" yOffset="319"/>
+    <component base="acute" xScale="1.06" xOffset="164" yOffset="319"/>
   </outline>
 </glyph>

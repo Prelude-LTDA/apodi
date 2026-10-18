@@ -18,8 +18,8 @@ What it does, per style:
   3. sets the exact advance by moving sidebearings (difference split in proportion to the
      existing left/right sidebearings), with at most +-3% horizontal outline scaling at the
      ends of the width range;
-  4. design changes on each instance (before 1-3): raises the M's middle vertex, draws G and K
-     with Open Sans's Cyrillic Komi Sje and Ka, cuts C c S s out of O o 8, and in the italics
+  4. design changes on each instance (before 1-3): raises the M's middle vertex, draws G, K and k
+     with Open Sans's Cyrillic Komi Sje, Ka and ka, cuts C c S s out of O o 8, and in the italics
      replaces e f c C s S (and the f ligatures) with the matching roman glyphs slanted;
   5. writes kerning from the reference pair values (class-compressed), drops ligatures the
      reference doesn't form, and sets vertical metrics to the reference numbers.
@@ -67,20 +67,26 @@ M_VERTEX_RAISE = 0.25                           # M middle vertex raised by 25% 
 # slanted from the italic): G takes Komi Sje (U+050C), K takes Ka (U+041A). Names, Unicode values,
 # kerning and groups stay the Latin glyph's.
 CYRILLIC_OUTLINES = {"G": "uni050C", "K": "afii10028"}
+# Lowercase k is Cyrillic ka (U+043A) with its stem extended up to k's ascender.
+K_CYRILLIC_LC = 0x043A
 # C and c are cut out of O and o: a rectangle covering the right side of the bowl (fractions of
 # the source glyph's bounding box: x from CUT_C[0] to beyond the right edge, y from CUT_C[1]
 # to CUT_C[2]) is removed, which leaves flat horizontal terminals.
 CUT_C = {"C": ("O", 0.50, 0.30, 0.70), "c": ("o", 0.50, 0.30, 0.70)}
 # S and s are cut out of 8: the upper-right quadrant (from the centre to the right edge, from
 # the waist to CUT_S[1] of the height) and the lower-left quadrant (from the left edge to the
-# centre, from CUT_S[0] up to the waist) are removed. The cuts follow the 8's waist, so the
-# spine is one stroke (see cut_S_from_8). s uses the 8 scaled to x-height, drawn at the weight
-# that gives s's own horizontal stroke and o's stem after scaling.
-CUT_S = {"S": (0.26, 0.74), "s": (0.27, 0.73)}
+# centre, from CUT_S[0] up to the waist) are removed, and the 8's waist is replaced by a drawn
+# spine (S_SPINE; see cut_S_from_8). s uses the 8 scaled to x-height, drawn at the weight that
+# gives s's own horizontal stroke and o's stem after scaling.
+CUT_S = {"S": (0.29, 0.72), "s": (0.32, 0.69)}
+# The S/s spine (see cut_S_from_8): angle from the horizontal at the centre (degrees), weight as
+# a multiple of the bowls' vertical strokes, and where it joins the bowls (fraction of each
+# counter's height, from the waist).
+S_SPINE = {"S": (30.0, 1.0, 0.5), "s": (24.0, 1.0, 0.5)}
 # In the italics these glyphs are the matching roman's (same wdth, weight and stretch) slanted
 # by the italic angle: obliques, instead of Open Sans's cursive forms. The f ligatures follow f.
 OBLIQUE_ITALIC = ["e", "eogonek", "eogonek.loclNAV", "f", "c", "C", "s", "S", "f_f", "fi", "fl", "f_f_i", "f_f_l"]
-VERSION = (1, 1)
+VERSION = (1, 2)
 
 STYLES = {
     # key: family, style, italic, weight, Narrow?, Display?, OS/2 width class
@@ -480,6 +486,28 @@ def use_outline(font, name, source):
     set_drawing(font, name, cs, anchors, s.width)
 
 
+def k_from_cyrillic(font):
+    """Lowercase k drawn with Cyrillic ka (U+043A): its stem is extended from the x-height to
+    the Latin k's ascender (along the slant in italics); the stem top stays flat, as on l and h."""
+    ka = next(g.name for g in font if K_CYRILLIC_LC in g.unicodes)
+    src = font[ka]
+    assert src.contours and not src.components, (ka, "is not a simple glyph")
+    cs = contours_of(src)
+    top = max(p[1] for c in cs for p in c if p[2] is not None)
+    stem_top = sorted(((ci, pi) for ci, c in enumerate(cs) for pi, p in enumerate(c)
+                       if p[2] is not None and abs(p[1] - top) < 1), key=lambda t: cs[t[0]][t[1]][0])[:2]
+    assert len(stem_top) == 2, "unexpected ka structure"
+    kb = glyph_bounds(font, "k")
+    dy = kb[3] - top
+    dx = -math.tan(math.radians(font.info.italicAngle or 0)) * dy
+    for ci, pi in stem_top:
+        x, y, t, sm = cs[ci][pi]
+        cs[ci][pi] = (x + dx, y + dy, t, sm)
+    src_anchors = {a.name: (a.x, a.y) for a in src.anchors if a.name == "bottom"}
+    anchors = fit_anchors(font["k"], kb, bounds_of(cs), src_anchors)
+    set_drawing(font, "k", cs, anchors, src.width)
+
+
 def glyph_bounds(font, name):
     bp = BoundsPen(font)
     font[name].draw(bp)
@@ -540,35 +568,94 @@ def eight_parts(cs):
     return outer, upper, lower, (aL, dL), (aR, dR), (u, dU), (lw, dW)
 
 
-def cut_S_from_8(cs, ylo, yhi):
-    """S out of an 8. The 8 is drawn as two S-curves crossing at the waist: the upper counter's
-    bottom corner U and the outer right waist corner AR lie on the edge of one of them (and the
-    outer left corner AL and the lower counter's top corner LW on the edge of the other). The
-    upper-right cut is bounded below by a curve from U to AR, and the lower-left one above by a
-    curve from AL to LW, each tangent to the 8's own edges at both ends, so what is left of the
-    waist is the spine as one smooth stroke, without stubs of the other diagonal. Past AR / AL
-    the cuts follow the bowl's tangent, outside the ink. Their vertical sides pass through the
-    counters only."""
-    outer, upper, lower, (aL, dL), (aR, dR), (u, dU), (lw, dW) = eight_parts(cs)
+def edge_at(contour, y, pick):
+    """The point where a contour crosses the height y (pick=min: leftmost crossing, max:
+    rightmost) and the contour's unit direction there, oriented to point down."""
+    hits = []
+    for poly in flatten([contour], steps=64):
+        for (x0, y0), (x1, y1) in zip(poly, poly[1:] + poly[:1]):
+            if (y0 - y) * (y1 - y) < 0:
+                x = x0 + (y - y0) * (x1 - x0) / (y1 - y0)
+                dx, dy = (x1 - x0, y1 - y0) if y1 < y0 else (x0 - x1, y0 - y1)
+                n = math.hypot(dx, dy)
+                hits.append((x, (dx / n, dy / n)))
+    x, d = pick(hits, key=lambda h: h[0])
+    return (x, y), d
+
+
+def cut_S_from_8(cs, ylo, yhi, spine):
+    """S out of an 8: its upper-right and lower-left quarters are cut away (the terminals end in
+    flat horizontal cuts at yhi / ylo of the height) and the waist is replaced by a drawn spine.
+
+    The spine is a band whose two edges are single cubics: they leave the top bowl's left stroke
+    and join the bottom bowl's right stroke tangentially, at `join` of each counter's height
+    from the waist; their handle lengths give them `angle` degrees from the horizontal half-way
+    and set the spine's thickness there (perpendicular) to `weight` x the bowls' vertical
+    strokes. The 8 is cut along the same curves and the band is added (union), so no stub of the
+    8's other diagonal remains, the 8's pointed counters become round, and the bowls run into
+    the spine without corners. The cuts' vertical sides pass through the counters only.
+    """
+    angle, weight, join = spine
+    outer, upper, lower = eight_parts(cs)[:3]
     x0, y0, x1, y1 = bounds_of(cs)
     h = y1 - y0
     yT, yB = y0 + yhi * h, y0 + ylo * h
     ub, lb = bounds_of([upper]), bounds_of([lower])
-    assert u[1] < yT < ub[3] and lb[1] < yB < lw[1], "S cut heights outside the 8's counters"
+    assert ub[1] < yT < ub[3] and lb[1] < yB < lb[3], "S cut heights outside the 8's counters"
+    yL = ub[1] + join * (ub[3] - ub[1])
+    yR = lb[3] - join * (lb[3] - lb[1])
+    pu, du = edge_at(upper, yL, min)            # spine's upper edge leaves the upper counter
+    pl, dl = edge_at(outer, yL, min)            # lower edge leaves the outer contour
+    qu, eu = edge_at(outer, yR, max)            # upper edge joins the outer contour
+    ql, el = edge_at(lower, yR, max)            # lower edge joins the lower counter
+    a = math.radians(angle)
+    tm = (math.cos(a), -math.sin(a))            # spine direction at its middle, down to the right
+    nm = (math.sin(a), math.cos(a))             # its normal, up
+    stem = (stem_v([outer, upper], (ub[1] + ub[3]) / 2) + stem_v([outer, lower], (lb[1] + lb[3]) / 2)) / 2
+    cr = lambda u, v: u[0] * v[1] - u[1] * v[0]
 
-    def edge(p, dp, q, dq):
-        k = math.hypot(q[0] - p[0], q[1] - p[1]) / 3
-        return (p[0] + dp[0] * k, p[1] + dp[1] * k), (q[0] - dq[0] * k, q[1] - dq[1] * k)
+    def base_k(p, dp, q, dq):
+        # equal handles giving the curve the direction tm half-way:
+        # B'(1/2) = 1.5 (q - p) - 0.75 (k1 dp + k2 dq), parallel to tm
+        D = (q[0] - p[0], q[1] - p[1])
+        S = (dp[0] + dq[0], dp[1] + dq[1])
+        return 1.5 * cr(D, tm) / (0.75 * cr(S, tm)), math.hypot(*D)
+
+    def mid(p, dp, q, dq, k1, k2):
+        return ((p[0] + q[0]) / 2 + 0.375 * (k1 * dp[0] - k2 * dq[0]),
+                (p[1] + q[1]) / 2 + 0.375 * (k1 * dp[1] - k2 * dq[1]))
+    ku, Lu = base_k(pu, du, qu, eu)
+    kl, Ll = base_k(pl, dl, ql, el)
+    # unequal handles move each edge's middle across the spine without turning it: the upper
+    # edge by +d / -d, the lower by -d / +d, with d giving the spine `weight` x the bowls' stroke
+
+    def thickness(d):
+        mu = mid(pu, du, qu, eu, ku + d, ku - d)
+        ml = mid(pl, dl, ql, el, kl - d, kl + d)
+        return (mu[0] - ml[0]) * nm[0] + (mu[1] - ml[1]) * nm[1]
+    t0, t1 = thickness(0.0), thickness(1.0)
+    d = (weight * stem - t0) / (t1 - t0) if abs(t1 - t0) > 1e-9 else 0.0
+
+    def curve(p, dp, q, dq, k1, k2, L):
+        k1, k2 = (min(max(k, 0.15 * L), 1.2 * L) for k in (k1, k2))
+        return [(p[0] + dp[0] * k1, p[1] + dp[1] * k1, None, False),
+                (q[0] - dq[0] * k2, q[1] - dq[1] * k2, None, False), (*q, "curve", False)]
+    up = curve(pu, du, qu, eu, ku + d, ku - d, Lu)     # from pu to qu
+    lo = curve(pl, dl, ql, el, kl - d, kl + d, Ll)     # from pl to ql
     m = 20
-    eR = (x1 + m, aR[1] + dR[1] / dR[0] * (x1 + m - aR[0]))
-    eL = (x0 - m, aL[1] + dL[1] / dL[0] * (x0 - m - aL[0]))
-    c1, c2 = edge(u, dU, aR, dR)
-    cut_ur = [[(*u, "line", False), (*c1, None, False), (*c2, None, False), (*aR, "curve", False),
-               (*eR, "line", False), (eR[0], yT, "line", False), (u[0], yT, "line", False)]]
-    c1, c2 = edge(aL, dL, lw, dW)
-    cut_ll = [[(*aL, "line", False), (*c1, None, False), (*c2, None, False), (*lw, "curve", False),
-               (lw[0], yB, "line", False), (eL[0], yB, "line", False), (*eL, "line", False)]]
-    return difference(cs, [cut_ur, cut_ll])
+    cut_ur = [[(*pu, "line", False)] + up + [(x1 + m, qu[1], "line", False), (x1 + m, yT, "line", False),
+                                             (pu[0], yT, "line", False)]]
+    cut_ll = [[(*pl, "line", False)] + lo + [(ql[0], yB, "line", False), (x0 - m, yB, "line", False),
+                                             (x0 - m, pl[1], "line", False)]]
+    c1, c2, _ = lo
+    back = [(*ql, "line", False), c2, c1, (*pl, "curve", False)]
+    band = [[(*pu, "line", False)] + up[:-1] + [(*qu, "curve", False)] + back]
+    import pathops
+    res = to_path(cs)
+    for cut in (cut_ur, cut_ll):
+        res = pathops.op(res, to_path(cut), pathops.PathOp.DIFFERENCE, fix_winding=True)
+    res = pathops.op(res, to_path(band), pathops.PathOp.UNION, fix_winding=True)
+    return from_path(res)
 
 
 def stroke_h(cs):
@@ -589,7 +676,7 @@ def make_S(font, name, space=None, location=None):
         cs = contours_of(font["eight"])
     else:
         cs = small_eight(font, space, location)
-    new = cut_S_from_8(cs, *CUT_S[name])
+    new = cut_S_from_8(cs, *CUT_S[name], S_SPINE[name])
     nb = bounds_of(new)
     anchors = fit_anchors(font[name], glyph_bounds(font, name), nb)
     # sidebearings: the original S's (the 8 is a tabular figure with wide ones)
@@ -639,6 +726,7 @@ def apply_outline_changes(font, space=None, location=None, roman=True):
     top): G and K from the Cyrillic drawings; in the roman, C c S s cut out of O o 8."""
     for latin, cyr in CYRILLIC_OUTLINES.items():
         use_outline(font, latin, cyr)
+    k_from_cyrillic(font)
     if roman:
         for name in CUT_C:
             cut_C_from_O(font, name)
@@ -1056,7 +1144,8 @@ def build_style(key, spaces, metrics_dir, out_dir, report):
     font.lib["org.apodi.fit"] = {
         "scale": s, "grid_wght_wdth_stretch": [list(g) for g in grid], "defaultInstance": list(default_gw),
         "mVertexRaise": M_VERTEX_RAISE, "defaultAlternates": DEFAULT_ALTERNATES["italic" if italic else "roman"],
-        "cyrillicOutlines": CYRILLIC_OUTLINES, "cutC": {k: list(v) for k, v in CUT_C.items()},
+        "cyrillicOutlines": CYRILLIC_OUTLINES, "kFromCyrillic": "U+%04X" % K_CYRILLIC_LC,
+        "sSpine": {k: list(v) for k, v in S_SPINE.items()}, "cutC": {k: list(v) for k, v in CUT_C.items()},
         "cutS": {k: list(v) for k, v in CUT_S.items()}, "obliques": OBLIQUE_ITALIC if italic else [],
     }
     for g in font:

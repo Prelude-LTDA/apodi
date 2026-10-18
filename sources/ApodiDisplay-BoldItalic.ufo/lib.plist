@@ -51,13 +51,13 @@
       <dict>
         <key>S</key>
         <array>
-          <real>0.26</real>
-          <real>0.74</real>
+          <real>0.29</real>
+          <real>0.72</real>
         </array>
         <key>s</key>
         <array>
-          <real>0.27</real>
-          <real>0.73</real>
+          <real>0.32</real>
+          <real>0.69</real>
         </array>
       </dict>
       <key>cyrillicOutlines</key>
@@ -172,6 +172,8 @@
           <real>0.97</real>
         </array>
       </array>
+      <key>kFromCyrillic</key>
+      <string>U+043A</string>
       <key>mVertexRaise</key>
       <real>0.25</real>
       <key>obliques</key>
@@ -190,6 +192,21 @@
         <string>f_f_i</string>
         <string>f_f_l</string>
       </array>
+      <key>sSpine</key>
+      <dict>
+        <key>S</key>
+        <array>
+          <real>30.0</real>
+          <real>1.0</real>
+          <real>0.5</real>
+        </array>
+        <key>s</key>
+        <array>
+          <real>24.0</real>
+          <real>1.0</real>
+          <real>0.5</real>
+        </array>
+      </dict>
       <key>scale</key>
       <real>0.920656634746922</real>
     </dict>

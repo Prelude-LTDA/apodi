@@ -105,11 +105,12 @@ The fitting parameters sit at the top of `scripts/build_sources.py`:
 * `WDTH_GRID`, `STRETCH_WIDE`, `STRETCH_NARROW`, `STRETCH_COST`: candidate widths, and the
   limits on horizontal scaling.
 * `M_VERTEX_RAISE`: the M vertex height.
-* `CYRILLIC_OUTLINES`: Latin letters drawn with an Open Sans Cyrillic outline (G from Komi
-  Sje Ԍ, K from Ka К).
+* `CYRILLIC_OUTLINES`, `K_CYRILLIC_LC`: Latin letters drawn with an Open Sans Cyrillic
+  outline (G from Komi Sje Ԍ, K from Ka К, k from ka к with its stem extended to the ascender).
 * `CUT_C`, `CUT_S`: C/c cut out of O/o and S/s cut out of 8 (boolean difference with
-  rectangles; the S cuts follow the 8's waist so the spine stays one stroke). s uses an
-  x-height 8 interpolated at a heavier weight so its strokes match s and o.
+  rectangles). The 8's waist is replaced by a drawn spine, set by `S_SPINE` (angle, weight
+  relative to the bowls, where it joins the bowls). s uses an x-height 8 interpolated at a
+  heavier weight so its strokes match s and o.
 * `OBLIQUE_ITALIC`: italic glyphs replaced by the matching roman's, slanted by the italic
   angle (e, ę, f and the f ligatures, c, C, s, S).
 * `DEFAULT_ALTERNATES`: Open Sans alternates promoted to default. Currently J.salt (J on the
@@ -117,6 +118,6 @@ The fitting parameters sit at the top of `scripts/build_sources.py`:
   deliberately left as the default, because the reference uses it too.
 
 Then run `APTOS_DIR=... ./build.sh fit`. This **regenerates `sources/` from scratch** and
-discards hand edits, so make design changes in `build_sources.py` (as with the M, G, K, C, S
+discards hand edits, so make design changes in `build_sources.py` (as with the M, G, K, k, C, S
 and the italic obliques), or
 re-apply them after refitting.
