@@ -82,7 +82,7 @@ CUT_S = {"S": (0.29, 0.72), "s": (0.32, 0.69)}
 # The S/s spine (see cut_S_from_8): angle from the horizontal at the centre (degrees), weight as
 # a multiple of the bowls' vertical strokes, and where it joins the bowls (fraction of each
 # counter's height, from the waist).
-S_SPINE = {"S": (30.0, 1.0, 0.5), "s": (24.0, 1.0, 0.5)}
+S_SPINE = {"S": (33.0, 1.0, 0.5), "s": (29.5, 1.0, 0.5)}
 # In the italics these glyphs are the matching roman's (same wdth, weight and stretch) slanted
 # by the italic angle: obliques, instead of Open Sans's cursive forms. The f ligatures follow f.
 OBLIQUE_ITALIC = ["e", "eogonek", "eogonek.loclNAV", "f", "c", "C", "s", "S", "f_f", "fi", "fl", "f_f_i", "f_f_l"]

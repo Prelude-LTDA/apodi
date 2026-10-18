@@ -34,14 +34,39 @@ def paths(stem_family, weight, italic, before, after, aptos):
     return out
 
 
+def closeup(versions, aptos, out, text="s S Sessions", size=200):
+    """Large rows of `text`: Aptos (if given), then each (label, font dir), in Regular and Bold."""
+    lab = ImageFont.truetype(os.path.join(versions[-1][1], "Apodi-Regular.ttf"), 24)
+    rows = []
+    for st, ref in (("Regular", "Aptos.ttf"), ("Bold", "Aptos Bold.ttf")):
+        if aptos:
+            rows.append((f"Aptos {st}", os.path.join(aptos, ref)))
+        for name, d in versions:
+            rows.append((f"Apodi {name} {st}", os.path.join(d, f"Apodi-{st}.ttf")))
+    lh = int(size * 1.3)
+    im = Image.new("RGB", (60 + int(size * 6.5), 20 + len(rows) * (lh + 34)), "white")
+    d = ImageDraw.Draw(im)
+    y = 10
+    for name, p in rows:
+        d.text((20, y), name, fill=(110, 110, 110), font=lab)
+        d.text((60, y + 30), text, fill="black", font=ImageFont.truetype(p, size, layout_engine=ImageFont.Layout.RAQM))
+        y += lh + 34
+    im.save(out)
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--before", required=True)
+    ap.add_argument("--closeup", default=None,
+                    help="label=dir,label=dir,...: write a large 's S Sessions' close-up of these versions instead")
+    ap.add_argument("--before", default=None)
     ap.add_argument("--after", default="fonts/ttf")
     ap.add_argument("--aptos", default=None)
     ap.add_argument("--styles", default="Regular,Bold", help="e.g. Regular,Bold,NarrowBold,DisplayRegular")
     ap.add_argument("--out", required=True)
     a = ap.parse_args()
+    if a.closeup:
+        closeup([tuple(v.split("=", 1)) for v in a.closeup.split(",")], a.aptos, a.out)
+        return
     blocks = []
     for s in a.styles.split(","):
         fam = "Narrow" if s.startswith("Narrow") else "Display" if s.startswith("Display") else ""

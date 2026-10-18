@@ -140,6 +140,8 @@ them as `ff`+`i`, so `f`+`ﬁ` differs by 1 unit.
   obliques, Aptos / Apodi 1.000 / Apodi now, in Regular, Bold and Narrow Bold with their italics; made by
   `scripts/revisions.py --aptos`. It contains reference renderings, so it is git-ignored like `docs/comparison/`.
 - **`docs/images/revisions-apodi.png`:** the same rows without the reference (Apodi 1.000 / now). Committed.
+- **`docs/images/s-closeup.png`:** "s S Sessions" at 200 px in Regular and Bold: Aptos, Apodi 1.001, the 24°/30° spine
+  and the current one (`scripts/revisions.py --closeup`). Contains the reference, so git-ignored.
 
 ## 4. Visible design differences
 
@@ -180,12 +182,12 @@ these glyphs inherit the change.
 - **S.** The 8 minus its upper-right quarter (centre to right edge, waist to 72% of the height) and lower-left
   quarter (left edge to centre, 29% to the waist), so the terminals are a little longer than a half-and-half cut. The
   8's waist (thin, and steep in the narrow s) is replaced by a drawn spine: a band whose edges are single cubics,
-  tangent to the bowls half-way up the upper counter and half-way down the lower one, running at 30° from the
+  tangent to the bowls half-way up the upper counter and half-way down the lower one, running at 33° from the
   horizontal at the centre, as thick (perpendicular) as the bowls' vertical strokes (`S_SPINE`). The 8 is cut along
   the same curves and the band added, so no stub of the other diagonal remains and the 8's pointed counters become
   round.
-- **s.** The same construction (terminal cuts at 32% and 69%, spine at 24°, the angle of the reference's s judged by
-  eye) on an x-height 8: Open Sans has no x-height 8 (its oldstyle 8 is full height, and ȣ is
+- **s.** The same construction (terminal cuts at 32% and 69%, spine at 29.5°, judged by
+  eye against the reference's s at text size) on an x-height 8: Open Sans has no x-height 8 (its oldstyle 8 is full height, and ȣ is
   open-topped), so the cap 8 is interpolated at the weight at which, scaled to the height of o, its top stroke matches
   s's, then narrowed so its bowls match o's stem.
 - **Italic e f c C s S** (with ę and the ff fi fl ffi ffl ligatures): the glyph of the roman instance that the
