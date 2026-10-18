@@ -73,7 +73,8 @@ Changelog
   the bowls tangentially; the cuts are slightly smaller (S terminals at 29%/72% of the height,
   s at 32%/69%), so the terminals are longer and the openings narrower.
 - k drawn with Open Sans's Cyrillic ka (U+043A), its stem extended to the ascender with a flat
-  top as on l and h; k-cedilla and k-caron follow, Cyrillic ka itself unchanged.
+  top as on l and h (in the italics, Open Sans's italic ka, the stem extended along the slant);
+  k-cedilla and k-caron follow, Cyrillic ka itself unchanged.
 
 2026-10-17 (The Apodi Project Authors) Apodi v1.001
 - Outline changes only; advance widths, kerning, vertical metrics and ligatures unchanged
