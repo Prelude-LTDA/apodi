@@ -48,10 +48,10 @@ Metric compatibility comes from the numbers, not the shapes:
   and `unitsPerEm` (2048) alone. Outlines may go above or below them; line spacing won't change.
 * **Ligatures.** The `liga` feature forms only `ff`, `fi` and `fl`, as the reference does.
   `ffi` and `ffl` are left as `ff` + `i`/`l`. Adding ligatures changes line widths.
-* **New glyphs.** These are free to add, unless the character is one of the 84 the reference
-  has and Apodi lacks (see REPORT.md). Those need the reference's advance width to stay
-  compatible: run `./build.sh fit` after adding them to the Open Sans-derived sources, or
-  set the width by hand from `build/metrics/ref_*.json`.
+* **New glyphs.** These are free to add. Apodi has every character the reference has; a
+  character the reference adds later needs its advance width: run `./build.sh fit`, which
+  draws missing reference characters from the Noto fonts listed in `scripts/noto_glyphs.py`
+  (`SOURCES`), or set the width by hand from `build/metrics/ref_*.json`.
 
 `./build.sh fonts` runs `scripts/check_locked.py` first and warns about every glyph whose
 width moved.

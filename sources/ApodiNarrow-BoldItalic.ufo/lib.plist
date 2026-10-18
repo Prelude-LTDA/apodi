@@ -1552,6 +1552,34 @@
       <integer>1105</integer>
       <key>uni03E1</key>
       <integer>1135</integer>
+      <key>uni03E2</key>
+      <integer>1757</integer>
+      <key>uni03E3</key>
+      <integer>1623</integer>
+      <key>uni03E4</key>
+      <integer>1175</integer>
+      <key>uni03E5</key>
+      <integer>1069</integer>
+      <key>uni03E6</key>
+      <integer>1225</integer>
+      <key>uni03E7</key>
+      <integer>1070</integer>
+      <key>uni03E8</key>
+      <integer>1118</integer>
+      <key>uni03E9</key>
+      <integer>983</integer>
+      <key>uni03EA</key>
+      <integer>1121</integer>
+      <key>uni03EB</key>
+      <integer>1031</integer>
+      <key>uni03EC</key>
+      <integer>1290</integer>
+      <key>uni03ED</key>
+      <integer>1034</integer>
+      <key>uni03EE</key>
+      <integer>1156</integer>
+      <key>uni03EF</key>
+      <integer>916</integer>
       <key>uni03F0</key>
       <integer>1150</integer>
       <key>uni03F1</key>
@@ -1910,6 +1938,22 @@
       <integer>1359</integer>
       <key>uni0525</key>
       <integer>1143</integer>
+      <key>uni058F</key>
+      <integer>1016</integer>
+      <key>uni060B</key>
+      <integer>1038</integer>
+      <key>uni09F2</key>
+      <integer>1038</integer>
+      <key>uni09F3</key>
+      <integer>1038</integer>
+      <key>uni0AF1</key>
+      <integer>1781</integer>
+      <key>uni0BF9</key>
+      <integer>1545</integer>
+      <key>uni0E3F</key>
+      <integer>1015</integer>
+      <key>uni17DB</key>
+      <integer>1038</integer>
       <key>uni1E62</key>
       <integer>1091</integer>
       <key>uni1E63</key>
@@ -2156,8 +2200,130 @@
       <integer>1038</integer>
       <key>uni2117</key>
       <integer>1380</integer>
+      <key>uni2190</key>
+      <integer>1229</integer>
+      <key>uni2191</key>
+      <integer>1229</integer>
+      <key>uni2192</key>
+      <integer>1229</integer>
+      <key>uni2193</key>
+      <integer>1229</integer>
+      <key>uni2194</key>
+      <integer>1843</integer>
+      <key>uni2195</key>
+      <integer>1095</integer>
+      <key>uni2196</key>
+      <integer>1229</integer>
+      <key>uni2197</key>
+      <integer>1229</integer>
+      <key>uni2198</key>
+      <integer>1229</integer>
+      <key>uni2199</key>
+      <integer>1229</integer>
+      <key>uni21A8</key>
+      <integer>1095</integer>
+      <key>uni2219</key>
+      <integer>970</integer>
+      <key>uni221F</key>
+      <integer>1021</integer>
+      <key>uni2229</key>
+      <integer>1020</integer>
+      <key>uni2236</key>
+      <integer>1038</integer>
+      <key>uni2261</key>
+      <integer>1020</integer>
+      <key>uni2302</key>
+      <integer>1126</integer>
+      <key>uni2310</key>
+      <integer>1020</integer>
+      <key>uni2320</key>
+      <integer>708</integer>
+      <key>uni2321</key>
+      <integer>708</integer>
+      <key>uni2460</key>
+      <integer>1534</integer>
+      <key>uni2461</key>
+      <integer>1534</integer>
+      <key>uni2462</key>
+      <integer>1534</integer>
+      <key>uni2463</key>
+      <integer>1534</integer>
+      <key>uni2464</key>
+      <integer>1534</integer>
+      <key>uni2465</key>
+      <integer>1534</integer>
+      <key>uni2466</key>
+      <integer>1534</integer>
+      <key>uni2467</key>
+      <integer>1534</integer>
+      <key>uni2468</key>
+      <integer>1534</integer>
+      <key>uni2469</key>
+      <integer>1534</integer>
+      <key>uni2500</key>
+      <integer>1024</integer>
+      <key>uni2502</key>
+      <integer>1024</integer>
+      <key>uni250C</key>
+      <integer>1024</integer>
+      <key>uni2510</key>
+      <integer>1024</integer>
+      <key>uni2514</key>
+      <integer>1024</integer>
+      <key>uni2518</key>
+      <integer>1024</integer>
+      <key>uni25A1</key>
+      <integer>1536</integer>
+      <key>uni25AA</key>
+      <integer>988</integer>
+      <key>uni25AB</key>
+      <integer>988</integer>
+      <key>uni25CB</key>
+      <integer>1534</integer>
       <key>uni25CC</key>
       <integer>1534</integer>
+      <key>uni25CF</key>
+      <integer>1534</integer>
+      <key>uni25E6</key>
+      <integer>988</integer>
+      <key>uni2610</key>
+      <integer>1536</integer>
+      <key>uni2611</key>
+      <integer>1536</integer>
+      <key>uni2713</key>
+      <integer>1534</integer>
+      <key>uni2766</key>
+      <integer>1555</integer>
+      <key>uni2776</key>
+      <integer>1534</integer>
+      <key>uni2777</key>
+      <integer>1534</integer>
+      <key>uni2778</key>
+      <integer>1534</integer>
+      <key>uni2779</key>
+      <integer>1534</integer>
+      <key>uni277A</key>
+      <integer>1534</integer>
+      <key>uni277B</key>
+      <integer>1534</integer>
+      <key>uni277C</key>
+      <integer>1534</integer>
+      <key>uni277D</key>
+      <integer>1534</integer>
+      <key>uni277E</key>
+      <integer>1534</integer>
+      <key>uni277F</key>
+      <integer>1534</integer>
+      <key>uni27E8</key>
+      <integer>596</integer>
+      <key>uni27E9</key>
+      <integer>596</integer>
+      <key>uni2BBD</key>
+      <integer>1535</integer>
+      <key>uni2BBE</key>
+      <integer>1534</integer>
+      <key>uniFDFC</key>
+      <integer>1830</integer>
       <key>uogonek</key>
       <integer>1069</integer>
       <key>upsilon</key>
@@ -2218,6 +2384,507 @@
       <integer>700</integer>
       <key>zeta</key>
       <integer>844</integer>
+    </dict>
+    <key>org.apodi.notoGlyphs</key>
+    <dict>
+      <key>03E2</key>
+      <array>
+        <string>NotoSansCoptic-Regular.ttf</string>
+        <string>embolden x+85 y+53 k0.85</string>
+        <real>1.0</real>
+      </array>
+      <key>03E3</key>
+      <array>
+        <string>NotoSansCoptic-Regular.ttf</string>
+        <string>embolden x+59 y+53 k1</string>
+        <real>1.0</real>
+      </array>
+      <key>03E4</key>
+      <array>
+        <string>NotoSansCoptic-Regular.ttf</string>
+        <string>embolden x+85 y+53 k0.85</string>
+        <real>1.0</real>
+      </array>
+      <key>03E5</key>
+      <array>
+        <string>NotoSansCoptic-Regular.ttf</string>
+        <string>embolden x+85 y+53 k0.85</string>
+        <real>1.0</real>
+      </array>
+      <key>03E6</key>
+      <array>
+        <string>NotoSansCoptic-Regular.ttf</string>
+        <string>embolden x+75 y+53 k0.9</string>
+        <real>1.0</real>
+      </array>
+      <key>03E7</key>
+      <array>
+        <string>NotoSansCoptic-Regular.ttf</string>
+        <string>embolden x+66 y+53 k0.95</string>
+        <real>1.0</real>
+      </array>
+      <key>03E8</key>
+      <array>
+        <string>NotoSansCoptic-Regular.ttf</string>
+        <string>embolden x+59 y+53 k1</string>
+        <real>1.0</real>
+      </array>
+      <key>03E9</key>
+      <array>
+        <string>NotoSansCoptic-Regular.ttf</string>
+        <string>embolden x+85 y+53 k0.85</string>
+        <real>1.0</real>
+      </array>
+      <key>03EA</key>
+      <array>
+        <string>NotoSansCoptic-Regular.ttf</string>
+        <string>embolden x+85 y+53 k0.85</string>
+        <real>1.0</real>
+      </array>
+      <key>03EB</key>
+      <array>
+        <string>NotoSansCoptic-Regular.ttf</string>
+        <string>embolden x+85 y+53 k0.85</string>
+        <real>1.0</real>
+      </array>
+      <key>03EC</key>
+      <array>
+        <string>NotoSansCoptic-Regular.ttf</string>
+        <string>embolden x+75 y+53 k0.9</string>
+        <real>1.0</real>
+      </array>
+      <key>03ED</key>
+      <array>
+        <string>NotoSansCoptic-Regular.ttf</string>
+        <string>embolden x+85 y+53 k0.85</string>
+        <real>1.0</real>
+      </array>
+      <key>03EE</key>
+      <array>
+        <string>NotoSansCoptic-Regular.ttf</string>
+        <string>embolden x+75 y+53 k0.9</string>
+        <real>1.0</real>
+      </array>
+      <key>03EF</key>
+      <array>
+        <string>NotoSansCoptic-Regular.ttf</string>
+        <string>embolden x+85 y+53 k0.85</string>
+        <real>1.0</real>
+      </array>
+      <key>058F</key>
+      <array>
+        <string>NotoSansArmenian[wdth,wght].ttf</string>
+        <string>wght 809.7 wdth 62.5</string>
+        <real>0.85</real>
+      </array>
+      <key>060B</key>
+      <array>
+        <string>NotoSansArabic[wdth,wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>09F2</key>
+      <array>
+        <string>NotoSansBengali[wdth,wght].ttf</string>
+        <string>wght 719.3 wdth 87.5</string>
+        <real>1.0</real>
+      </array>
+      <key>09F3</key>
+      <array>
+        <string>NotoSansBengali[wdth,wght].ttf</string>
+        <string>wght 719.3 wdth 87.5</string>
+        <real>1.0</real>
+      </array>
+      <key>0AF1</key>
+      <array>
+        <string>NotoSansGujarati[wdth,wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>0BF9</key>
+      <array>
+        <string>NotoSansTamil[wdth,wght].ttf</string>
+        <string>wght 809.7 wdth 62.5</string>
+        <real>1.0</real>
+      </array>
+      <key>0E3F</key>
+      <array>
+        <string>NotoSansThai[wdth,wght].ttf</string>
+        <string>wght 719.3 wdth 87.5</string>
+        <real>1.0</real>
+      </array>
+      <key>17DB</key>
+      <array>
+        <string>NotoSansKhmer[wdth,wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>2190</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>2191</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>2192</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>2193</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>2194</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>2195</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>2196</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>2197</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>2198</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>2199</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>21A8</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>synthesized from U+2195 wght 682.3</string>
+        <real>1.0</real>
+      </array>
+      <key>2219</key>
+      <array>
+        <string>NotoSansMath-Regular.ttf</string>
+        <string>embolden x+59 y+53 k1</string>
+        <real>1.0</real>
+      </array>
+      <key>221F</key>
+      <array>
+        <string>NotoSansMath-Regular.ttf</string>
+        <string>embolden x+59 y+53 k1</string>
+        <real>1.0</real>
+      </array>
+      <key>2229</key>
+      <array>
+        <string>NotoSansMath-Regular.ttf</string>
+        <string>embolden x+59 y+53 k1</string>
+        <real>0.729</real>
+      </array>
+      <key>2236</key>
+      <array>
+        <string>NotoSansMath-Regular.ttf</string>
+        <string>embolden x+59 y+53 k1</string>
+        <real>1.0</real>
+      </array>
+      <key>2261</key>
+      <array>
+        <string>NotoSansMath-Regular.ttf</string>
+        <string>embolden x+59 y+53 k1</string>
+        <real>1.0</real>
+      </array>
+      <key>2302</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>2310</key>
+      <array>
+        <string>NotoSansMath-Regular.ttf</string>
+        <string>embolden x+59 y+53 k1</string>
+        <real>1.0</real>
+      </array>
+      <key>2320</key>
+      <array>
+        <string>NotoSansMath-Regular.ttf</string>
+        <string>embolden x+59 y+53 k1; reference extents</string>
+        <real>1.0</real>
+      </array>
+      <key>2321</key>
+      <array>
+        <string>NotoSansMath-Regular.ttf</string>
+        <string>embolden x+59 y+53 k1; reference extents</string>
+        <real>1.0</real>
+      </array>
+      <key>2460</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>2461</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>2462</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>2463</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>2464</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>2465</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>2466</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>2467</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>2468</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>2469</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>2500</key>
+      <array>
+        <string>NotoSansMono[wdth,wght].ttf</string>
+        <string>box: reference extents</string>
+        <real>1.0</real>
+      </array>
+      <key>2502</key>
+      <array>
+        <string>NotoSansMono[wdth,wght].ttf</string>
+        <string>box: reference extents</string>
+        <real>1.0</real>
+      </array>
+      <key>250C</key>
+      <array>
+        <string>NotoSansMono[wdth,wght].ttf</string>
+        <string>box: reference extents</string>
+        <real>1.0</real>
+      </array>
+      <key>2510</key>
+      <array>
+        <string>NotoSansMono[wdth,wght].ttf</string>
+        <string>box: reference extents</string>
+        <real>1.0</real>
+      </array>
+      <key>2514</key>
+      <array>
+        <string>NotoSansMono[wdth,wght].ttf</string>
+        <string>box: reference extents</string>
+        <real>1.0</real>
+      </array>
+      <key>2518</key>
+      <array>
+        <string>NotoSansMono[wdth,wght].ttf</string>
+        <string>box: reference extents</string>
+        <real>1.0</real>
+      </array>
+      <key>25A1</key>
+      <array>
+        <string>NotoSansSymbols2-Regular.ttf</string>
+        <string>embolden x+59 y+53 k1</string>
+        <real>1.0</real>
+      </array>
+      <key>25AA</key>
+      <array>
+        <string>NotoSansSymbols2-Regular.ttf</string>
+        <string>scaled</string>
+        <real>1.0</real>
+      </array>
+      <key>25AB</key>
+      <array>
+        <string>NotoSansSymbols2-Regular.ttf</string>
+        <string>embolden x+59 y+53 k1</string>
+        <real>1.0</real>
+      </array>
+      <key>25CB</key>
+      <array>
+        <string>NotoSansSymbols2-Regular.ttf</string>
+        <string>embolden x+59 y+53 k1</string>
+        <real>1.0</real>
+      </array>
+      <key>25CF</key>
+      <array>
+        <string>NotoSansSymbols2-Regular.ttf</string>
+        <string>scaled</string>
+        <real>1.0</real>
+      </array>
+      <key>25E6</key>
+      <array>
+        <string>NotoSansSymbols2-Regular.ttf</string>
+        <string>embolden x+59 y+53 k1</string>
+        <real>1.0</real>
+      </array>
+      <key>2610</key>
+      <array>
+        <string>NotoSansSymbols2-Regular.ttf</string>
+        <string>embolden x+59 y+53 k1</string>
+        <real>1.0</real>
+      </array>
+      <key>2611</key>
+      <array>
+        <string>NotoSansSymbols2-Regular.ttf</string>
+        <string>embolden x+59 y+53 k1</string>
+        <real>1.0</real>
+      </array>
+      <key>2713</key>
+      <array>
+        <string>NotoSansSymbols2-Regular.ttf</string>
+        <string>embolden x+59 y+53 k1</string>
+        <real>1.0</real>
+      </array>
+      <key>2766</key>
+      <array>
+        <string>NotoSansSymbols2-Regular.ttf</string>
+        <string>scaled</string>
+        <real>1.0</real>
+      </array>
+      <key>2776</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>2777</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>2778</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>2779</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>277A</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>277B</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>277C</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>277D</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>277E</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>277F</key>
+      <array>
+        <string>NotoSansSymbols[wght].ttf</string>
+        <string>wght 682.3 wdth 100</string>
+        <real>1.0</real>
+      </array>
+      <key>27E8</key>
+      <array>
+        <string>NotoSansMath-Regular.ttf</string>
+        <string>embolden x+59 y+53 k1</string>
+        <real>0.675</real>
+      </array>
+      <key>27E9</key>
+      <array>
+        <string>NotoSansMath-Regular.ttf</string>
+        <string>embolden x+59 y+53 k1</string>
+        <real>0.675</real>
+      </array>
+      <key>2BBD</key>
+      <array>
+        <string>NotoSansSymbols2-Regular.ttf</string>
+        <string>embolden x+59 y+53 k1</string>
+        <real>1.0</real>
+      </array>
+      <key>2BBE</key>
+      <array>
+        <string>NotoSansSymbols2-Regular.ttf</string>
+        <string>embolden x+59 y+53 k1</string>
+        <real>1.0</real>
+      </array>
+      <key>FDFC</key>
+      <array>
+        <string>NotoSansArabic[wdth,wght].ttf</string>
+        <string>wght 809.7 wdth 62.5</string>
+        <real>0.821</real>
+      </array>
     </dict>
     <key>public.glyphOrder</key>
     <array>
@@ -3528,6 +4195,89 @@
       <string>ogonekcentering</string>
       <string>uni03F3dotless</string>
       <string>uni1ECBdotless</string>
+      <string>uni03E2</string>
+      <string>uni03E3</string>
+      <string>uni03E4</string>
+      <string>uni03E5</string>
+      <string>uni03E6</string>
+      <string>uni03E7</string>
+      <string>uni03E8</string>
+      <string>uni03E9</string>
+      <string>uni03EA</string>
+      <string>uni03EB</string>
+      <string>uni03EC</string>
+      <string>uni03ED</string>
+      <string>uni03EE</string>
+      <string>uni03EF</string>
+      <string>uni058F</string>
+      <string>uni060B</string>
+      <string>uni09F2</string>
+      <string>uni09F3</string>
+      <string>uni0AF1</string>
+      <string>uni0BF9</string>
+      <string>uni0E3F</string>
+      <string>uni17DB</string>
+      <string>uni2190</string>
+      <string>uni2191</string>
+      <string>uni2192</string>
+      <string>uni2193</string>
+      <string>uni2194</string>
+      <string>uni2195</string>
+      <string>uni2196</string>
+      <string>uni2197</string>
+      <string>uni2198</string>
+      <string>uni2199</string>
+      <string>uni21A8</string>
+      <string>uni2219</string>
+      <string>uni221F</string>
+      <string>uni2229</string>
+      <string>uni2236</string>
+      <string>uni2261</string>
+      <string>uni2302</string>
+      <string>uni2310</string>
+      <string>uni2320</string>
+      <string>uni2321</string>
+      <string>uni2460</string>
+      <string>uni2461</string>
+      <string>uni2462</string>
+      <string>uni2463</string>
+      <string>uni2464</string>
+      <string>uni2465</string>
+      <string>uni2466</string>
+      <string>uni2467</string>
+      <string>uni2468</string>
+      <string>uni2469</string>
+      <string>uni2500</string>
+      <string>uni2502</string>
+      <string>uni250C</string>
+      <string>uni2510</string>
+      <string>uni2514</string>
+      <string>uni2518</string>
+      <string>uni25A1</string>
+      <string>uni25AA</string>
+      <string>uni25AB</string>
+      <string>uni25CB</string>
+      <string>uni25CF</string>
+      <string>uni25E6</string>
+      <string>uni2610</string>
+      <string>uni2611</string>
+      <string>uni2713</string>
+      <string>uni2766</string>
+      <string>uni2776</string>
+      <string>uni2777</string>
+      <string>uni2778</string>
+      <string>uni2779</string>
+      <string>uni277A</string>
+      <string>uni277B</string>
+      <string>uni277C</string>
+      <string>uni277D</string>
+      <string>uni277E</string>
+      <string>uni277F</string>
+      <string>uni27E8</string>
+      <string>uni27E9</string>
+      <string>uni2BBD</string>
+      <string>uni2BBE</string>
+      <string>uniFDFC</string>
     </array>
     <key>public.postscriptNames</key>
     <dict>

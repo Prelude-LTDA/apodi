@@ -22,13 +22,12 @@ by Microsoft, and contains no Microsoft font data other than the metric numbers 
 | Apodi Display | Regular, Bold, Italic, Bold Italic | Aptos Display | Word headings |
 
 Files: `fonts/ttf/*.ttf` (desktop, LibreOffice) and `fonts/woff2/*.woff2` (web). Unhinted
-TrueType, 2048 units per em, about 1,300 glyphs per style (Latin, Greek, Cyrillic, Hebrew from
-Open Sans).
+TrueType, 2048 units per em, about 1,380 glyphs per style (Latin, Greek, Cyrillic, Hebrew from
+Open Sans; arrows, shapes, box drawing, circled digits, a few math signs, other scripts'
+currency signs and Coptic letters from Noto).
 
-Coverage: 1,002 of the 1,086 characters in Aptos. The missing 84 are mostly arrows, box
-drawing, geometric shapes and check boxes (`← → ● ○ ▪ ☐ ✓`), circled digits, a few currency
-signs (`฿ ﷼ ֏ ؋`) and Coptic letters. Text using them falls back to another font, and lines
-that contain them can break differently. The full list is in [REPORT.md](REPORT.md).
+Coverage: all 1,086 characters in Aptos (1,085 in the italics, as in Aptos), each at Aptos's
+advance width.
 
 ## Using it as a substitute (fontconfig / LibreOffice)
 
@@ -58,7 +57,8 @@ APTOS_DIR=/path/to/aptos ./build.sh fit     # regenerate sources/ from Open Sans
 * `check`, `images` and `fit` read the Aptos `.ttf` files from a folder you point to with
   `APTOS_DIR`. Nothing from that folder is copied into this repository. `fit` writes only
   numbers to `build/metrics/`, which git ignores.
-* `fit` also downloads the Open Sans sources at a pinned commit (`scripts/fetch_opensans.sh`)
+* `fit` also downloads the Open Sans sources and the Noto fonts at pinned commits
+  (`scripts/fetch_opensans.sh`, `scripts/fetch_noto.sh`, checked by SHA-256, kept out of git)
   and **overwrites `sources/`**. Run it only to change the fitting itself, not after editing
   glyphs.
 
@@ -71,11 +71,19 @@ validation results and the known differences, see [REPORT.md](REPORT.md).
   googlefonts/opensans, commit `bd7e37632246368c60fdcbd374dbf9bad11969b6` (v3.003,
   2023-11-16), `sources/*.ufo` + `OpenSans-Roman/Italic.designspace`, SIL OFL 1.1. Open Sans
   declares no Reserved Font Name. The family is still renamed, as the OFL asks of modified
-  versions.
+  versions. The exception is the 84 characters Open Sans doesn't have (arrows, shapes, box
+  drawing, circled digits, ∙ ∟ ∩ ∶ ≡ ⌂ ⌐ ⌠ ⌡ ⟨ ⟩, ☐ ☑ ✓ ❦ ⮽ ⮾, ֏ ؋ ৲ ৳ ૱ ௹ ฿ ៛ ⃀ ﷼ and
+  Coptic Ϣ–ϯ): their outlines come from Noto fonts in google/fonts, commit
+  `47d54ca1ebb14fd864695f1d39dc734f39017c33` (2026-10-16): Noto Sans 2.015, Noto Sans Mono
+  2.014, Noto Sans Symbols 2.003, Noto Sans Symbols 2 2.008, Noto Sans Math 3.000, Noto Sans
+  Coptic 2.004, Noto Sans Armenian 2.008, Arabic 2.012, Bengali 3.011, Gujarati 2.106, Tamil
+  2.004, Thai 2.002 and Khmer 2.004. All are SIL OFL 1.1 (checked in each font's license
+  record and google/fonts' OFL.txt) and declare no Reserved Font Name.
 * **From Aptos, numbers only**: advance width per Unicode codepoint, advance per ligature
   character sequence (`fi`, `fl`, `ff`), kerning value per codepoint pair, unitsPerEm,
   ascender, descender and line gap (hhea, typo, win), cap height, weight class and italic
-  angle. No outline, point or curve was read, traced or derived from Aptos, including from
+  angle, and the bounding boxes of the six box-drawing characters and the two integral halves
+  (so that they join across lines). No outline, point or curve was read, traced or derived from Aptos, including from
   renderings. The side-by-side renderings were made for visual review only, and they stay
   out of the repository (`docs/comparison/` is git-ignored).
 * **Apodi's own design changes**: the middle vertex of **M** is raised off the baseline

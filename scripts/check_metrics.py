@@ -89,7 +89,7 @@ def main():
     if not a.aptos:
         sys.exit("set APTOS_DIR or pass --aptos")
     results = {}
-    print(f"{'style':26} {'ref cps':>7} {'covered':>7} {'adv≠':>5} {'vert≠':>5} {'kern pairs':>10} {'kern≠':>6} {'lig≠':>5}")
+    print(f"{'style':26} {'ref cps':>7} {'covered':>7} {'missing':>7} {'adv≠':>5} {'vert≠':>5} {'kern pairs':>10} {'kern≠':>6} {'lig≠':>5}")
     for stem, refname in PAIRS.items():
         mine_p = os.path.join(a.fonts, stem + ".ttf")
         ref_p = os.path.join(a.aptos, refname)
@@ -126,8 +126,10 @@ def main():
             r["kern_mismatches"] = kmis
             r["kern_shaping_differences"] = subst
         results[stem] = r
-        print(f"{stem:26} {len(rc):7} {len(covered):7} {len(adv_mis):5} {len(vert_mis):5} "
+        print(f"{stem:26} {len(rc):7} {len(covered):7} {len(rc) - len(covered):7} {len(adv_mis):5} {len(vert_mis):5} "
               f"{r.get('kern_pairs_tested', 0):10} {len(r.get('kern_mismatches', [])):6} {len(lig_mis):5}")
+        for cp in r["missing"][:10]:
+            print(f"    missing U+{cp:04X} {chr(cp)!r}")
         for cp, rv, mv in adv_mis[:10]:
             print(f"    U+{cp:04X} {chr(cp)!r}: ref {rv} mine {mv}")
         for x, y, rv, mv in r.get("kern_mismatches", [])[:10]:
@@ -140,7 +142,7 @@ def main():
         with open(a.json, "w") as fh:
             json.dump(results, fh, indent=1)
     bad = sum(len(r["advance_mismatches"]) + len(r["vertical_mismatches"]) + len(r.get("kern_mismatches", []))
-              for r in results.values())
+              + len(r["missing"]) for r in results.values())
     sys.exit(1 if bad else 0)
 
 

@@ -27,6 +27,7 @@ need_aptos() {
 do_fit() {
   need_aptos
   bash scripts/fetch_opensans.sh .opensans
+  bash scripts/fetch_noto.sh .noto
   mkdir -p build/metrics
   for pair in "Aptos.ttf:Regular" "Aptos Bold.ttf:Bold" "Aptos Italic.ttf:Italic" "Aptos Bold Italic.ttf:BoldItalic" \
               "Aptos Narrow.ttf:NarrowRegular" "Aptos Narrow Bold.ttf:NarrowBold" "Aptos Narrow Italic.ttf:NarrowItalic" \
@@ -34,7 +35,7 @@ do_fit() {
               "Aptos Display Italic.ttf:DisplayItalic" "Aptos Display Bold Italic.ttf:DisplayBoldItalic"; do
     "$PY" -I scripts/extract_metrics.py "$APTOS_DIR/${pair%%:*}" "build/metrics/ref_${pair##*:}.json"
   done
-  "$PY" -I scripts/build_sources.py --opensans .opensans/sources --metrics build/metrics \
+  "$PY" -I scripts/build_sources.py --opensans .opensans/sources --noto .noto --metrics build/metrics \
         --out sources --report build/fit_report.json
 }
 

@@ -1,7 +1,8 @@
 """Extract ONLY numeric metrics from a reference font into JSON.
 
 Reads: per-codepoint advance widths, vertical metrics, weight class, x-height,
-cap height, italic angle, and kerning pair values keyed by codepoint pairs.
+cap height, italic angle, kerning pair values keyed by codepoint pairs, and the bounding boxes
+of the box-drawing and integral-piece characters (which must join across lines).
 No outline, point, curve or glyph-name data is read or written.
 
 Usage: python -I extract_metrics.py <reference.ttf> <out.json>
@@ -90,7 +91,16 @@ def main(src, dst):
                                 # even with zero value (HarfBuzz behaviour).
                                 pairs.setdefault((c1, c2), v)
     kern = [[a, b, v] for (a, b), v in sorted(pairs.items(), key=lambda kv: (str(kv[0][0]), str(kv[0][1]))) if v]
-    out = dict(source_file=src.split("/")[-1], vertical=vm,
+    # Bounding boxes (numbers only) of the characters that must join their neighbours across
+    # lines: box drawing and the integral pieces.
+    glyf = f["glyf"] if "glyf" in f else None
+    bnds = {}
+    for cp in list(range(0x2500, 0x2580)) + [0x2320, 0x2321]:
+        if glyf is not None and cp in cmap:
+            g = glyf[cmap[cp]]
+            if hasattr(g, "xMin"):
+                bnds[str(cp)] = [g.xMin, g.yMin, g.xMax, g.yMax]
+    out = dict(source_file=src.split("/")[-1], vertical=vm, bounds=bnds,
                advances={str(k): v for k, v in sorted(adv.items())},
                ligatures=ligs,
                kern_lookup_flags=sorted(flags), kerning=kern)

@@ -235,6 +235,7 @@
     <key>public.kern1.Uhorn</key>
     <array>
       <string>Uhorn</string>
+      <string>uni03E4</string>
       <string>uni1EE8</string>
       <string>uni1EEA</string>
       <string>uni1EEC</string>
@@ -1020,6 +1021,7 @@
       <string>Uring</string>
       <string>Utilde</string>
       <string>uni01B2</string>
+      <string>uni03E4</string>
       <string>uni1EE4</string>
       <string>uni1EE6</string>
       <string>uni1EE8</string>

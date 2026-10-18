@@ -86,7 +86,8 @@ S_SPINE = {"S": (33.0, 1.0, 0.5), "s": (29.5, 1.0, 0.5)}
 # In the italics these glyphs are the matching roman's (same wdth, weight and stretch) slanted
 # by the italic angle: obliques, instead of Open Sans's cursive forms. The f ligatures follow f.
 OBLIQUE_ITALIC = ["e", "eogonek", "eogonek.loclNAV", "f", "c", "C", "s", "S", "f_f", "fi", "fl", "f_f_i", "f_f_l"]
-VERSION = (1, 2)
+VERSION = (1, 3)
+NOTO = None                                     # noto_glyphs.Noto, set from --noto
 
 STYLES = {
     # key: family, style, italic, weight, Narrow?, Display?, OS/2 width class
@@ -105,9 +106,11 @@ STYLES = {
 }
 
 COPYRIGHT = ("Copyright 2020 The Open Sans Project Authors (https://github.com/googlefonts/opensans). "
+             "Copyright 2022 The Noto Project Authors (https://github.com/notofonts). "
              "Copyright 2026 The Apodi Project Authors.")
-DESCRIPTION = ("An open, metric-compatible alternative to Aptos. Derived from Open Sans "
-               "(SIL Open Font License 1.1); see FONTLOG.txt.")
+DESCRIPTION = ("An open, metric-compatible alternative to Aptos. Derived from Open Sans, with "
+               "symbols and other scripts' characters from Noto (SIL Open Font License 1.1); "
+               "see FONTLOG.txt.")
 LICENSE = ("This Font Software is licensed under the SIL Open Font License, Version 1.1. "
            "This license is available with a FAQ at: https://openfontlicense.org")
 
@@ -1051,6 +1054,23 @@ def build_style(key, spaces, metrics_dir, out_dir, report):
         dst.width = adv
         dst.unicodes = list(src.unicodes)
 
+    # 3b. characters Open Sans lacks: drawn from Noto fonts at the reference advance (locked)
+    added_noto = {}
+    if NOTO is not None:
+        from noto_glyphs import NOTO_EM_CAP, add_glyphs
+        rb = {int(k): v for k, v in ref.get("bounds", {}).items()}
+        added_noto, noto_rep = add_glyphs(
+            font, NOTO, {cp: t for cp, t in targets.items() if cp not in cmap}, rb,
+            vm["capHeight"] / (NOTO_EM_CAP * 1000), l_stem(sp.instance(W, 100)) * s, italic, vm["italicAngle"] or 0,
+            box(font, "x")[3])
+        for g, t in added_noto.items():
+            cp = font[g].unicodes[0]
+            cmap[cp] = g
+            gtarget[g] = t
+            gcp[g] = cp
+            order.append(g)
+        log(key, "added from Noto:", len(added_noto))
+
     # 4. features: our kerning replaces the source's; ligatures as in the reference
     dropped = edit_features(font, set(ref.get("ligatures", {})))
     ligs_after = liga_map(font)
@@ -1140,7 +1160,10 @@ def build_style(key, spaces, metrics_dir, out_dir, report):
         if k not in keep:
             del font.lib[k]
     font.lib["public.glyphOrder"] = order
-    font.lib["org.apodi.lockedAdvanceWidths"] = {g: xform[g][2] for g in sorted(gtarget)}
+    font.lib["org.apodi.lockedAdvanceWidths"] = {g: (xform[g][2] if g in xform else font[g].width)
+                                                 for g in sorted(gtarget)}
+    if added_noto:
+        font.lib["org.apodi.notoGlyphs"] = {"%04X" % cp: [f, note, shrink] for cp, f, note, shrink in noto_rep}
     font.lib["org.apodi.fit"] = {
         "scale": s, "grid_wght_wdth_stretch": [list(g) for g in grid], "defaultInstance": list(default_gw),
         "mVertexRaise": M_VERTEX_RAISE, "defaultAlternates": DEFAULT_ALTERNATES["italic" if italic else "roman"],
@@ -1181,6 +1204,14 @@ def build_style(key, spaces, metrics_dir, out_dir, report):
     report.setdefault("_glyphset", set()).update(gtarget)
     log(key, "->", path, "kern pairs", len(pairs), "groups", len(groups), "entries", len(kerning))
     return info.postscriptFontName
+
+
+def l_stem(f):
+    """Stem of l in an Open Sans instance (horizontal extent minus the slant in italics)."""
+    bp = BoundsPen(f)
+    f["l"].draw(bp)
+    x0, y0, x1, y1 = bp.bounds
+    return (x1 - x0) - (y1 - y0) * abs(math.tan(math.radians(f.info.italicAngle or 0)))
 
 
 def write_designspace(out_dir, built):
@@ -1225,7 +1256,13 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--report", default=None)
     ap.add_argument("--styles", default=",".join(STYLES))
+    ap.add_argument("--noto", default=None, help="folder with the Noto fonts (scripts/fetch_noto.sh)")
     a = ap.parse_args()
+    global NOTO
+    if a.noto:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from noto_glyphs import Noto
+        NOTO = Noto(a.noto)
     os.makedirs(a.out, exist_ok=True)
     spaces = {}
     log("loading Open Sans designspaces")

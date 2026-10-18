@@ -14,8 +14,9 @@ that documents keep their line and page breaks when Apodi replaces it. "Aptos" i
 to describe compatibility (nominative use); Apodi is not affiliated with Microsoft.
 
 Apodi is a Modified Version of Open Sans (designed by Steve Matteson; Open Sans Project
-Authors), released under the SIL Open Font License 1.1. Open Sans declares no Reserved Font
-Name; the modified fonts are nevertheless renamed.
+Authors), released under the SIL Open Font License 1.1, with 84 symbols and other scripts'
+characters taken from Noto fonts (The Noto Project Authors, SIL OFL 1.1). Neither declares a
+Reserved Font Name; the modified fonts are nevertheless renamed.
 
 Families: Apodi, Apodi Narrow, Apodi Display; each in Regular, Bold, Italic, Bold Italic.
 
@@ -23,21 +24,47 @@ Families: Apodi, Apodi Narrow, Apodi Display; each in Regular, Bold, Italic, Bol
 Sources used
 ------------
 
-Open Sans sources (the only source of outlines, components, anchors and substitution
-features):
+Open Sans sources (the source of all other outlines, and of all components, anchors and
+substitution features):
   https://github.com/googlefonts/opensans
   commit bd7e37632246368c60fdcbd374dbf9bad11969b6 ("Fix version number to v3.003", 2023-11-16)
   sources/OpenSans-Roman.designspace, sources/OpenSans-Italic.designspace, sources/*.ufo,
   sources/OpenSans-glyphset.txt; license OFL.txt (SIL OFL 1.1).
 
+Noto fonts (outlines of the 84 characters Open Sans lacks; SIL OFL 1.1, no Reserved Font
+Name, checked in each font's license record and google/fonts' OFL.txt):
+  https://github.com/google/fonts  commit 47d54ca1ebb14fd864695f1d39dc734f39017c33 (2026-10-16)
+  ofl/notosans (Noto Sans 2.015, Italic), ofl/notosansmono (2.014), ofl/notosanssymbols
+  (2.003), ofl/notosanssymbols2 (2.008), ofl/notosansmath (3.000), ofl/notosanscoptic (2.004),
+  ofl/notosansarmenian (2.008), ofl/notosansarabic (2.012), ofl/notosansbengali (3.011),
+  ofl/notosansgujarati (2.106), ofl/notosanstamil (2.004), ofl/notosansthai (2.002),
+  ofl/notosanskhmer (2.004). Copyright 2022 The Noto Project Authors (notofonts/*); Noto Sans
+  Math's name table reads "Copyright 2022 Google LLC".
+
 Reference metrics (numbers only), read from locally installed Aptos fonts: advance width per
 Unicode codepoint, advance per default-ligature character sequence, kerning value per
 codepoint pair, unitsPerEm, hhea/typo/win ascender, descender and line gap, cap height,
-weight class, italic angle. No outlines, points or curves were taken from Aptos.
+weight class, italic angle, and the bounding boxes of the six box-drawing characters and the
+two integral halves (so they join across lines). No outlines, points or curves were taken
+from Aptos.
 
 
 Changelog
 ---------
+
+2026-10-17 (The Apodi Project Authors) Apodi v1.003
+- Added the 84 characters of the reference that Open Sans lacks, with outlines from Noto
+  (see Sources used): Coptic U+03E2-03EF; currency signs U+058F, U+060B, U+09F2, U+09F3,
+  U+0AF1, U+0BF9, U+0E3F, U+17DB, U+20C0, U+FDFC; arrows U+2190-2199 and U+21A8; U+2219,
+  U+221F, U+2229, U+2236, U+2261, U+2302, U+2310, U+2320, U+2321; circled digits U+2460-2469
+  and U+2776-277F; box drawing U+2500, 2502, 250C, 2510, 2514, 2518; shapes U+25A1, 25AA,
+  25AB, 25CB, 25CF, 25E6; U+2610, 2611, 2713, 2766, 27E8, 27E9, 2BBD, 2BBE.
+- Each is scaled to Apodi's size, set to the style's stem weight (Noto's wght/wdth axes, or
+  FreeType outline emboldening for the static Noto Sans Math, Symbols 2 and Coptic), slanted
+  in the italics where the reference slants it, and given the reference's advance width
+  (locked) and kerning. Box drawing and the integral halves run to the reference's bounding
+  boxes so they join. U+21A8 is synthesized from Noto Sans Symbols' U+2195 plus a base bar.
+- Apodi now covers all of the reference's characters.
 
 2026-10-17 (The Apodi Project Authors) Apodi v1.002
 - Outline changes only; metrics, kerning and line breaks unchanged against the reference.
@@ -102,6 +129,11 @@ D: Designer of Open Sans
 N: The Open Sans Project Authors
 W: https://github.com/googlefonts/opensans
 D: Open Sans sources
+
+N: The Noto Project Authors
+W: https://github.com/notofonts
+D: Noto Sans, Mono, Symbols, Symbols 2, Math, Coptic, Armenian, Arabic, Bengali, Gujarati,
+D: Tamil, Thai and Khmer (outlines of the characters Open Sans lacks)
 
 N: The Apodi Project Authors
 D: Metric fitting, letter-shape changes (M, G, K, k, C, S, italic obliques), build tooling

@@ -7,7 +7,7 @@
     <key>capHeight</key>
     <integer>1346</integer>
     <key>copyright</key>
-    <string>Copyright 2020 The Open Sans Project Authors (https://github.com/googlefonts/opensans). Copyright 2026 The Apodi Project Authors.</string>
+    <string>Copyright 2020 The Open Sans Project Authors (https://github.com/googlefonts/opensans). Copyright 2022 The Noto Project Authors (https://github.com/notofonts). Copyright 2026 The Apodi Project Authors.</string>
     <key>descender</key>
     <integer>-577</integer>
     <key>familyName</key>
@@ -39,7 +39,7 @@
     <key>openTypeHheaLineGap</key>
     <integer>0</integer>
     <key>openTypeNameDescription</key>
-    <string>An open, metric-compatible alternative to Aptos. Derived from Open Sans (SIL Open Font License 1.1); see FONTLOG.txt.</string>
+    <string>An open, metric-compatible alternative to Aptos. Derived from Open Sans, with symbols and other scripts' characters from Noto (SIL Open Font License 1.1); see FONTLOG.txt.</string>
     <key>openTypeNameDesigner</key>
     <string>Steve Matteson (Open Sans); Apodi modifications by The Apodi Project Authors</string>
     <key>openTypeNameLicense</key>
@@ -49,9 +49,9 @@
     <key>openTypeNameRecords</key>
     <array/>
     <key>openTypeNameUniqueID</key>
-    <string>1.002;NONE;Apodi-BoldItalic</string>
+    <string>1.003;NONE;Apodi-BoldItalic</string>
     <key>openTypeNameVersion</key>
-    <string>Version 1.002</string>
+    <string>Version 1.003</string>
     <key>openTypeOS2CodePageRanges</key>
     <array>
       <integer>0</integer>
@@ -144,7 +144,7 @@
     <key>versionMajor</key>
     <integer>1</integer>
     <key>versionMinor</key>
-    <integer>2</integer>
+    <integer>3</integer>
     <key>xHeight</key>
     <integer>1028</integer>
   </dict>

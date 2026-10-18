@@ -1,6 +1,6 @@
 # Apodi: build report
 
-Date: 2026-10-17. Version 1.002. All numbers below come from `./build.sh check` and `build/fit_report.json` for the
+Date: 2026-10-17. Version 1.003. All numbers below come from `./build.sh check` and `build/fit_report.json` for the
 binaries in `fonts/`.
 
 ## 1. Inventory
@@ -28,24 +28,46 @@ and Black are not built.
 - **Not used:** the repository's `original source/*.glyphs` files. They do not match the published fonts (different
   glyph set and Condensed masters).
 
-**Coverage:** 1,002 of 1,086 codepoints (italics: 1,002 of 1,085).
+**Coverage:** all 1,086 codepoints (italics: all 1,085; U+20C0 is upright-only in the reference too).
 
-- **Complete:** Basic Latin, Latin-1, Latin Extended-A, Latin Extended-B/IPA and general punctuation, including
-  ZWJ/ZWNJ/bidi controls.
-- **Recovered:** 138 of the 222 codepoints the published Open Sans fonts lack. Their glyphs are in the Open Sans
-  sources but not shipped by Open Sans:
-  - currency: ₹ ₽ ₺ ₩ ₱ ₦ ₿ ₴ ₸ ₼ ₾ ₡ ₢ ₥ ₨ ₭ ₮ ₯ ₰ ₲ ₳ ₵ ₶ ₷ ₻ ₠
-  - fractions ⅓–⅚, and ‽ ‾ ℗ ℳ ◌
-  - Latin Extended-B/IPA letters, Greek symbols and format controls
-- **Missing (84):**
-  - Coptic: U+03E2–03EF
-  - other scripts' currency signs: U+058F ֏, U+060B ؋, U+09F2, U+09F3, U+0AF1, U+0BF9, U+0E3F ฿, U+17DB, U+20C0
-    (upright only), U+FDFC ﷼
-  - arrows: U+2190–2199 and U+21A8
-  - math ∙ ∟ ∩ ∶ ≡; technical ⌂ ⌐ ⌠ ⌡
-  - circled digits ①–⑩ and ❶–❿
-  - box drawing ─ │ ┌ ┐ └ ┘; shapes □ ▪ ▫ ○ ● ◦
-  - other: ☐ ☑ ✓ ❦, ⟨ ⟩, ⮽ ⮾
+- **From Open Sans:** 1,002. Basic Latin, Latin-1, Latin Extended-A, Latin Extended-B/IPA and general punctuation,
+  including ZWJ/ZWNJ/bidi controls, plus 138 codepoints whose glyphs are in the Open Sans sources but not shipped by
+  Open Sans (currency ₹ ₽ ₺ ₩ ₱ ₦ ₿ ₴ ₸ ₼ ₾ ₡ ₢ ₥ ₨ ₭ ₮ ₯ ₰ ₲ ₳ ₵ ₶ ₷ ₻ ₠; fractions ⅓–⅚; ‽ ‾ ℗ ℳ ◌; Latin
+  Extended-B/IPA letters, Greek symbols and format controls).
+- **From Noto (84):** the characters Open Sans has no drawing for, from google/fonts commit
+  `47d54ca1ebb14fd864695f1d39dc734f39017c33` (`scripts/fetch_noto.sh`, SHA-256-checked, not committed). All SIL OFL
+  1.1 with no Reserved Font Name (checked in each font's name-table license record and google/fonts' OFL.txt).
+
+| Characters | Source (version) | Weight / width |
+|---|---|---|
+| Coptic Ϣ–ϯ (U+03E2–03EF) | Noto Sans Coptic 2.004 (static Regular) | FreeType outline emboldening to the style's stem; condensed up to 15% with stems compensated where needed |
+| ֏ | Noto Sans Armenian 2.008 (wght/wdth) | interpolated |
+| ؋ ﷼ | Noto Sans Arabic 2.012 (wght/wdth) | interpolated |
+| ৲ ৳ | Noto Sans Bengali 3.011 (wght/wdth) | interpolated |
+| ૱ | Noto Sans Gujarati 2.106 (wght/wdth) | interpolated |
+| ௹ | Noto Sans Tamil 2.004 (wght/wdth) | interpolated |
+| ฿ | Noto Sans Thai 2.002 (wght/wdth) | interpolated |
+| ៛ | Noto Sans Khmer 2.004 (wght/wdth) | interpolated |
+| ⃀ | Noto Sans 2.015 and Noto Sans Italic (wght/wdth) | interpolated |
+| ← ↑ → ↓ ↔ ↕ ↖ ↗ ↘ ↙, ⌂, ①–⑩, ❶–❿ | Noto Sans Symbols 2.003 (wght) | interpolated |
+| ↨ | synthesized: Noto Sans Symbols's ↕ plus a base bar as thick as its shaft (Noto has ↨ only in Math, drawn heavier than the Symbols arrows) | interpolated |
+| ∙ ∟ ∩ ∶ ≡ ⌐ ⌠ ⌡ ⟨ ⟩ | Noto Sans Math 3.000 (static Regular) | emboldened |
+| □ ▫ ○ ◦ ☐ ☑ ✓ ⮽ ⮾ | Noto Sans Symbols 2 2.008 (static Regular) | emboldened |
+| ▪ ● ❦ | Noto Sans Symbols 2 2.008 | filled shapes: scaled only |
+| ─ │ ┌ ┐ └ ┘ | Noto Sans Mono 2.014 (light line weight) | lines run to the reference's bounding box |
+
+- **Fitting:** each is scaled like the Open Sans glyphs (Noto Sans's cap height is 0.714 em, as in Open Sans, so the
+  factor is 1346/714 in font units). Its weight is set so that Noto Sans's `l` stem matches Apodi's `l` stem in the
+  style (variable fonts: the wght, and for Narrow the wdth with the best natural advance; static fonts: FreeType's
+  outline emboldening). The advance is the reference's, with the difference in the sidebearings; symbols much wider
+  than their advance are scaled down whole (in Narrow Bold and Narrow Bold Italic: ֏ ∩ ⟨ ⟩ ﷼). The widths are locked like the others and the
+  reference's kerning pairs with these characters are included.
+- **Joining characters:** the box-drawing lines and the integral halves ⌠ ⌡ run to the reference's bounding boxes
+  (`extract_metrics.py` records those numbers), so boxes and integrals join across lines and neighbours. The line
+  thickness is Noto's own.
+- **Italics:** Coptic, the currency signs and ❦ are slanted 12°. Arrows, shapes, box drawing, circled digits, check
+  marks and math signs stay upright, as in the reference's italics (where they are only shifted); slanting box
+  drawing or the integral halves would also break their joins.
 
 ## 2. Method (per style)
 
@@ -105,15 +127,15 @@ reference's very wide spacing accents (´ ` ¸ ˙, 1,130 units).
 
 ## 3. Validation
 
-**(a) `scripts/check_metrics.py`** found 0 mismatches in all 12 styles for advance widths (1,002 codepoints each),
-vertical metrics, ligatures and kerning.
+**(a) `scripts/check_metrics.py`** found 0 missing characters and 0 mismatches in all 12 styles for advance widths
+(1,086 codepoints each, 1,085 in the italics), vertical metrics, ligatures and kerning.
 
 | Style | kern pairs tested |
 |---|---|
-| Regular / Bold | 68,713 / 68,949 |
-| Italic / Bold Italic | 61,509 / 61,745 |
-| Narrow (R / B / I / BI) | 69,806 / 69,594 / 62,324 / 63,192 |
-| Display (R / B / I / BI) | 69,087 / 69,323 / 62,522 / 62,758 |
+| Regular / Bold | 68,720 / 68,956 |
+| Italic / Bold Italic | 61,871 / 62,107 |
+| Narrow (R / B / I / BI) | 69,813 / 69,601 / 62,686 / 63,554 |
+| Display (R / B / I / BI) | 69,094 / 69,330 / 62,884 / 63,120 |
 
 Each pair is shaped as a two-character string with HarfBuzz in both fonts. Six cases are not counted: in Narrow Bold
 Italic, Display Italic and Display Bold Italic, the reference decomposes ﬁ/ﬂ (U+FB01/FB02) after `f` and re-ligates
@@ -140,6 +162,9 @@ them as `ff`+`i`, so `f`+`ﬁ` differs by 1 unit.
   obliques, Aptos / Apodi 1.000 / Apodi now, in Regular, Bold and Narrow Bold with their italics; made by
   `scripts/revisions.py --aptos`. It contains reference renderings, so it is git-ignored like `docs/comparison/`.
 - **`docs/images/revisions-apodi.png`:** the same rows without the reference (Apodi 1.000 / now). Committed.
+- **`docs/images/added-glyphs.png`:** the 84 characters from Noto in Regular, Bold, Narrow Bold and Italic, with a box
+  and an integral set at the font's line height. Committed. `docs/comparison/added-glyphs-reference.png` has the
+  reference row above each (`scripts/added_glyphs.py --aptos`), local only.
 - **`docs/images/s-closeup.png`:** "s S Sessions" at 200 px in Regular and Bold: Aptos, Apodi 1.001, the 24°/30° spine
   and the current one (`scripts/revisions.py --closeup`). Contains the reference, so git-ignored.
 
@@ -196,8 +221,10 @@ these glyphs inherit the change.
 
 ## 6. Residual issues and risks
 
-1. **Missing characters:** 84 reference characters are missing (§1). Text that uses them falls back to another font
-   with different widths.
+1. **Characters from Noto** (§1) match the reference's widths but not its design: arrows are lighter and longer,
+   ﷼ uses Noto's form, the circled digits in the italics are upright. The static fonts (Math, Symbols 2, Coptic) are
+   emboldened by outline offsetting rather than drawn bold. Characters outside the reference's set still fall back
+   to another font.
 2. **Optional figure styles and features are not width-matched.** Proportional and oldstyle figures, superscripts,
    subscripts and fractions (`pnum`, `onum`, `sups`/`subs`/`frac`), all-caps forms (`case`) and small caps keep Open
    Sans widths.

@@ -1,6 +1,7 @@
-"""Character-set coverage: reference metrics JSON (codepoints) vs Open Sans cmap.
+"""Character-set coverage: reference metrics JSON (codepoints) vs a font's cmap (Open Sans, to
+see what has to come from elsewhere, or the Apodi binaries, which should miss none).
 
-Usage: python -I coverage.py <ref_Regular.json> <ref_Italic.json> <OpenSans-VF.ttf> <OpenSans-Italic-VF.ttf>
+Usage: python -I coverage.py <ref_Regular.json> <ref_Italic.json> <upright.ttf> <italic.ttf>
 """
 import json
 import sys
@@ -43,8 +44,8 @@ def main(refR, refI, osR, osI):
         o = set(TTFont(osf).getBestCmap())
         miss = sorted(a - o)
         extra = len(o - a)
-        print(f"## {label}: reference {len(a)} codepoints, Open Sans {len(o)}; "
-              f"in reference but not Open Sans: {len(miss)}; in Open Sans only: {extra}\n")
+        print(f"## {label}: reference {len(a)} codepoints, font {len(o)}; "
+              f"missing from the font: {len(miss)}; in the font only: {extra}\n")
         byb = {}
         for cp in miss:
             byb.setdefault(block(cp), []).append(cp)

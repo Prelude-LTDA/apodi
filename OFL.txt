@@ -1,4 +1,10 @@
 Copyright 2020 The Open Sans Project Authors (https://github.com/googlefonts/opensans)
+Copyright 2022 The Noto Project Authors (https://github.com/notofonts/latin-greek-cyrillic,
+  https://github.com/notofonts/symbols, https://github.com/notofonts/math,
+  https://github.com/notofonts/coptic, https://github.com/notofonts/armenian,
+  https://github.com/notofonts/arabic, https://github.com/notofonts/bengali,
+  https://github.com/notofonts/gujarati, https://github.com/notofonts/tamil,
+  https://github.com/notofonts/thai, https://github.com/notofonts/khmer)
 Copyright 2026 The Apodi Project Authors
 
 -----------------------------------------------------------

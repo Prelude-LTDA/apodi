@@ -21,3 +21,6 @@ docs/comparison/
 # revisions sheet with the reference column (scripts/revisions.py --aptos): local only
 docs/images/revisions.png
 docs/images/s-closeup.png
+
+# downloaded Noto fonts (scripts/fetch_noto.sh)
+.noto/
