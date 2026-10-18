@@ -1,0 +1,6 @@
+# This is the list of people who have contributed to Apodi.
+# Copyright is held by the Apodi Project Authors (see AUTHORS.txt).
+# Names should be added to this file as:
+#     Name <email address>
+
+Marco Buono

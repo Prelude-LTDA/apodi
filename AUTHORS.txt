@@ -1,0 +1,11 @@
+# This is the official list of the Apodi Project Authors for copyright purposes.
+# It is distinct from the CONTRIBUTORS.txt file, which lists the people who have contributed.
+# Names should be added to this file as one of:
+#     Organization's name
+#     Individual's name <submission email address>
+#     Individual's name <submission email address> working for Organization's name
+#
+# The authors of Open Sans and of the Noto fonts Apodi draws from are credited in
+# FONTLOG.txt and OFL.txt.
+
+Prelude LTDA

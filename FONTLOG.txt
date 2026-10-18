@@ -136,5 +136,6 @@ W: https://github.com/notofonts
 D: Noto Sans, Mono, Symbols, Symbols 2, Math, Coptic, Armenian, Arabic, Bengali, Gujarati,
 D: Tamil, Thai and Khmer (outlines of the characters Open Sans lacks)
 
-N: The Apodi Project Authors
+N: The Apodi Project Authors (Prelude LTDA; see AUTHORS.txt and CONTRIBUTORS.txt)
+W: https://github.com/Prelude-LTDA/apodi
 D: Metric fitting, letter-shape changes (M, G, K, k, C, S, italic obliques), build tooling

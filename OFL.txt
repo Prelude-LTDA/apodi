@@ -5,7 +5,7 @@ Copyright 2022 The Noto Project Authors (https://github.com/notofonts/latin-gree
   https://github.com/notofonts/arabic, https://github.com/notofonts/bengali,
   https://github.com/notofonts/gujarati, https://github.com/notofonts/tamil,
   https://github.com/notofonts/thai, https://github.com/notofonts/khmer)
-Copyright 2026 The Apodi Project Authors
+Copyright 2026 The Apodi Project Authors (https://github.com/Prelude-LTDA/apodi)
 
 -----------------------------------------------------------
 SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007

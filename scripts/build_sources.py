@@ -105,9 +105,10 @@ STYLES = {
     "DisplayBoldItalic": ("Apodi Display", "Bold Italic", True, "bold", False, True, 5),
 }
 
+APODI_URL = "https://github.com/Prelude-LTDA/apodi"
 COPYRIGHT = ("Copyright 2020 The Open Sans Project Authors (https://github.com/googlefonts/opensans). "
              "Copyright 2022 The Noto Project Authors (https://github.com/notofonts). "
-             "Copyright 2026 The Apodi Project Authors.")
+             f"Copyright 2026 The Apodi Project Authors ({APODI_URL}).")
 DESCRIPTION = ("An open, metric-compatible alternative to Aptos. Derived from Open Sans, with "
                "symbols and other scripts' characters from Noto (SIL Open Font License 1.1); "
                "see FONTLOG.txt.")
@@ -1106,8 +1107,8 @@ def build_style(key, spaces, metrics_dir, out_dir, report):
     info.versionMajor, info.versionMinor = VERSION
     info.copyright = COPYRIGHT
     info.trademark = None
-    info.openTypeNameManufacturer = None
-    info.openTypeNameManufacturerURL = None
+    info.openTypeNameManufacturer = "Prelude LTDA"
+    info.openTypeNameManufacturerURL = APODI_URL
     info.openTypeNameDesigner = "Steve Matteson (Open Sans); Apodi modifications by The Apodi Project Authors"
     info.openTypeNameDesignerURL = None
     info.openTypeNameDescription = DESCRIPTION
